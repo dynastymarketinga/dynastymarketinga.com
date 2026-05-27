@@ -1125,7 +1125,7 @@ nav.stuck{
 /* ========================
    PROJECTS GRID
    ======================== */
-.grid-wrap{padding:48px 64px 80px;}
+.grid-wrap{padding:0;}
 .proj-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -1156,15 +1156,22 @@ nav.stuck{
 }
 .pcard:hover .pcard-img{transform:scale(1.05);}
 
-/* Dark overlay */
+/* Dark overlay — misma marca en todas las tarjetas */
 .pcard-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(35,36,34,0.92) 0%,rgba(35,36,34,0.2) 55%,rgba(35,36,34,0.0) 100%);
+  background:linear-gradient(to top,rgba(74,3,21,0.9) 0%,rgba(74,3,21,0.35) 48%,rgba(74,3,21,0.02) 72%);
   transition:background .5s;
 }
 .pcard:hover .pcard-overlay{
-  background:linear-gradient(to top,rgba(35,36,34,0.96) 0%,rgba(35,36,34,0.5) 65%,rgba(35,36,34,0.1) 100%);
+  background:linear-gradient(to top,rgba(74,3,21,0.96) 0%,rgba(74,3,21,0.55) 58%,rgba(74,3,21,0.12) 100%);
 }
+.pcard--has-photo .pcard-overlay{
+  background:linear-gradient(to top,rgba(74,3,21,0.82) 0%,rgba(74,3,21,0.22) 40%,transparent 65%);
+}
+.pcard--has-photo:hover .pcard-overlay{
+  background:linear-gradient(to top,rgba(74,3,21,0.94) 0%,rgba(74,3,21,0.45) 55%,rgba(74,3,21,0.08) 100%);
+}
+.pcard--has-photo .pcard-tags{max-height:80px;opacity:1;}
 
 /* Gold left line on hover */
 .pcard-line{position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:3;}
@@ -1359,37 +1366,80 @@ html.detail-open body{
 .dvid:hover .dvid-btn{transform:translate(-50%,-50%) scale(1.1);}
 .dvid.playing .dvid-btn{opacity:0;}
 
-/* Featured portfolio video */
-.portfolio-feature{
+/* Portfolio: portada + secuencia unificada */
+#page-portfolio{background:var(--off);}
+.portfolio-cover{
+  background:var(--ink);
+  padding:56px 64px 72px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.portfolio-cover::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 75% 90% at 15% 100%,rgba(110,44,58,0.28) 0%,transparent 55%);
+  pointer-events:none;
+}
+.portfolio-cover-label{
+  position:relative;z-index:1;
+  font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:28px;
+  display:flex;align-items:center;gap:10px;
+}
+.portfolio-cover-label::before{content:'';width:20px;height:1px;background:var(--gold);}
+.portfolio-cover-inner{
+  position:relative;z-index:1;
   display:flex;align-items:center;gap:56px;
-  margin-bottom:56px;padding-bottom:56px;
+  max-width:1180px;
+}
+.portfolio-cover-media{flex:0 0 auto;}
+.portfolio-cover .dvid{
+  width:min(300px,34vw);
+  aspect-ratio:9/16;
+  box-shadow:0 28px 64px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.portfolio-cover-info{flex:1;min-width:0;}
+.portfolio-cover-num{
+  font-size:10px;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);margin-bottom:14px;
+}
+.portfolio-cover-name{
+  font-family:var(--serif);
+  font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:0.05em;
+  color:var(--off);line-height:1.05;margin-bottom:18px;
+}
+.portfolio-cover-desc{
+  font-size:14px;font-weight:300;line-height:1.85;
+  color:rgba(255,255,255,0.5);max-width:460px;margin-bottom:22px;
+}
+.portfolio-cover-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.portfolio-cover-tag{
+  font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+  padding:5px 12px;border:1px solid rgba(215,182,136,0.35);
+  color:rgba(215,182,136,0.85);
+}
+.portfolio-sequence{
+  background:var(--off);
+  padding:64px 64px 80px;
+}
+.sequence-head{
+  margin-bottom:40px;padding-bottom:28px;
   border-bottom:1px solid var(--faint2);
 }
-.portfolio-feature .dvid{
-  flex:0 0 auto;width:min(300px,42vw);
-  box-shadow:0 24px 60px rgba(74,3,21,0.18);
-}
-.portfolio-feature-info{flex:1;min-width:0;}
-.portfolio-feature-cat{
-  font-size:9px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;
+.sequence-label{
+  font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;
   color:var(--gold);margin-bottom:12px;
-  display:flex;align-items:center;gap:8px;
+  display:flex;align-items:center;gap:10px;
 }
-.portfolio-feature-cat::before{content:'';width:14px;height:1px;background:var(--gold);}
-.portfolio-feature-name{
+.sequence-label::before{content:'';width:18px;height:1px;background:var(--gold);}
+.sequence-title{
   font-family:var(--serif);
-  font-size:clamp(28px,3.5vw,44px);font-weight:700;letter-spacing:0.05em;
-  color:var(--ink);line-height:1.1;margin-bottom:16px;
+  font-size:clamp(26px,3vw,38px);font-weight:900;letter-spacing:0.05em;
+  color:var(--ink);line-height:1.1;margin-bottom:10px;
 }
-.portfolio-feature-desc{
-  font-size:14px;font-weight:300;line-height:1.85;color:var(--mid);
-  max-width:420px;margin-bottom:20px;
-}
-.portfolio-feature-tags{display:flex;gap:6px;flex-wrap:wrap;}
-.portfolio-feature-tag{
-  font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
-  padding:4px 10px;border:1px solid var(--faint2);color:var(--mid);
-}
+.sequence-title em{font-style:normal;color:var(--gold);}
+.sequence-desc{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid);max-width:520px;}
 
 /* Detail CTA bottom */
 .detail-cta{padding:80px 64px;text-align:center;background:var(--ink);margin-top:3px;}
@@ -1436,10 +1486,12 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
   .dg-lf2{grid-template-columns:1fr;}
   .dg-lf3{grid-template-columns:1fr 1fr;}
   .dvid{max-height:380px;}
-  .portfolio-feature{flex-direction:column;gap:32px;text-align:center;}
-  .portfolio-feature-desc{margin-left:auto;margin-right:auto;}
-  .portfolio-feature-tags{justify-content:center;}
-  .portfolio-feature .dvid{width:min(280px,100%);}
+  .portfolio-cover{padding:40px 24px 56px;}
+  .portfolio-cover-inner{flex-direction:column;gap:32px;text-align:center;}
+  .portfolio-cover-desc{margin-left:auto;margin-right:auto;}
+  .portfolio-cover-tags{justify-content:center;}
+  .portfolio-cover .dvid{width:min(280px,100%);}
+  .portfolio-sequence{padding:48px 24px 60px;}
   .detail-cta,.page-cta{padding:72px 24px;}
   .detail-close{top:16px;right:16px;}
   footer{flex-direction:column;gap:12px;text-align:center;padding:20px;}
@@ -2130,7 +2182,7 @@ window.addEventListener('scroll',()=>{
     <h1 class="ph-title">This is our<br><span>Portfolio.</span></h1>
   </div>
   <div class="ph-right" style="position:relative;z-index:1;">
-    <p class="ph-desc"></p>
+    <p class="ph-desc">A curated sequence of brand, content and digital work — from real estate film to jewelry identity.</p>
     <div class="ph-count"><span>05</span> Featured Projects &nbsp;·&nbsp; 2021 — 2026</div>
   </div>
   <!-- Burgundy decorative circle -->
@@ -2147,25 +2199,35 @@ window.addEventListener('scroll',()=>{
   <button class="ftab" data-f="software">Software</button>
 </div>
 
-<!-- PROJECT GRID -->
-<div class="grid-wrap">
-
-  <!-- Featured video -->
-  <div class="portfolio-feature rv">
-    <div class="dvid" data-video>
-      <video src="videos/carolina-realtors.mp4" playsinline preload="metadata"></video>
-      <div class="dvid-btn" aria-hidden="true">&#9654;</div>
-    </div>
-    <div class="portfolio-feature-info">
-      <div class="portfolio-feature-cat">Content Creation</div>
-      <h2 class="portfolio-feature-name">Carolina real estate</h2>
-      <p class="portfolio-feature-desc">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
-      <div class="portfolio-feature-tags">
-        <span class="portfolio-feature-tag">Video Production</span>
-        <span class="portfolio-feature-tag">Real Estate</span>
-        <span class="portfolio-feature-tag">Social Content</span>
+<!-- PORTADA: Carolina (misma zona oscura que header) -->
+<section class="portfolio-cover rv" data-cat="content">
+  <div class="portfolio-cover-label">Featured Project · Content Creation</div>
+  <div class="portfolio-cover-inner">
+    <div class="portfolio-cover-media">
+      <div class="dvid" data-video>
+        <video src="videos/carolina-realtors.mp4" playsinline preload="metadata"></video>
+        <div class="dvid-btn" aria-hidden="true">&#9654;</div>
       </div>
     </div>
+    <div class="portfolio-cover-info">
+      <div class="portfolio-cover-num">— Featured —</div>
+      <h2 class="portfolio-cover-name">Carolina Real Estate</h2>
+      <p class="portfolio-cover-desc">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
+      <div class="portfolio-cover-tags">
+        <span class="portfolio-cover-tag">Video Production</span>
+        <span class="portfolio-cover-tag">Real Estate</span>
+        <span class="portfolio-cover-tag">Social Content</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECUENCIA: todos los clientes en orden -->
+<section class="portfolio-sequence">
+  <div class="sequence-head rv">
+    <div class="sequence-label">Project Index</div>
+    <h2 class="sequence-title">All <em>Clients</em> · 01 — 05</h2>
+    <p class="sequence-desc">Each project opens with the same case-study layout. Select a card to view the full gallery and story.</p>
   </div>
 
   <div class="proj-grid">
@@ -2226,7 +2288,7 @@ window.addEventListener('scroll',()=>{
     </div>
 
     <!-- CARD 4: Axones (fallback landing) -->
-    <a href="axones/index.html" class="pcard pcard--axones rv d4" data-cat="software">
+    <a href="axones/index.html" class="pcard pcard--axones pcard--has-photo rv d4" data-cat="software">
       <div class="pcard-img" style="background-image:url('axones/assets/axones-preview.png');"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
@@ -2245,8 +2307,8 @@ window.addEventListener('scroll',()=>{
     </a>
 
     <!-- CARD 5: La Francia -->
-    <div class="pcard pcard--lf rv d5" data-cat="branding content" data-project="lf">
-      <div class="pcard-img" style="background-image:url('assets/la-francia/la-francia-card-preview.jpg');"></div>
+    <div class="pcard pcard--lf pcard--has-photo rv d5" data-cat="branding content" data-project="lf">
+      <div class="pcard-img" style="background-image:url('assets/la-francia/la-francia-card-preview.jpg');background-position:center 22%;"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">05</div>
@@ -2263,7 +2325,8 @@ window.addEventListener('scroll',()=>{
       </div>
     </div>
 
-</div>
+  </div>
+</section>
 
 <!-- DETAIL: World Coaching Corp -->
 <div class="detail-overlay" id="det-wcc">
@@ -2464,11 +2527,15 @@ document.addEventListener('keydown',e=>{
 });
 
 // Filter
+const portfolioCover=document.querySelector('.portfolio-cover');
 document.querySelectorAll('.ftab').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));
     btn.classList.add('on');
     const f=btn.dataset.f;
+    if(portfolioCover){
+      portfolioCover.style.display=(f==='all'||f==='content')?'':'none';
+    }
     document.querySelectorAll('.pcard').forEach(c=>{
       const cats=c.dataset.cat||'';
       c.style.display=(f==='all'||cats.includes(f))?'':'none';
@@ -2761,8 +2828,8 @@ img,video{max-width:100%;height:auto;}
   .test-grid{grid-template-columns:1fr!important;}
   .clients-row{flex-wrap:wrap!important;justify-content:center!important;}
   .cta-contacts{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important;}
-  .portfolio-feature{gap:28px!important;}
-  .portfolio-feature-name{font-size:clamp(24px,4.8vw,38px)!important;}
+  .portfolio-cover-inner{gap:28px!important;}
+  .portfolio-cover-name{font-size:clamp(24px,4.8vw,38px)!important;}
   .page-header > div[style*="position:absolute"]{display:none!important;}
 }
 
@@ -2838,7 +2905,7 @@ img,video{max-width:100%;height:auto;}
   .fcopy{font-size:9px!important;line-height:1.4!important;}
   .hero-stats{display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;gap:14px!important;}
   .hero-stats > div:last-child{grid-column:1 / -1;}
-  .portfolio-feature .dvid{width:100%!important;max-width:260px!important;}
+  .portfolio-cover .dvid{width:100%!important;max-width:260px!important;}
 }
 </style>
 </body>
