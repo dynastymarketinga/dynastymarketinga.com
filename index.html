@@ -1,10 +1,33 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynasty Marketing Agency · Miami</title>
+<title>Dynasty Marketing Agency Â· Miami</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
+<script>
+(function(){
+  var PAGES=['home','portfolio','contact'];
+  window.showPage=function(id,pushState){
+    if(id==='contact'){ window.location.href='contact.html'; return; } if(PAGES.indexOf(id)<0) id='home';
+    document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+    var target=document.getElementById('page-'+id);
+    if(!target){ target=document.getElementById('page-home'); id='home'; }
+    target.classList.add('active');
+    window.scrollTo(0,0);
+    document.body.style.overflow='';
+    target.querySelectorAll('.rv,.rv-left,.rv-right').forEach(function(el){ el.classList.add('show'); });
+    if(pushState!==false) history.pushState({page:id},'','#'+id);
+  };
+  function dynastyRoute(){
+    var hash=(location.hash||'').replace('#','').toLowerCase();
+    showPage(PAGES.indexOf(hash)>=0?hash:'home',false);
+  }
+  document.addEventListener('DOMContentLoaded',dynastyRoute);
+  window.addEventListener('hashchange',dynastyRoute);
+})();
+</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 
@@ -277,7 +300,7 @@ nav.stuck .nav-logo img{filter:none;}
   display:flex;align-items:center;gap:10px;
   transition:color .3s;
 }
-.btn-ghost::after{content:'↓';font-size:14px;}
+.btn-ghost::after{content:'â†“';font-size:14px;}
 .btn-ghost:hover{color:var(--ink);}
 
 .hero-bottom{
@@ -365,7 +388,7 @@ nav.stuck .nav-logo img{filter:none;}
   color:var(--ink);text-decoration:none;margin-top:16px;
   transition:gap .3s var(--ease),color .3s;
 }
-.about-link::after{content:'→';font-size:16px;transition:transform .3s var(--ease);}
+.about-link::after{content:'â†’';font-size:16px;transition:transform .3s var(--ease);}
 .about-link:hover{color:var(--darkreader-text--gold, var(--darkreader-text-000000, #181a1b));gap:20px;}
 .about-link:hover::after{transform:translateX(4px);}
 
@@ -420,7 +443,7 @@ nav.stuck .nav-logo img{filter:none;}
   color:var(--darkreader-text--gold, var(--darkreader-text-000000, #181a1b));writing-mode:vertical-rl;
 }
 
-/* SERVICES — 3D Cards */
+/* SERVICES â€” 3D Cards */
 #services{
   background:var(--ink);
   padding:160px 64px;
@@ -583,7 +606,7 @@ nav.stuck .nav-logo img{filter:none;}
   transition:opacity .4s var(--ease),transform .4s var(--ease);
   text-decoration:none;
 }
-.svc-card-link::after{content:'→';transition:transform .3s var(--ease);}
+.svc-card-link::after{content:'â†’';transition:transform .3s var(--ease);}
 .svc-card:hover .svc-card-link{opacity:1;transform:translateY(0);}
 .svc-card:hover .svc-card-link:hover::after{transform:translateX(4px);}
 
@@ -597,7 +620,7 @@ nav.stuck .nav-logo img{filter:none;}
 }
 .svc-card:hover::after{transform:translateX(100%);}
 
-/* WORK — Full CTA Section to portfolio page */
+/* WORK â€” Full CTA Section to portfolio page */
 #work{
   position:relative;
   overflow:hidden;
@@ -605,7 +628,7 @@ nav.stuck .nav-logo img{filter:none;}
   min-height:100vh;
   display:flex;align-items:center;justify-content:center;
 }
-/* Animated background texture — moving grid */
+/* Animated background texture â€” moving grid */
 .work-grid-bg{
   position:absolute;inset:0;
   background-image:
@@ -973,14 +996,42 @@ footer{
 #page-contact .nav-center a{color:rgba(255,255,255,0.45)!important;}
 #page-portfolio .nav-center a:hover,
 #page-contact .nav-center a:hover{color:var(--gold)!important;}
+#page-contact .nav-links a{color:rgba(255,255,255,0.45)!important;}
+#page-contact .nav-links a:hover{color:var(--gold)!important;}
+#page-contact .nav-cta{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:10px 24px;background:var(--fire);color:var(--off)!important;text-decoration:none;transition:background .3s;}
+#page-contact .nav-cta:hover{background:#8a3848;}
+#page-contact .nav-back{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4)!important;text-decoration:none;display:flex;align-items:center;gap:8px;}
+#page-contact .nav-back::before{content:'â†';}
+#page-contact .nav-back:hover{color:var(--gold)!important;}
+#page-contact nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;}
 #page-portfolio .btn-nav,
 #page-contact .btn-nav{background:var(--fire)!important;color:var(--off)!important;}
+
+/* Contact page */
+#page-contact.page{display:none;}
+#page-contact.page.active{
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+  min-height:100vh;
+  background:var(--off);
+  animation:none!important;
+}
+#page-contact.active .page-wrap{display:grid!important;min-height:calc(100vh - 72px);}
+#page-contact.active .rv,
+#page-contact.active .rv-left,
+#page-contact.active .rv-right{
+  opacity:1!important;
+  transform:none!important;
+  visibility:visible!important;
+}
+#page-contact footer{margin-top:0;}
 
 /* Split layout for contact */
 .page-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;}
 
 /* Smooth page transitions */
-.page{animation:pageFadeIn .4s var(--ease);}
+.page.active{animation:pageFadeIn .4s var(--ease) forwards;}
 @keyframes pageFadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
 
 </style>
@@ -1023,7 +1074,7 @@ nav.stuck{
 .nav-logo{font-family:var(--serif);font-size:18px;letter-spacing:0.2em;font-weight:700;color:var(--off);text-decoration:none;display:flex;align-items:center;gap:6px;}
 .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
 .nav-back{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.nav-back::before{content:'←';transition:transform .3s var(--ease);}
+.nav-back::before{content:'â†';transition:transform .3s var(--ease);}
 .nav-back:hover{color:var(--gold);}
 .nav-back:hover::before{transform:translateX(-4px);}
 .nav-cta{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:10px 24px;background:var(--fire);color:var(--off);text-decoration:none;transition:background .3s;}
@@ -1077,7 +1128,10 @@ nav.stuck{
   gap:20px;
 }
 @media(min-width:1200px){
-  .proj-grid{grid-template-columns:repeat(4,1fr);}
+  .proj-grid{grid-template-columns:repeat(5,1fr);}
+}
+@media(min-width:900px) and (max-width:1199px){
+  .proj-grid{grid-template-columns:repeat(3,1fr);}
 }
 
 /* PROJECT CARD */
@@ -1120,7 +1174,7 @@ nav.stuck{
 }
 .pcard:hover .pcard-num{color:var(--gold);}
 
-/* Bottom text — always visible */
+/* Bottom text â€” always visible */
 .pcard-body{
   position:absolute;bottom:0;left:0;right:0;z-index:3;
   padding:32px 24px 28px;
@@ -1139,7 +1193,7 @@ nav.stuck{
 }
 .pcard:hover .pcard-name{transform:translateY(-4px);}
 
-/* Tags — slide up on hover */
+/* Tags â€” slide up on hover */
 .pcard-tags{
   display:flex;gap:6px;flex-wrap:wrap;
   margin-top:12px;
@@ -1162,7 +1216,7 @@ nav.stuck{
   opacity:0;transform:translateY(8px);
   transition:opacity .4s var(--ease),transform .4s var(--ease);
 }
-.pcard-btn::after{content:'→';transition:transform .3s;}
+.pcard-btn::after{content:'â†’';transition:transform .3s;}
 .pcard:hover .pcard-btn{opacity:1;transform:translateY(0);}
 .pcard:hover .pcard-btn:hover::after{transform:translateX(4px);}
 
@@ -1180,6 +1234,20 @@ a.pcard{text-decoration:none;color:inherit;display:block;}
 }
 .pcard--axones:hover .pcard-overlay{
   background:linear-gradient(to top,rgba(35,36,34,0.94) 0%,rgba(35,36,34,0.45) 50%,rgba(35,36,34,0.08) 100%);
+}
+.pcard--lf:hover{box-shadow:0 24px 60px rgba(110,44,58,0.28),0 0 0 1px rgba(200,150,12,0.25);}
+.pcard--lf .pcard-line{background:#C8960C;}
+.pcard--lf:hover .pcard-num{color:#E5B822;}
+.pcard--lf .pcard-cat{color:#E5B822;}
+.pcard--lf .pcard-cat::before{background:#C8960C;}
+.pcard--lf .pcard-tag{border-color:rgba(200,150,12,0.35);color:rgba(229,184,34,0.85);}
+.pcard--lf .pcard-btn{color:#E5B822;}
+.pcard--lf .pcard-img{background-position:center 20%!important;}
+.pcard--lf .pcard-overlay{
+  background:linear-gradient(to top,rgba(35,36,34,0.9) 0%,rgba(35,36,34,0.25) 45%,rgba(35,36,34,0) 70%);
+}
+.pcard--lf:hover .pcard-overlay{
+  background:linear-gradient(to top,rgba(35,36,34,0.96) 0%,rgba(35,36,34,0.5) 55%,rgba(35,36,34,0.1) 100%);
 }
 
 /* ========================
@@ -1217,7 +1285,7 @@ a.pcard{text-decoration:none;color:inherit;display:block;}
   position:sticky;top:0;z-index:10;
 }
 .detail-nav-back{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);background:none;border:none;cursor:none;display:flex;align-items:center;gap:8px;transition:color .3s;padding:0;}
-.detail-nav-back::before{content:'←';}
+.detail-nav-back::before{content:'â†';}
 .detail-nav-back:hover{color:var(--ink);}
 .detail-nav-logo{font-family:var(--serif);font-size:16px;letter-spacing:0.18em;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:5px;margin-left:auto;}
 .detail-nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
@@ -1256,6 +1324,11 @@ a.pcard{text-decoration:none;color:inherit;display:block;}
 .dg-lf1 .dgi-feat{aspect-ratio:4/3;}
 .dg-lf1 .dgi-p{aspect-ratio:2/3;}
 .dg-lf2{display:grid;grid-template-columns:1fr 2fr;gap:3px;margin-top:3px;}
+.dg-lf3{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3px;}
+.dg-lf3 .dgi{aspect-ratio:3/4;}
+.dg-lf1 .dgi-feat .dvid,.dg-lf2 .dgi .dvid,.dg-lf3 .dgi .dvid{width:100%;height:100%;aspect-ratio:3/4;}
+.dg-lf1 .dgi-feat{aspect-ratio:auto;min-height:320px;}
+.dg-lf1 .dgi-feat .dvid{aspect-ratio:16/10;max-height:none;}
 .dgi{position:relative;overflow:hidden;background:var(--warm);}
 .dgi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease);}
 .dgi:hover img{transform:scale(1.04);}
@@ -1324,7 +1397,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
 /* Reveal */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
 .rv.show{opacity:1;transform:none;}
-.rv.d1{transition-delay:.08s;}.rv.d2{transition-delay:.16s;}.rv.d3{transition-delay:.24s;}.rv.d4{transition-delay:.32s;}
+.rv.d1{transition-delay:.08s;}.rv.d2{transition-delay:.16s;}.rv.d3{transition-delay:.24s;}.rv.d4{transition-delay:.32s;}.rv.d5{transition-delay:.4s;}
 
 /* MOBILE */
 @media(max-width:900px){
@@ -1342,6 +1415,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
   .dg-wcc .dgi-s2,.dg-wcc .dgi-s3{grid-column:span 2;}
   .dg-lf1{grid-template-columns:1fr 1fr;}.dg-lf1 .dgi-feat{grid-column:span 2;aspect-ratio:16/9;}
   .dg-lf2{grid-template-columns:1fr;}
+  .dg-lf3{grid-template-columns:1fr 1fr;}
   .dvid{max-height:380px;}
   .portfolio-feature{flex-direction:column;gap:32px;text-align:center;}
   .portfolio-feature-desc{margin-left:auto;margin-right:auto;}
@@ -1380,14 +1454,14 @@ nav.stuck{padding:16px 64px;background:rgba(247,245,240,0.94);backdrop-filter:bl
 .nav-links a{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:color .3s;}
 .nav-links a:hover{color:var(--gold);}
 
-/* LAYOUT — split */
+/* LAYOUT â€” split */
 .page-wrap{
   display:grid;
   grid-template-columns:1fr 1fr;
   min-height:100vh;
 }
 
-/* LEFT — dark info panel */
+/* LEFT â€” dark info panel */
 .left-panel{
   background:var(--ink);
   padding:160px 72px 80px;
@@ -1421,7 +1495,7 @@ nav.stuck{padding:16px 64px;background:rgba(247,245,240,0.94);backdrop-filter:bl
 .info-val a{color:rgba(255,255,255,0.65);text-decoration:none;transition:color .3s;}
 .info-val a:hover{color:var(--gold);}
 
-/* RIGHT — form panel */
+/* RIGHT â€” form panel */
 .right-panel{
   background:var(--off);
   padding:160px 72px 80px;
@@ -1475,7 +1549,7 @@ select{cursor:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
 }
 .check-box{width:14px;height:14px;border:1px solid var(--faint2);flex-shrink:0;position:relative;transition:all .3s;}
 .check-item input:checked + .check-label .check-box{background:var(--gold);border-color:var(--gold);}
-.check-item input:checked + .check-label .check-box::after{content:'✓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8px;color:var(--ink);}
+.check-item input:checked + .check-label .check-box::after{content:'âœ“';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8px;color:var(--ink);}
 
 /* Budget pills */
 .budget-grid{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
@@ -1616,20 +1690,20 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-inner" id="tickerInner">
-    <div class="ticker-item">Brand Identity <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Social Media <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Content Creation <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Web Campaigns <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Performance Marketing <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Creative Strategy <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Brand Identity <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Social Media <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Content Creation <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Web Campaigns <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Performance Marketing <span class="ticker-sep">✦</span></div>
-    <div class="ticker-item">Creative Strategy <span class="ticker-sep">✦</span></div>
+    <div class="ticker-item">Brand Identity <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Social Media <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Content Creation <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Web Campaigns <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Performance Marketing <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Creative Strategy <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Brand Identity <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Social Media <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Content Creation <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Web Campaigns <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Performance Marketing <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Creative Strategy <span class="ticker-sep">âœ¦</span></div>
   </div>
 </div>
 
@@ -1654,7 +1728,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
         <div class="acard-main-content">
           <div class="acard-tag">Our Approach</div>
           <h3>Strategy before<br>aesthetics. Always.</h3>
-          <p>Miami, Florida · Global Reach</p>
+          <p>Miami, Florida Â· Global Reach</p>
         </div>
       </div>
       <div class="acard acard-stat">
@@ -1687,7 +1761,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">01</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">◈</span>
+        <span class="svc-card-icon">â—ˆ</span>
         <div class="svc-card-name">Brand<br>Positioning</div>
         <div class="svc-card-desc">Visual identity, brand strategy, naming and market positioning crafted to make your brand unmistakable and impossible to copy.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1701,7 +1775,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">02</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">⬡</span>
+        <span class="svc-card-icon">â¬¡</span>
         <div class="svc-card-name">Intelligence<br>System</div>
         <div class="svc-card-desc">Smart internal systems and AI-driven workflows that streamline operations, reduce manual work, and give your team clarity at every step.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1715,7 +1789,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">03</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">▣</span>
+        <span class="svc-card-icon">â–£</span>
         <div class="svc-card-name">Content<br>Creation</div>
         <div class="svc-card-desc">Premium visual content: photography, video, reels, editorial campaigns. Production quality that makes people stop mid-scroll.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1729,7 +1803,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">04</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">◎</span>
+        <span class="svc-card-icon">â—Ž</span>
         <div class="svc-card-name">Web<br>Campaigns</div>
         <div class="svc-card-desc">Integrated digital campaigns combining paid media, SEO and conversion strategy built to deliver measurable, scalable ROI.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1743,9 +1817,9 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">05</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">◉</span>
+        <span class="svc-card-icon">â—‰</span>
         <div class="svc-card-name">Artificial<br>Intelligence<br>for Business</div>
-        <div class="svc-card-desc">Custom AI solutions for administration, customer service, and decision-making — built to integrate seamlessly into how your business already runs.</div>
+        <div class="svc-card-desc">Custom AI solutions for administration, customer service, and decision-making â€” built to integrate seamlessly into how your business already runs.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
       </div>
     </div>
@@ -1757,7 +1831,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">06</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">⊞</span>
+        <span class="svc-card-icon">âŠž</span>
         <div class="svc-card-name">Intelligence<br>Web</div>
         <div class="svc-card-desc">High-performance websites and digital platforms powered by intelligent automation, analytics, and conversion-focused architecture.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1787,7 +1861,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
     </p>
     <a href="#portfolio" onclick="showPage('portfolio');return false;" class="btn-work-cta">
       View All Work
-      <span class="btn-work-cta-arrow">→</span>
+      <span class="btn-work-cta-arrow">â†’</span>
     </a>
 
   </div>
@@ -1833,7 +1907,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
         <div class="tcard-av">PD</div>
         <div>
           <div class="tcard-name">Patricia De Abreu</div>
-          <div class="tcard-role">Founder · La Duquesa</div>
+          <div class="tcard-role">Founder Â· La Duquesa</div>
         </div>
       </div>
     </div>
@@ -1844,7 +1918,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
         <div class="tcard-av">CH</div>
         <div>
           <div class="tcard-name">Carlos H.</div>
-          <div class="tcard-role">CEO · World Coaching Corporation</div>
+          <div class="tcard-role">CEO Â· World Coaching Corporation</div>
         </div>
       </div>
     </div>
@@ -1914,7 +1988,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
     <a href="#contact" onclick="showPage('contact');return false;">Contact Us</a>
     <a href="https://instagram.com/dynastymarketing_" target="_blank">Instagram</a>
   </div>
-  <div class="fcopy">© 2025 Dynasty Marketing Agency · Miami, FL</div>
+  <div class="fcopy">Â© 2025 Dynasty Marketing Agency Â· Miami, FL</div>
 </footer>
 
 <script>
@@ -1950,9 +2024,11 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
 
 // Nav sticky
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('stuck',scrollY>50);
-});
+if(nav){
+  window.addEventListener('scroll',()=>{
+    nav.classList.toggle('stuck',scrollY>50);
+  });
+}
 
 // Reveal on scroll
 const rvEls=document.querySelectorAll('.rv,.rv-left,.rv-right');
@@ -1979,7 +2055,7 @@ const cuObs=new IntersectionObserver(en=>{
 },{threshold:0.5});
 document.querySelectorAll('.cu').forEach(el=>cuObs.observe(el));
 
-// Portfolio filter tabs — removed (now a cover page)
+// Portfolio filter tabs â€” removed (now a cover page)
 
 // Mouse parallax on mood board pieces
 document.addEventListener('mousemove', e => {
@@ -2036,7 +2112,7 @@ window.addEventListener('scroll',()=>{
   </div>
   <div class="ph-right" style="position:relative;z-index:1;">
     <p class="ph-desc"></p>
-    <div class="ph-count"><span>04</span> Featured Projects &nbsp;·&nbsp; 2021 — 2026</div>
+    <div class="ph-count"><span>05</span> Featured Projects &nbsp;Â·&nbsp; 2021 â€” 2026</div>
   </div>
   <!-- Burgundy decorative circle -->
   <div style="position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(110,44,58,0.2);top:-100px;right:200px;pointer-events:none;"></div>
@@ -2059,12 +2135,12 @@ window.addEventListener('scroll',()=>{
   <div class="portfolio-feature rv">
     <div class="dvid" data-video>
       <video src="videos/carolina-realtors.mp4" playsinline preload="metadata"></video>
-      <div class="dvid-btn" aria-hidden="true">▶</div>
+      <div class="dvid-btn" aria-hidden="true">â–¶</div>
     </div>
     <div class="portfolio-feature-info">
       <div class="portfolio-feature-cat">Content Creation</div>
       <h2 class="portfolio-feature-name">Carolina real estate</h2>
-      <p class="portfolio-feature-desc">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
+      <p class="portfolio-feature-desc">Brand video production for a Miami real estate team â€” cinematic storytelling that puts their agents and listings front and center.</p>
       <div class="portfolio-feature-tags">
         <span class="portfolio-feature-tag">Video Production</span>
         <span class="portfolio-feature-tag">Real Estate</span>
@@ -2141,7 +2217,7 @@ window.addEventListener('scroll',()=>{
         <div class="pcard-name">Axones</div>
         <div class="pcard-tags">
           <span class="pcard-tag">Inventario</span>
-          <span class="pcard-tag">Producción</span>
+          <span class="pcard-tag">ProducciÃ³n</span>
           <span class="pcard-tag">Kanban</span>
           <span class="pcard-tag">Preview</span>
         </div>
@@ -2149,18 +2225,37 @@ window.addEventListener('scroll',()=>{
       </div>
     </a>
 
+    <!-- CARD 5: La Francia -->
+    <div class="pcard pcard--lf rv d5" data-cat="branding content" data-project="lf">
+      <div class="pcard-img" style="background-image:url('assets/la-francia/la-francia-card-preview.jpg');"></div>
+      <div class="pcard-overlay"></div>
+      <div class="pcard-line"></div>
+      <div class="pcard-num">05</div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Brand Identity</div>
+        <div class="pcard-name">La Francia</div>
+        <div class="pcard-tags">
+          <span class="pcard-tag">Logo Design</span>
+          <span class="pcard-tag">Visual Identity</span>
+          <span class="pcard-tag">Jewelry</span>
+          <span class="pcard-tag">Content</span>
+        </div>
+        <div class="pcard-btn">View Project</div>
+      </div>
+    </div>
+
 </div>
 
 <!-- DETAIL: World Coaching Corp -->
 <div class="detail-overlay" id="det-wcc">
-  <button class="detail-close" id="close-wcc">✕</button>
+  <button class="detail-close" id="close-wcc">âœ•</button>
   <div class="detail-nav">
     <button class="detail-nav-back" onclick="closeDetail('wcc')">All Projects</button>
     <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
   </div>
   <div class="detail-hero">
     <div>
-      <div class="dh-num" style="position:relative;z-index:1;">02 of 04</div>
+      <div class="dh-num" style="position:relative;z-index:1;">02 of 05</div>
       <h2 class="dh-title" style="position:relative;z-index:1;">World Coaching Corp</h2>
       <div class="dh-tags" style="position:relative;z-index:1;">
         <span class="dh-tag">Logo Design</span><span class="dh-tag">Stationery</span>
@@ -2188,14 +2283,14 @@ window.addEventListener('scroll',()=>{
 
 <!-- DETAIL: Be U Academy -->
 <div class="detail-overlay" id="det-beu">
-  <button class="detail-close" id="close-beu">✕</button>
+  <button class="detail-close" id="close-beu">âœ•</button>
   <div class="detail-nav">
     <button class="detail-nav-back" onclick="closeDetail('beu')">All Projects</button>
     <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
   </div>
   <div class="detail-hero">
     <div>
-      <div class="dh-num" style="position:relative;z-index:1;">03 of 04</div>
+      <div class="dh-num" style="position:relative;z-index:1;">03 of 05</div>
       <h2 class="dh-title" style="position:relative;z-index:1;">Be U Academy</h2>
       <div class="dh-tags" style="position:relative;z-index:1;">
         <span class="dh-tag">Logo Design</span><span class="dh-tag">Brand Identity</span>
@@ -2209,6 +2304,89 @@ window.addEventListener('scroll',()=>{
       <div class="dgi" style="aspect-ratio:3/4;"><div class="dgi-visual" style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#2d5a3d,#f2ead8);"></div><div class="dgi-cap">Branded Pens</div></div>
       <div class="dgi" style="aspect-ratio:3/4;"><div class="dgi-visual" style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#4a8f5c,#f2ead8);"></div><div class="dgi-cap">Brand System</div></div>
       <div class="dgi" style="aspect-ratio:3/4;"><div class="dgi-visual" style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#2d5a3d,#4a8f5c);"></div><div class="dgi-cap">Print Materials</div></div>
+    </div>
+  </div>
+  <div class="detail-cta">
+    <h3>Like what you see? <em>Let's talk.</em></h3>
+    <p>We can build something like this for your brand.</p>
+    <a href="#contact" onclick="showPage('contact');return false;" class="d-btn">Start Your Project</a>
+  </div>
+</div>
+
+<!-- DETAIL: La Francia JoyerÃ­a -->
+<div class="detail-overlay" id="det-lf">
+  <button class="detail-close" id="close-lf">âœ•</button>
+  <div class="detail-nav">
+    <button class="detail-nav-back" onclick="closeDetail('lf')">All Projects</button>
+    <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
+  </div>
+  <div class="detail-hero">
+    <div>
+      <div class="dh-num" style="position:relative;z-index:1;">05 of 05</div>
+      <h2 class="dh-title" style="position:relative;z-index:1;">La Francia</h2>
+      <div class="dh-tags" style="position:relative;z-index:1;">
+        <span class="dh-tag">Logo Design</span><span class="dh-tag">Brand Identity</span>
+        <span class="dh-tag">Jewelry</span><span class="dh-tag">Content</span>
+      </div>
+    </div>
+    <p class="dh-desc" style="position:relative;z-index:1;">La Francia JoyerÃ­a â€” fine jewelry brand identity and visual content for Miami. Dynasty crafted a warm, luxurious presence across photography, film and brand assets that celebrate elegance and romance.</p>
+  </div>
+  <div class="detail-gallery">
+    <div class="dg-lf1">
+      <div class="dgi dgi-feat">
+        <div class="dvid" data-video>
+          <video src="assets/la-francia/la-francia-video-ring-box.mp4" playsinline preload="metadata"></video>
+          <div class="dvid-btn" aria-hidden="true">â–¶</div>
+        </div>
+        <div class="dgi-cap">Brand Film</div>
+      </div>
+      <div class="dgi dgi-p">
+        <img src="assets/la-francia/la-francia-photo-01-portrait.jpg" alt="La Francia portrait">
+        <div class="dgi-cap">Portrait</div>
+      </div>
+      <div class="dgi dgi-p">
+        <img src="assets/la-francia/la-francia-photo-02-couple-roses.jpg" alt="La Francia couple with roses">
+        <div class="dgi-cap">Lifestyle</div>
+      </div>
+    </div>
+    <div class="dg-lf2">
+      <div class="dgi dgi-p">
+        <div class="dvid" data-video>
+          <video src="assets/la-francia/la-francia-video-red-box.mp4" playsinline preload="metadata"></video>
+          <div class="dvid-btn" aria-hidden="true">â–¶</div>
+        </div>
+        <div class="dgi-cap">Product Film</div>
+      </div>
+      <div class="dgi dgi-feat">
+        <img src="assets/la-francia/la-francia-photo-04-embrace.jpg" alt="La Francia embrace">
+        <div class="dgi-cap">Campaign</div>
+      </div>
+    </div>
+    <div class="dg-lf3">
+      <div class="dgi">
+        <div class="dvid" data-video>
+          <video src="assets/la-francia/la-francia-video-necklace.mp4" playsinline preload="metadata"></video>
+          <div class="dvid-btn" aria-hidden="true">â–¶</div>
+        </div>
+        <div class="dgi-cap">Necklace</div>
+      </div>
+      <div class="dgi">
+        <div class="dvid" data-video>
+          <video src="assets/la-francia/la-francia-video-jewelry.mp4" playsinline preload="metadata"></video>
+          <div class="dvid-btn" aria-hidden="true">â–¶</div>
+        </div>
+        <div class="dgi-cap">Jewelry Detail</div>
+      </div>
+      <div class="dgi">
+        <img src="assets/la-francia/la-francia-photo-05-closeup.jpg" alt="La Francia ring closeup">
+        <div class="dgi-cap">Engagement</div>
+      </div>
+    </div>
+    <div style="margin-top:3px;">
+      <div class="dgi" style="aspect-ratio:21/8;">
+        <img src="assets/la-francia/la-francia-photo-03-couple.jpg" alt="La Francia couple">
+        <div class="dgi-cap">Brand Photography</div>
+      </div>
     </div>
   </div>
   <div class="detail-cta">
@@ -2297,11 +2475,9 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
 
 <!-- NAV -->
 <nav>
+  <a href="#home" onclick="showPage('home');return false;" class="nav-back">Home</a>
   <a href="#home" onclick="showPage('home');return false;" class="nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
-  <ul class="nav-links">
-    <li><a href="#portfolio" onclick="showPage('portfolio');return false;">Our Work</a></li>
-    <li><a href="#home" onclick="showPage('home');return false;">Home</a></li>
-  </ul>
+  <a href="#contact" onclick="showPage('contact');return false;" class="nav-cta">Start a Project</a>
 </nav>
 
 <div class="page-wrap">
@@ -2317,28 +2493,28 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
     </div>
     <div class="info-items rv d2">
       <div class="info-item">
-        <div class="info-icon">✉</div>
+        <div class="info-icon">âœ‰</div>
         <div>
           <div class="info-label">Email</div>
           <div class="info-val"><a href="mailto:dynastymarketingagency@gmail.com">dynastymarketingagency@gmail.com</a></div>
         </div>
       </div>
       <div class="info-item">
-        <div class="info-icon">☎</div>
+        <div class="info-icon">â˜Ž</div>
         <div>
           <div class="info-label">Phone</div>
           <div class="info-val"><a href="tel:+13053937543">+1 (305) 393-7543</a></div>
         </div>
       </div>
       <div class="info-item">
-        <div class="info-icon">◎</div>
+        <div class="info-icon">â—Ž</div>
         <div>
           <div class="info-label">Location</div>
           <div class="info-val">Miami, Florida</div>
         </div>
       </div>
       <div class="info-item">
-        <div class="info-icon">✦</div>
+        <div class="info-icon">âœ¦</div>
         <div>
           <div class="info-label">Instagram</div>
           <div class="info-val"><a href="https://instagram.com/dynastymarketing_" target="_blank">@dynastymarketing_</a></div>
@@ -2347,7 +2523,7 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
     </div>
   </div>
 
-  <!-- RIGHT PANEL — FORM -->
+  <!-- RIGHT PANEL â€” FORM -->
   <div class="right-panel">
     <div class="rv">
       <div class="form-title">Project Inquiry</div>
@@ -2410,13 +2586,13 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
         <textarea id="message" name="message" placeholder="Describe your brand, your goals and what you are looking to achieve..." required></textarea>
       </div>
 
-      <button type="submit" class="submit-btn"><span>Send Inquiry →</span></button>
+      <button type="submit" class="submit-btn"><span>Send Inquiry â†’</span></button>
       <p class="form-note">We respond within 24 hours. No commitment required.</p>
 
     </form>
 
     <div class="success-msg" id="successMsg">
-      <div class="success-icon">✦</div>
+      <div class="success-icon">âœ¦</div>
       <div class="success-title">Message Received</div>
       <p class="success-sub">Thank you for reaching out. We will be in touch within 24 hours to schedule your discovery call.</p>
     </div>
@@ -2426,16 +2602,17 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
 
 <footer>
   <a href="#home" onclick="showPage('home');return false;" class="fl"><img src="dynasty-logo.png" alt="Dynasty"></a>
-  <div class="fcopy">© 2025 Dynasty Marketing Agency · Miami, FL</div>
+  <div class="fcopy">Â© 2025 Dynasty Marketing Agency Â· Miami, FL</div>
 </footer>
 
 <script>
-// Reveal
-const contactRo=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');contactRo.unobserve(e.target);}});},{threshold:0.08});
-document.querySelectorAll('.rv').forEach(el=>contactRo.observe(el));
+// Contact page â€” scoped scripts
+(function(){
+  document.querySelectorAll('#page-contact .rv').forEach(function(el){ el.classList.add('show'); });
 
-// Form submit
-document.getElementById('contactForm').addEventListener('submit',function(e){
+  var form=document.querySelector('#page-contact #contactForm');
+  if(!form) return;
+  form.addEventListener('submit',function(e){
   e.preventDefault();
   // Collect data
   const data={
@@ -2449,7 +2626,7 @@ document.getElementById('contactForm').addEventListener('submit',function(e){
     message: document.getElementById('message').value
   };
   // Send via mailto as fallback (replace with your form service like Formspree)
-  const subject=encodeURIComponent('New Project Inquiry — '+data.brand);
+  const subject=encodeURIComponent('New Project Inquiry â€” '+data.brand);
   const body=encodeURIComponent(
     'Name: '+data.name+'\n'+
     'Email: '+data.email+'\n'+
@@ -2462,44 +2639,31 @@ document.getElementById('contactForm').addEventListener('submit',function(e){
   );
   window.location.href='mailto:dynastymarketingagency@gmail.com?subject='+subject+'&body='+body;
   // Show success
-  document.getElementById('contactForm').style.display='none';
-  document.getElementById('successMsg').classList.add('show');
-});
+  form.style.display='none';
+  document.getElementById('successMsg')?.classList.add('show');
+  });
+})();
 </script>
 </div>
 
 <script>
-// =====================
-// SPA NAVIGATION
-// =====================
-function showPage(id, pushState=true){
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  // Show target
-  const target = document.getElementById('page-'+id);
-  if(target){
-    target.classList.add('active');
-    window.scrollTo(0,0);
-    // Re-run reveal animations on new page
-    target.querySelectorAll('.rv').forEach(el=>{
-      el.classList.remove('show');
-      setTimeout(()=>rvObs.observe(el), 50);
-    });
-  }
-  if(pushState) history.pushState({page:id}, '', '#'+id);
-}
+// SPA â€” extend showPage with reveal observer when available
+(function(){
+  var baseShow=window.showPage;
+  window.showPage=function(id,pushState){
+    baseShow(id,pushState);
+    var target=document.getElementById('page-'+id);
+    if(target&&typeof rvObs!=='undefined'){
+      target.querySelectorAll('.rv,.rv-left,.rv-right').forEach(function(el){
+        rvObs.observe(el);
+      });
+    }
+  };
+})();
 
-// Handle browser back/forward
-window.addEventListener('popstate', e=>{
-  const page = e.state?.page || location.hash.replace('#','') || 'home';
-  showPage(page, false);
-});
-
-// On load — check hash
-window.addEventListener('DOMContentLoaded', ()=>{
-  const hash = location.hash.replace('#','');
-  if(hash && document.getElementById('page-'+hash)) showPage(hash, false);
-  else showPage('home', false);
+window.addEventListener('popstate',function(e){
+  var page=e.state&&e.state.page||location.hash.replace('#','')||'home';
+  showPage(page,false);
 });
 
 // Intercept all internal links
@@ -2518,10 +2682,21 @@ document.addEventListener('click', e=>{
     'contact.html':'contact',
   };
 
-  // Handle hash anchors on same page
-  if(href.startsWith('#') && href !== '#'){
-    const section = document.querySelector(href);
-    if(section){ e.preventDefault(); section.scrollIntoView({behavior:'smooth'}); }
+  // SPA page hashes (#home, #portfolio, #contact)
+  if(href.startsWith('#') && href.length>1){
+    const pageId=href.slice(1);
+    const spaPages=['home','portfolio','contact'];
+    if(spaPages.includes(pageId)&&document.getElementById('page-'+pageId)){
+      e.preventDefault();
+      showPage(pageId);
+      return;
+    }
+    const section=document.querySelector(href);
+    const activePage=document.querySelector('.page.active');
+    if(section&&activePage&&activePage.contains(section)){
+      e.preventDefault();
+      section.scrollIntoView({behavior:'smooth'});
+    }
     return;
   }
 
@@ -2607,8 +2782,9 @@ img,video{max-width:100%;height:auto;}
   #page-portfolio nav{grid-template-columns:auto 1fr auto;display:grid!important;gap:8px!important;align-items:center!important;}
   #page-portfolio .nav-back{font-size:9px!important;letter-spacing:0.12em!important;}
   #page-portfolio .nav-cta{padding:8px 10px!important;font-size:9px!important;letter-spacing:0.1em!important;}
-  #page-contact .nav-links{display:none!important;}
-  #page-contact nav{justify-content:flex-start!important;}
+  #page-contact nav{grid-template-columns:auto 1fr auto!important;gap:8px!important;padding:16px 16px!important;}
+  #page-contact .nav-back{font-size:9px!important;}
+  #page-contact .nav-cta{padding:8px 12px!important;font-size:9px!important;}
   .hero-eyebrow{flex-wrap:wrap!important;gap:8px 12px!important;}
   .hero-badge{padding:7px 12px!important;letter-spacing:0.2em!important;font-size:9px!important;}
   .hero-location{font-size:11px!important;}
@@ -2636,3 +2812,4 @@ img,video{max-width:100%;height:auto;}
 </style>
 </body>
 </html>
+

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Dynasty Marketing Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#4a0315;--off:#f8f1f4;--warm:#f3e8ed;--mid:#8f6370;--faint2:rgba(74,3,21,.22);--gold:#7a2942;--serif:'Cinzel',Georgia,serif;--sans:'Montserrat',sans-serif}
+body{font-family:var(--sans);background:var(--off);color:var(--ink)}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:20px 40px;background:rgba(74,3,21,.97);border-bottom:1px solid rgba(122,41,66,.35)}
+.nav-back{color:rgba(255,255,255,.5);text-decoration:none;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+.nav-logo img{height:56px}
+.nav-cta{background:var(--ink);color:#fff;text-decoration:none;padding:10px 16px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.page-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:84px}
+.left-panel{background:var(--ink);padding:64px 48px;color:#fff}
+.left-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.left-title{font-family:var(--serif);font-size:clamp(34px,4vw,56px);line-height:1.06;margin-bottom:20px}
+.left-title em{font-style:normal;color:var(--gold)}
+.left-desc{color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:28px;max-width:520px}
+.info-item{margin:10px 0;color:rgba(255,255,255,.8)}
+.info-item a{color:rgba(255,255,255,.9)}
+.right-panel{padding:64px 48px}
+.form-title{font-family:var(--serif);font-size:24px;letter-spacing:.06em;margin-bottom:8px}
+.form-sub{color:var(--mid);margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-group,.form-row{margin-bottom:14px}
+label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+input,textarea{width:100%;padding:12px;border:1px solid var(--faint2);background:var(--warm);font-family:var(--sans)}
+textarea{min-height:120px;resize:vertical}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.check-label{display:flex;gap:8px;align-items:center;padding:10px;border:1px solid var(--faint2);background:var(--warm);font-size:12px}
+.submit-btn{width:100%;padding:14px;margin-top:12px;border:none;background:var(--ink);color:#fff;letter-spacing:.16em;text-transform:uppercase}
+.form-note{margin-top:10px;color:var(--mid);font-size:12px}
+@media (max-width:900px){.page-wrap{grid-template-columns:1fr}.left-panel,.right-panel{padding:42px 20px}.form-row,.check-grid{grid-template-columns:1fr}nav{padding:14px 16px}.nav-logo img{height:44px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html#home" class="nav-back">Home</a>
+  <a href="index.html#home" class="nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
+  <a href="contact.html" class="nav-cta">Start a Project</a>
+</nav>
+<div class="page-wrap">
+  <div class="left-panel">
+    <div class="left-label">Let's Build Together</div>
+    <h1 class="left-title">Start your<br><em>project.</em></h1>
+    <p class="left-desc">Tell us about your brand, your goals and your vision. We will get back to you within 24 hours to schedule a call and discuss next steps.</p>
+    <div class="info-item"><strong>Email:</strong> <a href="mailto:dynastymarketingagency@gmail.com">dynastymarketingagency@gmail.com</a></div>
+    <div class="info-item"><strong>Phone:</strong> <a href="tel:+13053937543">+1 (305) 393-7543</a></div>
+    <div class="info-item"><strong>Location:</strong> Miami, Florida</div>
+    <div class="info-item"><strong>Instagram:</strong> <a href="https://instagram.com/dynastymarketing_" target="_blank">@dynastymarketing_</a></div>
+  </div>
+  <div class="right-panel">
+    <div class="form-title">Project Inquiry</div>
+    <p class="form-sub">Fill out the form below and we will schedule a call to discuss your project in detail.</p>
+    <form action="mailto:dynastymarketingagency@gmail.com" method="post" enctype="text/plain">
+      <div class="form-row">
+        <div><label>First Name</label><input name="First Name" required></div>
+        <div><label>Last Name</label><input name="Last Name" required></div>
+      </div>
+      <div class="form-row">
+        <div><label>Email Address</label><input type="email" name="Email" required></div>
+        <div><label>Phone Number</label><input name="Phone"></div>
+      </div>
+      <div class="form-group"><label>Brand / Business Name</label><input name="Brand" required></div>
+      <div class="form-group">
+        <label>Services You Are Interested In</label>
+        <div class="check-grid">
+          <label class="check-label"><input type="checkbox" name="Services" value="Brand Identity"> Brand Identity</label>
+          <label class="check-label"><input type="checkbox" name="Services" value="Social Media"> Social Media</label>
+          <label class="check-label"><input type="checkbox" name="Services" value="Content Creation"> Content Creation</label>
+          <label class="check-label"><input type="checkbox" name="Services" value="Web Campaigns"> Web Campaigns</label>
+        </div>
+      </div>
+      <div class="form-group"><label>Tell Us About Your Project</label><textarea name="Message" required></textarea></div>
+      <button class="submit-btn" type="submit">Send Inquiry</button>
+      <p class="form-note">We respond within 24 hours. No commitment required.</p>
+    </form>
+  </div>
+</div>
+</body>
+</html>
