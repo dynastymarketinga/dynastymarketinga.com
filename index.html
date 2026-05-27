@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynasty Marketing Agency Â· Miami</title>
+<title>Dynasty Marketing Agency · Miami</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>D</text></svg>">
 <script>
@@ -17,6 +17,7 @@
     target.classList.add('active');
     window.scrollTo(0,0);
     document.body.style.overflow='';
+    document.querySelectorAll('.detail-overlay.open').forEach(function(el){ el.classList.remove('open'); });
     target.querySelectorAll('.rv,.rv-left,.rv-right').forEach(function(el){ el.classList.add('show'); });
     if(pushState!==false) history.pushState({page:id},'','#'+id);
   };
@@ -49,13 +50,14 @@
   --ease2:cubic-bezier(0.34,1.56,0.64,1);
 }
 
-html{scroll-behavior:smooth;overflow-x:hidden;}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-y:scroll;}
 
 body{
   background:var(--off);
   color:var(--ink);
   font-family:var(--sans);
   overflow-x:hidden;
+  overflow-y:visible;
   cursor:none;
 }
 
@@ -300,7 +302,7 @@ nav.stuck .nav-logo img{filter:none;}
   display:flex;align-items:center;gap:10px;
   transition:color .3s;
 }
-.btn-ghost::after{content:'â†“';font-size:14px;}
+.btn-ghost::after{content:'\2193';font-size:14px;}
 .btn-ghost:hover{color:var(--ink);}
 
 .hero-bottom{
@@ -388,7 +390,7 @@ nav.stuck .nav-logo img{filter:none;}
   color:var(--ink);text-decoration:none;margin-top:16px;
   transition:gap .3s var(--ease),color .3s;
 }
-.about-link::after{content:'â†’';font-size:16px;transition:transform .3s var(--ease);}
+.about-link::after{content:'\2192';font-size:16px;transition:transform .3s var(--ease);}
 .about-link:hover{color:var(--darkreader-text--gold, var(--darkreader-text-000000, #181a1b));gap:20px;}
 .about-link:hover::after{transform:translateX(4px);}
 
@@ -443,7 +445,7 @@ nav.stuck .nav-logo img{filter:none;}
   color:var(--darkreader-text--gold, var(--darkreader-text-000000, #181a1b));writing-mode:vertical-rl;
 }
 
-/* SERVICES â€” 3D Cards */
+/* SERVICES — 3D Cards */
 #services{
   background:var(--ink);
   padding:160px 64px;
@@ -606,7 +608,7 @@ nav.stuck .nav-logo img{filter:none;}
   transition:opacity .4s var(--ease),transform .4s var(--ease);
   text-decoration:none;
 }
-.svc-card-link::after{content:'â†’';transition:transform .3s var(--ease);}
+.svc-card-link::after{content:'\2192';transition:transform .3s var(--ease);}
 .svc-card:hover .svc-card-link{opacity:1;transform:translateY(0);}
 .svc-card:hover .svc-card-link:hover::after{transform:translateX(4px);}
 
@@ -620,7 +622,7 @@ nav.stuck .nav-logo img{filter:none;}
 }
 .svc-card:hover::after{transform:translateX(100%);}
 
-/* WORK â€” Full CTA Section to portfolio page */
+/* WORK — Full CTA Section to portfolio page */
 #work{
   position:relative;
   overflow:hidden;
@@ -628,7 +630,7 @@ nav.stuck .nav-logo img{filter:none;}
   min-height:100vh;
   display:flex;align-items:center;justify-content:center;
 }
-/* Animated background texture â€” moving grid */
+/* Animated background texture — moving grid */
 .work-grid-bg{
   position:absolute;inset:0;
   background-image:
@@ -979,8 +981,8 @@ footer{
 /* =====================
    SPA PAGE SYSTEM
    ===================== */
-.page{display:none;}
-.page.active{display:block;}
+.page{display:none;overflow:hidden;height:0;}
+.page.active{display:block;overflow:visible;height:auto;}
 
 /* Portfolio & Contact pages share dark nav */
 #page-portfolio nav,
@@ -1001,7 +1003,7 @@ footer{
 #page-contact .nav-cta{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:10px 24px;background:var(--fire);color:var(--off)!important;text-decoration:none;transition:background .3s;}
 #page-contact .nav-cta:hover{background:#8a3848;}
 #page-contact .nav-back{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4)!important;text-decoration:none;display:flex;align-items:center;gap:8px;}
-#page-contact .nav-back::before{content:'â†';}
+#page-contact .nav-back::before{content:'\2190';}
 #page-contact .nav-back:hover{color:var(--gold)!important;}
 #page-contact nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;}
 #page-portfolio .btn-nav,
@@ -1046,8 +1048,8 @@ footer{
   --ease:cubic-bezier(0.16,1,0.3,1);
   --ease2:cubic-bezier(0.34,1.56,0.64,1);
 }
-html{scroll-behavior:smooth;overflow-x:hidden;}
-body{background:var(--off);color:var(--ink);font-family:var(--sans);cursor:none;overflow-x:hidden;}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-y:scroll;}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);cursor:none;overflow-x:hidden;overflow-y:visible;}
 
 /* CURSOR */
 .cur{width:10px;height:10px;background:var(--fire);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;}
@@ -1074,7 +1076,7 @@ nav.stuck{
 .nav-logo{font-family:var(--serif);font-size:18px;letter-spacing:0.2em;font-weight:700;color:var(--off);text-decoration:none;display:flex;align-items:center;gap:6px;}
 .nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
 .nav-back{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .3s;}
-.nav-back::before{content:'â†';transition:transform .3s var(--ease);}
+.nav-back::before{content:'\2190';transition:transform .3s var(--ease);}
 .nav-back:hover{color:var(--gold);}
 .nav-back:hover::before{transform:translateX(-4px);}
 .nav-cta{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:10px 24px;background:var(--fire);color:var(--off);text-decoration:none;transition:background .3s;}
@@ -1174,7 +1176,7 @@ nav.stuck{
 }
 .pcard:hover .pcard-num{color:var(--gold);}
 
-/* Bottom text â€” always visible */
+/* Bottom text — always visible */
 .pcard-body{
   position:absolute;bottom:0;left:0;right:0;z-index:3;
   padding:32px 24px 28px;
@@ -1193,7 +1195,7 @@ nav.stuck{
 }
 .pcard:hover .pcard-name{transform:translateY(-4px);}
 
-/* Tags â€” slide up on hover */
+/* Tags — slide up on hover */
 .pcard-tags{
   display:flex;gap:6px;flex-wrap:wrap;
   margin-top:12px;
@@ -1216,7 +1218,7 @@ nav.stuck{
   opacity:0;transform:translateY(8px);
   transition:opacity .4s var(--ease),transform .4s var(--ease);
 }
-.pcard-btn::after{content:'â†’';transition:transform .3s;}
+.pcard-btn::after{content:'\2192';transition:transform .3s;}
 .pcard:hover .pcard-btn{opacity:1;transform:translateY(0);}
 .pcard:hover .pcard-btn:hover::after{transform:translateX(4px);}
 
@@ -1256,12 +1258,18 @@ a.pcard{text-decoration:none;color:inherit;display:block;}
 .detail-overlay{
   position:fixed;inset:0;z-index:800;
   background:var(--off);
-  overflow-y:auto;
+  overflow:hidden;
   transform:translateY(100%);
   transition:transform .6s var(--ease);
   visibility:hidden;
+  pointer-events:none;
 }
-.detail-overlay.open{transform:translateY(0);visibility:visible;}
+.detail-overlay.open{
+  transform:translateY(0);
+  visibility:visible;
+  overflow-y:auto;
+  pointer-events:auto;
+}
 
 /* Close button */
 .detail-close{
@@ -1285,7 +1293,7 @@ a.pcard{text-decoration:none;color:inherit;display:block;}
   position:sticky;top:0;z-index:10;
 }
 .detail-nav-back{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);background:none;border:none;cursor:none;display:flex;align-items:center;gap:8px;transition:color .3s;padding:0;}
-.detail-nav-back::before{content:'â†';}
+.detail-nav-back::before{content:'\2190';}
 .detail-nav-back:hover{color:var(--ink);}
 .detail-nav-logo{font-family:var(--serif);font-size:16px;letter-spacing:0.18em;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:5px;margin-left:auto;}
 .detail-nav-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
@@ -1437,8 +1445,8 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
   --serif:'Cinzel',Georgia,serif;--sans:'Montserrat',sans-serif;
   --ease:cubic-bezier(0.16,1,0.3,1);
 }
-html{overflow-x:hidden;}
-body{background:var(--off);color:var(--ink);font-family:var(--sans);cursor:none;min-height:100vh;}
+html{overflow-x:hidden;overflow-y:scroll;}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);cursor:none;min-height:100vh;overflow-x:hidden;overflow-y:visible;}
 
 .cur{width:10px;height:10px;background:var(--fire);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;}
 .cur-ring{width:34px;height:34px;border:1.5px solid rgba(35,36,34,0.2);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .4s var(--ease),opacity .3s;}
@@ -1454,14 +1462,14 @@ nav.stuck{padding:16px 64px;background:rgba(247,245,240,0.94);backdrop-filter:bl
 .nav-links a{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:color .3s;}
 .nav-links a:hover{color:var(--gold);}
 
-/* LAYOUT â€” split */
+/* LAYOUT — split */
 .page-wrap{
   display:grid;
   grid-template-columns:1fr 1fr;
   min-height:100vh;
 }
 
-/* LEFT â€” dark info panel */
+/* LEFT — dark info panel */
 .left-panel{
   background:var(--ink);
   padding:160px 72px 80px;
@@ -1495,7 +1503,7 @@ nav.stuck{padding:16px 64px;background:rgba(247,245,240,0.94);backdrop-filter:bl
 .info-val a{color:rgba(255,255,255,0.65);text-decoration:none;transition:color .3s;}
 .info-val a:hover{color:var(--gold);}
 
-/* RIGHT â€” form panel */
+/* RIGHT — form panel */
 .right-panel{
   background:var(--off);
   padding:160px 72px 80px;
@@ -1549,7 +1557,7 @@ select{cursor:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
 }
 .check-box{width:14px;height:14px;border:1px solid var(--faint2);flex-shrink:0;position:relative;transition:all .3s;}
 .check-item input:checked + .check-label .check-box{background:var(--gold);border-color:var(--gold);}
-.check-item input:checked + .check-label .check-box::after{content:'âœ“';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8px;color:var(--ink);}
+.check-item input:checked + .check-label .check-box::after{content:'\2713';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8px;color:var(--ink);}
 
 /* Budget pills */
 .budget-grid{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
@@ -1690,20 +1698,20 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-inner" id="tickerInner">
-    <div class="ticker-item">Brand Identity <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Social Media <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Content Creation <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Web Campaigns <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Performance Marketing <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Creative Strategy <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Brand Identity <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Social Media <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Content Creation <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Web Campaigns <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Performance Marketing <span class="ticker-sep">âœ¦</span></div>
-    <div class="ticker-item">Creative Strategy <span class="ticker-sep">âœ¦</span></div>
+    <div class="ticker-item">Brand Identity <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Social Media <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Content Creation <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Web Campaigns <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Performance Marketing <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Creative Strategy <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Brand Identity <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Social Media <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Content Creation <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Web Campaigns <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Visual Storytelling <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Performance Marketing <span class="ticker-sep">&#10022;</span></div>
+    <div class="ticker-item">Creative Strategy <span class="ticker-sep">&#10022;</span></div>
   </div>
 </div>
 
@@ -1728,7 +1736,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
         <div class="acard-main-content">
           <div class="acard-tag">Our Approach</div>
           <h3>Strategy before<br>aesthetics. Always.</h3>
-          <p>Miami, Florida Â· Global Reach</p>
+          <p>Miami, Florida · Global Reach</p>
         </div>
       </div>
       <div class="acard acard-stat">
@@ -1761,7 +1769,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">01</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">â—ˆ</span>
+        <span class="svc-card-icon">&#9672;</span>
         <div class="svc-card-name">Brand<br>Positioning</div>
         <div class="svc-card-desc">Visual identity, brand strategy, naming and market positioning crafted to make your brand unmistakable and impossible to copy.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1775,7 +1783,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">02</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">â¬¡</span>
+        <span class="svc-card-icon">&#11041;</span>
         <div class="svc-card-name">Intelligence<br>System</div>
         <div class="svc-card-desc">Smart internal systems and AI-driven workflows that streamline operations, reduce manual work, and give your team clarity at every step.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1789,7 +1797,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">03</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">â–£</span>
+        <span class="svc-card-icon">&#9635;</span>
         <div class="svc-card-name">Content<br>Creation</div>
         <div class="svc-card-desc">Premium visual content: photography, video, reels, editorial campaigns. Production quality that makes people stop mid-scroll.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1803,7 +1811,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">04</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">â—Ž</span>
+        <span class="svc-card-icon">&#9678;</span>
         <div class="svc-card-name">Web<br>Campaigns</div>
         <div class="svc-card-desc">Integrated digital campaigns combining paid media, SEO and conversion strategy built to deliver measurable, scalable ROI.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1817,9 +1825,9 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">05</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">â—‰</span>
+        <span class="svc-card-icon">&#9673;</span>
         <div class="svc-card-name">Artificial<br>Intelligence<br>for Business</div>
-        <div class="svc-card-desc">Custom AI solutions for administration, customer service, and decision-making â€” built to integrate seamlessly into how your business already runs.</div>
+        <div class="svc-card-desc">Custom AI solutions for administration, customer service, and decision-making — built to integrate seamlessly into how your business already runs.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
       </div>
     </div>
@@ -1831,7 +1839,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
       <div class="svc-card-shape2"></div>
       <div class="svc-card-num">06</div>
       <div class="svc-card-body">
-        <span class="svc-card-icon">âŠž</span>
+        <span class="svc-card-icon">&#8862;</span>
         <div class="svc-card-name">Intelligence<br>Web</div>
         <div class="svc-card-desc">High-performance websites and digital platforms powered by intelligent automation, analytics, and conversion-focused architecture.</div>
         <a href="#contact" onclick="showPage('contact');return false;" class="svc-card-link">Explore service</a>
@@ -1861,7 +1869,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
     </p>
     <a href="#portfolio" onclick="showPage('portfolio');return false;" class="btn-work-cta">
       View All Work
-      <span class="btn-work-cta-arrow">â†’</span>
+      <span class="btn-work-cta-arrow">&#8594;</span>
     </a>
 
   </div>
@@ -1907,7 +1915,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
         <div class="tcard-av">PD</div>
         <div>
           <div class="tcard-name">Patricia De Abreu</div>
-          <div class="tcard-role">Founder Â· La Duquesa</div>
+          <div class="tcard-role">Founder · La Duquesa</div>
         </div>
       </div>
     </div>
@@ -1918,7 +1926,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
         <div class="tcard-av">CH</div>
         <div>
           <div class="tcard-name">Carlos H.</div>
-          <div class="tcard-role">CEO Â· World Coaching Corporation</div>
+          <div class="tcard-role">CEO · World Coaching Corporation</div>
         </div>
       </div>
     </div>
@@ -1988,7 +1996,7 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
     <a href="#contact" onclick="showPage('contact');return false;">Contact Us</a>
     <a href="https://instagram.com/dynastymarketing_" target="_blank">Instagram</a>
   </div>
-  <div class="fcopy">Â© 2025 Dynasty Marketing Agency Â· Miami, FL</div>
+  <div class="fcopy">© 2025 Dynasty Marketing Agency · Miami, FL</div>
 </footer>
 
 <script>
@@ -2055,7 +2063,7 @@ const cuObs=new IntersectionObserver(en=>{
 },{threshold:0.5});
 document.querySelectorAll('.cu').forEach(el=>cuObs.observe(el));
 
-// Portfolio filter tabs â€” removed (now a cover page)
+// Portfolio filter tabs — removed (now a cover page)
 
 // Mouse parallax on mood board pieces
 document.addEventListener('mousemove', e => {
@@ -2112,7 +2120,7 @@ window.addEventListener('scroll',()=>{
   </div>
   <div class="ph-right" style="position:relative;z-index:1;">
     <p class="ph-desc"></p>
-    <div class="ph-count"><span>05</span> Featured Projects &nbsp;Â·&nbsp; 2021 â€” 2026</div>
+    <div class="ph-count"><span>05</span> Featured Projects &nbsp;·&nbsp; 2021 — 2026</div>
   </div>
   <!-- Burgundy decorative circle -->
   <div style="position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(110,44,58,0.2);top:-100px;right:200px;pointer-events:none;"></div>
@@ -2135,12 +2143,12 @@ window.addEventListener('scroll',()=>{
   <div class="portfolio-feature rv">
     <div class="dvid" data-video>
       <video src="videos/carolina-realtors.mp4" playsinline preload="metadata"></video>
-      <div class="dvid-btn" aria-hidden="true">â–¶</div>
+      <div class="dvid-btn" aria-hidden="true">&#9654;</div>
     </div>
     <div class="portfolio-feature-info">
       <div class="portfolio-feature-cat">Content Creation</div>
       <h2 class="portfolio-feature-name">Carolina real estate</h2>
-      <p class="portfolio-feature-desc">Brand video production for a Miami real estate team â€” cinematic storytelling that puts their agents and listings front and center.</p>
+      <p class="portfolio-feature-desc">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
       <div class="portfolio-feature-tags">
         <span class="portfolio-feature-tag">Video Production</span>
         <span class="portfolio-feature-tag">Real Estate</span>
@@ -2217,7 +2225,7 @@ window.addEventListener('scroll',()=>{
         <div class="pcard-name">Axones</div>
         <div class="pcard-tags">
           <span class="pcard-tag">Inventario</span>
-          <span class="pcard-tag">ProducciÃ³n</span>
+          <span class="pcard-tag">Producción</span>
           <span class="pcard-tag">Kanban</span>
           <span class="pcard-tag">Preview</span>
         </div>
@@ -2248,7 +2256,7 @@ window.addEventListener('scroll',()=>{
 
 <!-- DETAIL: World Coaching Corp -->
 <div class="detail-overlay" id="det-wcc">
-  <button class="detail-close" id="close-wcc">âœ•</button>
+  <button class="detail-close" id="close-wcc">&#10005;</button>
   <div class="detail-nav">
     <button class="detail-nav-back" onclick="closeDetail('wcc')">All Projects</button>
     <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
@@ -2283,7 +2291,7 @@ window.addEventListener('scroll',()=>{
 
 <!-- DETAIL: Be U Academy -->
 <div class="detail-overlay" id="det-beu">
-  <button class="detail-close" id="close-beu">âœ•</button>
+  <button class="detail-close" id="close-beu">&#10005;</button>
   <div class="detail-nav">
     <button class="detail-nav-back" onclick="closeDetail('beu')">All Projects</button>
     <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
@@ -2493,28 +2501,28 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
     </div>
     <div class="info-items rv d2">
       <div class="info-item">
-        <div class="info-icon">âœ‰</div>
+        <div class="info-icon">&#9993;</div>
         <div>
           <div class="info-label">Email</div>
           <div class="info-val"><a href="mailto:dynastymarketingagency@gmail.com">dynastymarketingagency@gmail.com</a></div>
         </div>
       </div>
       <div class="info-item">
-        <div class="info-icon">â˜Ž</div>
+        <div class="info-icon">&#9742;</div>
         <div>
           <div class="info-label">Phone</div>
           <div class="info-val"><a href="tel:+13053937543">+1 (305) 393-7543</a></div>
         </div>
       </div>
       <div class="info-item">
-        <div class="info-icon">â—Ž</div>
+        <div class="info-icon">&#9678;</div>
         <div>
           <div class="info-label">Location</div>
           <div class="info-val">Miami, Florida</div>
         </div>
       </div>
       <div class="info-item">
-        <div class="info-icon">âœ¦</div>
+        <div class="info-icon">&#10022;</div>
         <div>
           <div class="info-label">Instagram</div>
           <div class="info-val"><a href="https://instagram.com/dynastymarketing_" target="_blank">@dynastymarketing_</a></div>
@@ -2523,7 +2531,7 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
     </div>
   </div>
 
-  <!-- RIGHT PANEL â€” FORM -->
+  <!-- RIGHT PANEL — FORM -->
   <div class="right-panel">
     <div class="rv">
       <div class="form-title">Project Inquiry</div>
@@ -2586,13 +2594,13 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
         <textarea id="message" name="message" placeholder="Describe your brand, your goals and what you are looking to achieve..." required></textarea>
       </div>
 
-      <button type="submit" class="submit-btn"><span>Send Inquiry â†’</span></button>
+      <button type="submit" class="submit-btn"><span>Send Inquiry &#8594;</span></button>
       <p class="form-note">We respond within 24 hours. No commitment required.</p>
 
     </form>
 
     <div class="success-msg" id="successMsg">
-      <div class="success-icon">âœ¦</div>
+      <div class="success-icon">&#10022;</div>
       <div class="success-title">Message Received</div>
       <p class="success-sub">Thank you for reaching out. We will be in touch within 24 hours to schedule your discovery call.</p>
     </div>
@@ -2602,11 +2610,11 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
 
 <footer>
   <a href="#home" onclick="showPage('home');return false;" class="fl"><img src="dynasty-logo.png" alt="Dynasty"></a>
-  <div class="fcopy">Â© 2025 Dynasty Marketing Agency Â· Miami, FL</div>
+  <div class="fcopy">© 2025 Dynasty Marketing Agency · Miami, FL</div>
 </footer>
 
 <script>
-// Contact page â€” scoped scripts
+// Contact page — scoped scripts
 (function(){
   document.querySelectorAll('#page-contact .rv').forEach(function(el){ el.classList.add('show'); });
 
@@ -2626,7 +2634,7 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
     message: document.getElementById('message').value
   };
   // Send via mailto as fallback (replace with your form service like Formspree)
-  const subject=encodeURIComponent('New Project Inquiry â€” '+data.brand);
+  const subject=encodeURIComponent('New Project Inquiry — '+data.brand);
   const body=encodeURIComponent(
     'Name: '+data.name+'\n'+
     'Email: '+data.email+'\n'+
@@ -2647,7 +2655,7 @@ document.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
 </div>
 
 <script>
-// SPA â€” extend showPage with reveal observer when available
+// SPA — extend showPage with reveal observer when available
 (function(){
   var baseShow=window.showPage;
   window.showPage=function(id,pushState){
