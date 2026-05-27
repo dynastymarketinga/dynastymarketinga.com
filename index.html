@@ -16,6 +16,8 @@
     if(!target){ target=document.getElementById('page-home'); id='home'; }
     target.classList.add('active');
     window.scrollTo(0,0);
+    document.documentElement.classList.remove('detail-open');
+    document.documentElement.style.overflow='';
     document.body.style.overflow='';
     document.querySelectorAll('.detail-overlay.open').forEach(function(el){ el.classList.remove('open'); });
     target.querySelectorAll('.rv,.rv-left,.rv-right').forEach(function(el){ el.classList.add('show'); });
@@ -1268,7 +1270,16 @@ a.pcard{text-decoration:none;color:inherit;display:block;}
   transform:translateY(0);
   visibility:visible;
   overflow-y:auto;
+  overflow-x:hidden;
   pointer-events:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* Solo el overlay scrollea; la pagina queda bloqueada */
+html.detail-open,
+html.detail-open body{
+  overflow:hidden!important;
+  height:100%;
 }
 
 /* Close button */
@@ -2404,19 +2415,31 @@ window.addEventListener('scroll',()=>{
   </div>
 </div>
 <script>
+// Mover overlays al body para evitar scroll doble por contenedores internos
+document.querySelectorAll('.detail-overlay').forEach(function(el){
+  document.body.appendChild(el);
+});
+
+function lockPageScroll(lock){
+  document.documentElement.classList.toggle('detail-open',lock);
+  document.documentElement.style.overflow=lock?'hidden':'';
+  document.body.style.overflow=lock?'hidden':'';
+}
+
 // Open detail
 function openDetail(id){
   const el=document.getElementById('det-'+id);
   if(!el) return;
+  document.querySelectorAll('.detail-overlay.open').forEach(function(o){ o.classList.remove('open'); });
   el.classList.add('open');
-  document.body.style.overflow='hidden';
+  lockPageScroll(true);
   el.scrollTop=0;
 }
 function closeDetail(id){
   const el=document.getElementById('det-'+id);
   if(!el) return;
   el.classList.remove('open');
-  document.body.style.overflow='';
+  if(!document.querySelector('.detail-overlay.open')) lockPageScroll(false);
 }
 
 // Detail IDs that actually exist in DOM
