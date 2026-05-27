@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axones · Resumen</title>
+  <meta name="description" content="Panel de resumen: inventario, solicitudes, órdenes de trabajo y alertas operativas.">
+  <link rel="stylesheet" href="axones.css">
+</head>
+<body class="app">
+
+  <div class="layout">
+
+    <aside class="sidebar" aria-label="Menú principal">
+      <div class="sidebar-brand">
+        <img src="assets/logo-axones.png" alt="" width="36" height="36">
+        <span>Axones</span>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div class="sidebar-label">Menú principal</div>
+        <ul class="nav-list">
+          <li class="nav-item is-open">
+            <button type="button" aria-expanded="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+              <span>Inicio y monitoreo</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <ul class="nav-sub">
+              <li><a href="#" class="is-active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg> Resumen</a></li>
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg> Alertas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"/><path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"/><circle cx="10.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+              <span>Datos maestros</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>
+              <span>Inventario</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>
+              <span>Producción</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>
+              <span>Solicitudes de insumos</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Calidad</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              <span>Despacho</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg>
+              <span>Reportes</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+              <span>Vigilancia</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+              <span>Cuenta</span>
+              <svg class="nav-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-user">
+        <button type="button" class="sidebar-user-btn">
+          <span class="user-avatar">US</span>
+          <span class="user-meta">
+            <span class="user-name">Usuario operativo</span>
+            <span class="user-email">usuario@empresa.com</span>
+          </span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="app-header">
+        <div class="header-left">
+          <button type="button" class="icon-btn" aria-label="Mostrar u ocultar menú lateral">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+          </button>
+          <div class="header-divider"></div>
+          <nav class="breadcrumb" aria-label="Ruta">
+            <a href="#">Panel</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="m9 18 6-6-6-6"/></svg>
+            <span class="breadcrumb-current">Resumen</span>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button type="button" class="icon-btn" title="Buscar en el menú">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          </button>
+          <div class="notif-wrap">
+            <button type="button" class="icon-btn" aria-label="Notificaciones">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+            </button>
+            <span class="notif-badge">5</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <div class="page-head">
+          <h1>Axones · Resumen</h1>
+          <p>Vista de inventario, solicitudes, órdenes y alertas. Los valores se actualizan al pulsar <strong>Actualizar</strong> con lo último del sistema.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <article class="kpi-card kpi-card--emerald">
+            <div class="kpi-body">
+              <p class="kpi-label">Materiales en inventario</p>
+              <p class="kpi-value">1</p>
+              <p class="kpi-desc">Referencias con stock o control de existencias.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--emerald">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>
+            </div>
+          </article>
+
+          <article class="kpi-card kpi-card--sky">
+            <div class="kpi-body">
+              <p class="kpi-label">Solicitudes de insumos pendientes</p>
+              <p class="kpi-value">0</p>
+              <p class="kpi-desc">Pendiente o con entrega parcial en inventario.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--sky">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+            </div>
+          </article>
+
+          <article class="kpi-card kpi-card--amber">
+            <div class="kpi-body">
+              <p class="kpi-label">Devoluciones por revisar</p>
+              <p class="kpi-value">0</p>
+              <p class="kpi-desc">Aún no aprobadas.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--amber">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            </div>
+          </article>
+
+          <article class="kpi-card kpi-card--violet">
+            <div class="kpi-body">
+              <p class="kpi-label">Órdenes sin fecha de programa</p>
+              <p class="kpi-value">1</p>
+              <p class="kpi-desc">Candidatas a asignar en el tablero.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--violet">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v4"/><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M3 10h5"/><path d="M8 2v4"/><circle cx="16" cy="16" r="6"/></svg>
+            </div>
+          </article>
+
+          <article class="kpi-card kpi-card--fuchsia">
+            <div class="kpi-body">
+              <p class="kpi-label">Órdenes en programación</p>
+              <p class="kpi-value">0</p>
+              <p class="kpi-desc">En curso en el calendario de planta.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--fuchsia">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+            </div>
+          </article>
+
+          <article class="kpi-card kpi-card--rose">
+            <div class="kpi-body">
+              <p class="kpi-label">Alertas sin leer</p>
+              <p class="kpi-value">15</p>
+              <p class="kpi-desc">Pendiente de atención del equipo.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--rose">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+            </div>
+          </article>
+
+          <article class="kpi-card kpi-card--cyan">
+            <div class="kpi-body">
+              <p class="kpi-label">Movimientos hoy en inventario</p>
+              <p class="kpi-value">0</p>
+              <p class="kpi-desc">Entradas, salidas y ajustes del día.</p>
+            </div>
+            <div class="kpi-icon kpi-icon--cyan">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel-grid">
+          <section class="panel">
+            <div class="panel-head">
+              <h2 class="panel-title">Materiales por área</h2>
+              <p class="panel-sub">Cuántas referencias de material hay en cada área de inventario.</p>
+            </div>
+            <div class="panel-body">
+              <div class="bar-chart">
+                <div class="bar-chart-axis">
+                  <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">Material</span>
+                  <div class="bar-track">
+                    <div class="bar-fill" style="width:25%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2 class="panel-title">Solicitudes de insumos por situación</h2>
+              <p class="panel-sub">Distribución de las solicitudes según su avance. El total es la suma de todas las solicitudes.</p>
+            </div>
+            <div class="panel-body">
+              <p class="empty-state">No hay solicitudes registradas aún.</p>
+              <a href="#" class="link-primary">Abrir solicitudes de insumos</a>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel" style="margin-bottom:16px">
+          <div class="panel-head">
+            <h2 class="panel-title">Órdenes de trabajo y programación</h2>
+            <p class="panel-sub">Comparación rápida entre las que aún no tienen programa asignado y las que ya están en el calendario.</p>
+          </div>
+          <div class="panel-body">
+            <div class="col-chart">
+              <div class="col-bar-wrap">
+                <div class="col-bar col-bar--short"></div>
+                <span class="col-label">En espera de programación</span>
+              </div>
+              <div class="col-bar-wrap">
+                <div class="col-bar col-bar--empty"></div>
+                <span class="col-label">En programación</span>
+              </div>
+            </div>
+            <a href="#" class="link-primary" style="margin-top:12px">Ir al tablero de programación</a>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Materiales con existencia baja</h2>
+            <p class="panel-sub">Listado donde el stock actual está por debajo del mínimo definido. Valide reabastecimiento o ajuste de mínimos.</p>
+          </div>
+          <div class="panel-body">
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Nombre</th>
+                    <th>Área</th>
+                    <th class="num">Stock</th>
+                    <th class="num">Mínimo</th>
+                    <th>Unidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">SUB-BOPP</td>
+                    <td>BOPP</td>
+                    <td>Material</td>
+                    <td class="num">1.000</td>
+                    <td class="num">1200.000</td>
+                    <td style="color:var(--muted)">kg</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <a href="../index.html#portfolio" class="back-portfolio">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+    Portafolio
+  </a>
+
+</body>
+</html>

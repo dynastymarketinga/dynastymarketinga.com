@@ -1,0 +1,42 @@
+# Editor / sistema
+.cursor/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.env
+.env.*
+
+# Versiones alternativas (no usa el sitio en producción)
+squarespace-snippets/
+squarespace-snippets-v2/
+dynasty-v2-separated/
+
+# Páginas sueltas antiguas (el portfolio vive dentro de index.html)
+project-*.html
+
+# Duplicado y videos fuente en la raíz (~400 MB; el sitio usa videos/carolina-realtors.mp4)
+Carolina Realtors.MP4
+*.MOV
+*.mov
+/1.mp4
+/2.mp4
+/3.mp4
+/4.mp4
+
+# Borradores de logo / diseño (el sitio usa dynasty-logo.png y dynasty-hero-logo.png)
+Diseño*
+dynasty-logo-clean.svg
+dynasty-logo.svg
+DYNASTY.png
+/assets/
+
+# Capturas y archivos de trabajo
+Captura*
+ChatGPT*
+
+# Axones: solo lo que usa el sitio
+axones/README.md
+axones/assets/logo-axones.svg
+axones/assets/screenshot-programacion.png
+axones/assets/screenshot-resumen.png
