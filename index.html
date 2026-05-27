@@ -1122,10 +1122,16 @@ nav.stuck{
 }
 .ftab.on,.ftab:hover{color:var(--off);border-color:var(--fire);}
 
+/* Portfolio zones */
+#page-portfolio .grid-wrap{background:var(--off);padding:48px 64px 80px;}
+#page-portfolio .page-header,
+#page-portfolio .filter-row,
+#page-portfolio .portfolio-cover{background:var(--ink);}
+
 /* ========================
    PROJECTS GRID
    ======================== */
-.grid-wrap{padding:0;}
+.grid-wrap{padding:48px 64px 80px;}
 .proj-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -1142,11 +1148,11 @@ nav.stuck{
 .pcard{
   position:relative;overflow:hidden;
   cursor:none;
-  background:var(--warm);
+  background:var(--ink);
   aspect-ratio:4/5;
   transition:box-shadow .4s var(--ease);
 }
-.pcard:hover{box-shadow:0 24px 60px rgba(110,44,58,0.2),0 0 0 1px rgba(110,44,58,0.15);}
+.pcard:hover{box-shadow:0 24px 60px rgba(74,3,21,0.35),0 0 0 1px rgba(122,41,66,0.4);}
 
 /* Cover image */
 .pcard-img{
@@ -1156,22 +1162,20 @@ nav.stuck{
 }
 .pcard:hover .pcard-img{transform:scale(1.05);}
 
-/* Dark overlay — misma marca en todas las tarjetas */
+/* Dark overlay — unified Dynasty */
 .pcard-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(74,3,21,0.9) 0%,rgba(74,3,21,0.35) 48%,rgba(74,3,21,0.02) 72%);
+  background:linear-gradient(to top,rgba(74,3,21,0.94) 0%,rgba(74,3,21,0.35) 50%,rgba(74,3,21,0.08) 100%);
   transition:background .5s;
 }
 .pcard:hover .pcard-overlay{
-  background:linear-gradient(to top,rgba(74,3,21,0.96) 0%,rgba(74,3,21,0.55) 58%,rgba(74,3,21,0.12) 100%);
+  background:linear-gradient(to top,rgba(74,3,21,0.98) 0%,rgba(74,3,21,0.55) 60%,rgba(74,3,21,0.15) 100%);
 }
-.pcard--has-photo .pcard-overlay{
-  background:linear-gradient(to top,rgba(74,3,21,0.82) 0%,rgba(74,3,21,0.22) 40%,transparent 65%);
-}
-.pcard--has-photo:hover .pcard-overlay{
-  background:linear-gradient(to top,rgba(74,3,21,0.94) 0%,rgba(74,3,21,0.45) 55%,rgba(74,3,21,0.08) 100%);
-}
-.pcard--has-photo .pcard-tags{max-height:80px;opacity:1;}
+.pcard-img--tl{background-image:linear-gradient(145deg,rgba(27,61,47,0.9) 0%,rgba(35,77,60,0.7) 55%,rgba(74,3,21,0.5) 100%);}
+.pcard-img--wcc{background-image:linear-gradient(145deg,rgba(13,31,61,0.95) 0%,rgba(26,58,110,0.75) 50%,rgba(74,3,21,0.55) 100%);}
+.pcard-img--beu{background-image:linear-gradient(145deg,rgba(45,90,61,0.9) 0%,rgba(74,143,92,0.65) 45%,rgba(74,3,21,0.5) 100%);}
+.pcard-img--axones{background-image:url('axones/assets/axones-preview.png');background-position:center top;}
+.pcard-img--lf{background-image:url('assets/la-francia/la-francia-card-preview.jpg');background-position:center 22%;}
 
 /* Gold left line on hover */
 .pcard-line{position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:3;}
@@ -1232,34 +1236,6 @@ nav.stuck{
 .pcard:hover .pcard-btn:hover::after{transform:translateX(4px);}
 
 a.pcard{text-decoration:none;color:inherit;display:block;}
-.pcard--axones:hover{box-shadow:0 24px 60px rgba(91,75,184,0.28),0 0 0 1px rgba(124,108,240,0.2);}
-.pcard--axones .pcard-line{background:#c4b5fd;}
-.pcard--axones:hover .pcard-num{color:#e9d5ff;}
-.pcard--axones .pcard-cat{color:#e9d5ff;}
-.pcard--axones .pcard-cat::before{background:#c4b5fd;}
-.pcard--axones .pcard-tag{border-color:rgba(196,181,253,0.45);color:rgba(233,213,255,0.9);}
-.pcard--axones .pcard-btn{color:#e9d5ff;}
-.pcard--axones .pcard-img{background-position:center top;}
-.pcard--axones .pcard-overlay{
-  background:linear-gradient(to top,rgba(35,36,34,0.88) 0%,rgba(35,36,34,0.25) 38%,rgba(35,36,34,0) 62%);
-}
-.pcard--axones:hover .pcard-overlay{
-  background:linear-gradient(to top,rgba(35,36,34,0.94) 0%,rgba(35,36,34,0.45) 50%,rgba(35,36,34,0.08) 100%);
-}
-.pcard--lf:hover{box-shadow:0 24px 60px rgba(110,44,58,0.28),0 0 0 1px rgba(200,150,12,0.25);}
-.pcard--lf .pcard-line{background:#C8960C;}
-.pcard--lf:hover .pcard-num{color:#E5B822;}
-.pcard--lf .pcard-cat{color:#E5B822;}
-.pcard--lf .pcard-cat::before{background:#C8960C;}
-.pcard--lf .pcard-tag{border-color:rgba(200,150,12,0.35);color:rgba(229,184,34,0.85);}
-.pcard--lf .pcard-btn{color:#E5B822;}
-.pcard--lf .pcard-img{background-position:center 20%!important;}
-.pcard--lf .pcard-overlay{
-  background:linear-gradient(to top,rgba(35,36,34,0.9) 0%,rgba(35,36,34,0.25) 45%,rgba(35,36,34,0) 70%);
-}
-.pcard--lf:hover .pcard-overlay{
-  background:linear-gradient(to top,rgba(35,36,34,0.96) 0%,rgba(35,36,34,0.5) 55%,rgba(35,36,34,0.1) 100%);
-}
 
 /* ========================
    PROJECT DETAIL OVERLAY
@@ -1366,80 +1342,65 @@ html.detail-open body{
 .dvid:hover .dvid-btn{transform:translate(-50%,-50%) scale(1.1);}
 .dvid.playing .dvid-btn{opacity:0;}
 
-/* Portfolio: portada + secuencia unificada */
-#page-portfolio{background:var(--off);}
+/* Featured cover — Carolina (burgundy zone) */
 .portfolio-cover{
-  background:var(--ink);
-  padding:56px 64px 72px;
   position:relative;
-  overflow:hidden;
-  border-bottom:1px solid rgba(255,255,255,0.06);
+  display:grid;
+  grid-template-columns:minmax(260px,1fr) 1fr;
+  align-items:center;
+  gap:56px;
+  padding:40px 64px 72px;
+  min-height:min(82vh,760px);
+  cursor:pointer;
+  border-bottom:1px solid rgba(122,41,66,0.35);
 }
-.portfolio-cover::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 75% 90% at 15% 100%,rgba(110,44,58,0.28) 0%,transparent 55%);
+.portfolio-cover-media{
+  position:relative;
+  justify-self:center;
+  width:min(340px,38vw);
+  aspect-ratio:9/14;
+  max-height:min(62vh,560px);
+  border-radius:2px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.45);
+}
+.portfolio-cover-media video{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.portfolio-cover-shade{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(74,3,21,0.5) 0%,transparent 45%);
   pointer-events:none;
 }
+.portfolio-cover-media .dvid-btn{pointer-events:auto;}
+.portfolio-cover-content{position:relative;z-index:2;max-width:520px;}
 .portfolio-cover-label{
-  position:relative;z-index:1;
   font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:28px;
+  color:var(--gold);margin-bottom:16px;
   display:flex;align-items:center;gap:10px;
 }
-.portfolio-cover-label::before{content:'';width:20px;height:1px;background:var(--gold);}
-.portfolio-cover-inner{
-  position:relative;z-index:1;
-  display:flex;align-items:center;gap:56px;
-  max-width:1180px;
-}
-.portfolio-cover-media{flex:0 0 auto;}
-.portfolio-cover .dvid{
-  width:min(300px,34vw);
-  aspect-ratio:9/16;
-  box-shadow:0 28px 64px rgba(0,0,0,0.35);
-  border:1px solid rgba(255,255,255,0.08);
-}
-.portfolio-cover-info{flex:1;min-width:0;}
-.portfolio-cover-num{
-  font-size:10px;letter-spacing:0.3em;text-transform:uppercase;
-  color:rgba(255,255,255,0.35);margin-bottom:14px;
-}
-.portfolio-cover-name{
+.portfolio-cover-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+.portfolio-cover-title{
   font-family:var(--serif);
-  font-size:clamp(30px,3.8vw,52px);font-weight:900;letter-spacing:0.05em;
-  color:var(--off);line-height:1.05;margin-bottom:18px;
+  font-size:clamp(36px,5vw,56px);font-weight:900;letter-spacing:0.05em;
+  color:var(--off);line-height:1.05;margin-bottom:20px;
 }
 .portfolio-cover-desc{
   font-size:14px;font-weight:300;line-height:1.85;
-  color:rgba(255,255,255,0.5);max-width:460px;margin-bottom:22px;
+  color:rgba(255,255,255,0.55);margin-bottom:24px;
 }
-.portfolio-cover-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.portfolio-cover-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
 .portfolio-cover-tag{
   font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
-  padding:5px 12px;border:1px solid rgba(215,182,136,0.35);
-  color:rgba(215,182,136,0.85);
+  padding:5px 12px;border:1px solid rgba(122,41,66,0.6);color:rgba(255,255,255,0.65);
 }
-.portfolio-sequence{
-  background:var(--off);
-  padding:64px 64px 80px;
+.portfolio-cover-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);
 }
-.sequence-head{
-  margin-bottom:40px;padding-bottom:28px;
-  border-bottom:1px solid var(--faint2);
-}
-.sequence-label{
-  font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:12px;
-  display:flex;align-items:center;gap:10px;
-}
-.sequence-label::before{content:'';width:18px;height:1px;background:var(--gold);}
-.sequence-title{
-  font-family:var(--serif);
-  font-size:clamp(26px,3vw,38px);font-weight:900;letter-spacing:0.05em;
-  color:var(--ink);line-height:1.1;margin-bottom:10px;
-}
-.sequence-title em{font-style:normal;color:var(--gold);}
-.sequence-desc{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid);max-width:520px;}
+.portfolio-cover-cta::after{content:'\2192';transition:transform .3s var(--ease);}
+.portfolio-cover:hover .portfolio-cover-cta::after{transform:translateX(4px);}
 
 /* Detail CTA bottom */
 .detail-cta{padding:80px 64px;text-align:center;background:var(--ink);margin-top:3px;}
@@ -1486,12 +1447,12 @@ footer{background:var(--ink);padding:22px 64px;border-top:1px solid rgba(255,255
   .dg-lf2{grid-template-columns:1fr;}
   .dg-lf3{grid-template-columns:1fr 1fr;}
   .dvid{max-height:380px;}
-  .portfolio-cover{padding:40px 24px 56px;}
-  .portfolio-cover-inner{flex-direction:column;gap:32px;text-align:center;}
+  .portfolio-cover{grid-template-columns:1fr;gap:32px;padding:32px 24px 48px;min-height:auto;text-align:center;}
+  .portfolio-cover-media{width:min(280px,100%);max-height:none;margin:0 auto;}
+  .portfolio-cover-content{margin:0 auto;}
   .portfolio-cover-desc{margin-left:auto;margin-right:auto;}
   .portfolio-cover-tags{justify-content:center;}
-  .portfolio-cover .dvid{width:min(280px,100%);}
-  .portfolio-sequence{padding:48px 24px 60px;}
+  .portfolio-cover-label{justify-content:center;}
   .detail-cta,.page-cta{padding:72px 24px;}
   .detail-close{top:16px;right:16px;}
   footer{flex-direction:column;gap:12px;text-align:center;padding:20px;}
@@ -2172,7 +2133,7 @@ window.addEventListener('scroll',()=>{
 <nav>
   <a href="#home" onclick="showPage('home');return false;" class="nav-back">Home</a>
   <a href="#home" onclick="showPage('home');return false;" class="nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
-  <a href="#contact" onclick="showPage('contact');return false;" class="nav-cta">Start a Project</a>
+  <a href="#contact" onclick="showPage('contact');return false;" class="nav-cta">Contact</a>
 </nav>
 
 <!-- PAGE HEADER -->
@@ -2182,7 +2143,7 @@ window.addEventListener('scroll',()=>{
     <h1 class="ph-title">This is our<br><span>Portfolio.</span></h1>
   </div>
   <div class="ph-right" style="position:relative;z-index:1;">
-    <p class="ph-desc">A curated sequence of brand, content and digital work — from real estate film to jewelry identity.</p>
+    <p class="ph-desc"></p>
     <div class="ph-count"><span>05</span> Featured Projects &nbsp;·&nbsp; 2021 — 2026</div>
   </div>
   <!-- Burgundy decorative circle -->
@@ -2199,42 +2160,36 @@ window.addEventListener('scroll',()=>{
   <button class="ftab" data-f="software">Software</button>
 </div>
 
-<!-- PORTADA: Carolina (misma zona oscura que header) -->
-<section class="portfolio-cover rv" data-cat="content">
-  <div class="portfolio-cover-label">Featured Project · Content Creation</div>
-  <div class="portfolio-cover-inner">
-    <div class="portfolio-cover-media">
-      <div class="dvid" data-video>
-        <video src="videos/carolina-realtors.mp4" playsinline preload="metadata"></video>
-        <div class="dvid-btn" aria-hidden="true">&#9654;</div>
-      </div>
+<!-- FEATURED COVER: Carolina -->
+<section class="portfolio-cover rv" data-cat="content" data-project="carolina" aria-label="Featured project: Carolina Real Estate">
+  <div class="portfolio-cover-media">
+    <div class="dvid" data-video>
+      <video src="videos/carolina-realtors.mp4" playsinline preload="metadata" muted></video>
+      <div class="dvid-btn" aria-hidden="true">&#9654;</div>
     </div>
-    <div class="portfolio-cover-info">
-      <div class="portfolio-cover-num">— Featured —</div>
-      <h2 class="portfolio-cover-name">Carolina Real Estate</h2>
-      <p class="portfolio-cover-desc">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
-      <div class="portfolio-cover-tags">
-        <span class="portfolio-cover-tag">Video Production</span>
-        <span class="portfolio-cover-tag">Real Estate</span>
-        <span class="portfolio-cover-tag">Social Content</span>
-      </div>
+    <div class="portfolio-cover-shade"></div>
+  </div>
+  <div class="portfolio-cover-content">
+    <div class="portfolio-cover-label">Featured · Content Creation</div>
+    <h2 class="portfolio-cover-title">Carolina Real Estate</h2>
+    <p class="portfolio-cover-desc">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
+    <div class="portfolio-cover-tags">
+      <span class="portfolio-cover-tag">Video Production</span>
+      <span class="portfolio-cover-tag">Real Estate</span>
+      <span class="portfolio-cover-tag">Social Content</span>
     </div>
+    <span class="portfolio-cover-cta">View Project</span>
   </div>
 </section>
 
-<!-- SECUENCIA: todos los clientes en orden -->
-<section class="portfolio-sequence">
-  <div class="sequence-head rv">
-    <div class="sequence-label">Project Index</div>
-    <h2 class="sequence-title">All <em>Clients</em> · 01 — 05</h2>
-    <p class="sequence-desc">Each project opens with the same case-study layout. Select a card to view the full gallery and story.</p>
-  </div>
+<!-- PROJECT GRID -->
+<div class="grid-wrap">
 
   <div class="proj-grid">
 
     <!-- CARD 1: Tropical Luxe -->
-    <div class="pcard rv d1" data-cat="branding" data-project="tl" style="background:linear-gradient(145deg,#1B3D2F 0%,#234D3C 55%,#E8DCC8 100%);">
-      <div class="pcard-img" style="background:linear-gradient(145deg,#1B3D2F 0%,#234D3C 55%,#E8DCC8 100%);"></div>
+    <div class="pcard rv d1" data-cat="branding">
+      <div class="pcard-img pcard-img--tl"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">01</div>
@@ -2253,7 +2208,7 @@ window.addEventListener('scroll',()=>{
 
     <!-- CARD 2: World Coaching Corp -->
     <div class="pcard rv d2" data-cat="branding" data-project="wcc">
-      <div class="pcard-img" style="background:linear-gradient(145deg,#0d1f3d 0%,#1a3a6e 50%,#c9a227 100%);"></div>
+      <div class="pcard-img pcard-img--wcc"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">02</div>
@@ -2271,7 +2226,7 @@ window.addEventListener('scroll',()=>{
 
     <!-- CARD 3: Be U Academy -->
     <div class="pcard rv d3" data-cat="branding" data-project="beu">
-      <div class="pcard-img" style="background:linear-gradient(145deg,#2d5a3d 0%,#4a8f5c 45%,#f2ead8 100%);"></div>
+      <div class="pcard-img pcard-img--beu"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">03</div>
@@ -2288,8 +2243,8 @@ window.addEventListener('scroll',()=>{
     </div>
 
     <!-- CARD 4: Axones (fallback landing) -->
-    <a href="axones/index.html" class="pcard pcard--axones pcard--has-photo rv d4" data-cat="software">
-      <div class="pcard-img" style="background-image:url('axones/assets/axones-preview.png');"></div>
+    <a href="axones/index.html" class="pcard rv d4" data-cat="software">
+      <div class="pcard-img pcard-img--axones"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">04</div>
@@ -2307,8 +2262,8 @@ window.addEventListener('scroll',()=>{
     </a>
 
     <!-- CARD 5: La Francia -->
-    <div class="pcard pcard--lf pcard--has-photo rv d5" data-cat="branding content" data-project="lf">
-      <div class="pcard-img" style="background-image:url('assets/la-francia/la-francia-card-preview.jpg');background-position:center 22%;"></div>
+    <div class="pcard rv d5" data-cat="branding content" data-project="lf">
+      <div class="pcard-img pcard-img--lf"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">05</div>
@@ -2325,8 +2280,41 @@ window.addEventListener('scroll',()=>{
       </div>
     </div>
 
+</div>
+
+<!-- DETAIL: Carolina Real Estate -->
+<div class="detail-overlay" id="det-carolina">
+  <button class="detail-close" id="close-carolina">&#10005;</button>
+  <div class="detail-nav">
+    <button class="detail-nav-back" onclick="closeDetail('carolina')">All Projects</button>
+    <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
   </div>
-</section>
+  <div class="detail-hero">
+    <div>
+      <div class="dh-num" style="position:relative;z-index:1;">Featured Project</div>
+      <h2 class="dh-title" style="position:relative;z-index:1;">Carolina Real Estate</h2>
+      <div class="dh-tags" style="position:relative;z-index:1;">
+        <span class="dh-tag">Video Production</span><span class="dh-tag">Real Estate</span>
+        <span class="dh-tag">Social Content</span>
+      </div>
+    </div>
+    <p class="dh-desc" style="position:relative;z-index:1;">Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.</p>
+  </div>
+  <div class="detail-gallery">
+    <div class="dgi" style="aspect-ratio:16/9;max-width:100%;">
+      <div class="dvid" data-video style="aspect-ratio:16/9;width:100%;max-height:none;">
+        <video src="videos/carolina-realtors.mp4" playsinline preload="metadata"></video>
+        <div class="dvid-btn" aria-hidden="true">&#9654;</div>
+      </div>
+      <div class="dgi-cap">Brand Film</div>
+    </div>
+  </div>
+  <div class="detail-cta">
+    <h3>Like what you see? <em>Let's talk.</em></h3>
+    <p>We can build something like this for your brand.</p>
+    <a href="#contact" onclick="showPage('contact');return false;" class="d-btn">Start Your Project</a>
+  </div>
+</div>
 
 <!-- DETAIL: World Coaching Corp -->
 <div class="detail-overlay" id="det-wcc">
@@ -2516,6 +2504,18 @@ document.querySelectorAll('.pcard').forEach(card=>{
   card.addEventListener('click',()=>openDetail(projectId));
 });
 
+// Featured cover opens Carolina detail (ignore clicks on video play)
+const portfolioCover=document.querySelector('.portfolio-cover');
+if(portfolioCover){
+  portfolioCover.addEventListener('click',e=>{
+    if(e.target.closest('.dvid[data-video]')) return;
+    openDetail('carolina');
+  });
+  portfolioCover.querySelectorAll('.dvid[data-video]').forEach(wrap=>{
+    wrap.addEventListener('click',e=>e.stopPropagation());
+  });
+}
+
 // Close buttons
 detailIds.forEach(id=>{
   document.getElementById('close-'+id)?.addEventListener('click',()=>closeDetail(id));
@@ -2527,14 +2527,15 @@ document.addEventListener('keydown',e=>{
 });
 
 // Filter
-const portfolioCover=document.querySelector('.portfolio-cover');
 document.querySelectorAll('.ftab').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('on'));
     btn.classList.add('on');
     const f=btn.dataset.f;
-    if(portfolioCover){
-      portfolioCover.style.display=(f==='all'||f==='content')?'':'none';
+    const cover=document.querySelector('.portfolio-cover');
+    if(cover){
+      const coverCats=cover.dataset.cat||'';
+      cover.style.display=(f==='all'||coverCats.includes(f))?'':'none';
     }
     document.querySelectorAll('.pcard').forEach(c=>{
       const cats=c.dataset.cat||'';
@@ -2828,8 +2829,8 @@ img,video{max-width:100%;height:auto;}
   .test-grid{grid-template-columns:1fr!important;}
   .clients-row{flex-wrap:wrap!important;justify-content:center!important;}
   .cta-contacts{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important;}
-  .portfolio-cover-inner{gap:28px!important;}
-  .portfolio-cover-name{font-size:clamp(24px,4.8vw,38px)!important;}
+  .portfolio-cover{gap:28px!important;padding:28px 16px 40px!important;}
+  .portfolio-cover-title{font-size:clamp(28px,8vw,40px)!important;}
   .page-header > div[style*="position:absolute"]{display:none!important;}
 }
 
@@ -2905,7 +2906,7 @@ img,video{max-width:100%;height:auto;}
   .fcopy{font-size:9px!important;line-height:1.4!important;}
   .hero-stats{display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;gap:14px!important;}
   .hero-stats > div:last-child{grid-column:1 / -1;}
-  .portfolio-cover .dvid{width:100%!important;max-width:260px!important;}
+  .portfolio-cover-media{width:100%!important;max-width:260px!important;}
 }
 </style>
 </body>
