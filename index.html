@@ -1171,9 +1171,39 @@ nav.stuck{
 .pcard:hover .pcard-overlay{
   background:linear-gradient(to top,rgba(74,3,21,0.98) 0%,rgba(74,3,21,0.55) 60%,rgba(74,3,21,0.15) 100%);
 }
-.pcard-img--tl{background-image:linear-gradient(145deg,rgba(27,61,47,0.9) 0%,rgba(35,77,60,0.7) 55%,rgba(74,3,21,0.5) 100%);}
-.pcard-img--wcc{background-image:linear-gradient(145deg,rgba(13,31,61,0.95) 0%,rgba(26,58,110,0.75) 50%,rgba(74,3,21,0.55) 100%);}
-.pcard-img--beu{background-image:linear-gradient(145deg,rgba(45,90,61,0.9) 0%,rgba(74,143,92,0.65) 45%,rgba(74,3,21,0.5) 100%);}
+
+/* Project index header (grid zone) */
+.portfolio-index{margin-bottom:40px;}
+.portfolio-index-label{
+  font-size:9px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.portfolio-index-label::before{content:'';width:14px;height:1px;background:var(--gold);}
+.portfolio-index-title{
+  font-family:var(--serif);font-size:clamp(26px,3.2vw,40px);font-weight:700;
+  letter-spacing:0.04em;color:var(--ink);line-height:1.15;margin-bottom:14px;
+}
+.portfolio-index-desc{
+  font-size:14px;font-weight:300;line-height:1.75;color:var(--mid);max-width:520px;
+}
+/* Placeholder cards 01–03: mismo patrón Dynasty, ligera variación de ángulo en la secuencia */
+.pcard-img--placeholder{
+  background-color:var(--ink);
+  background-image:
+    radial-gradient(110% 70% at 50% 0%,rgba(122,41,66,0.5) 0%,transparent 58%),
+    linear-gradient(165deg,var(--ink) 0%,var(--ink2) 30%,var(--fire2) 55%,var(--gold) 80%,var(--ink) 100%);
+}
+.pcard-img--placeholder.pcard-img--seq-2{
+  background-image:
+    radial-gradient(90% 65% at 50% 100%,rgba(106,23,48,0.45) 0%,transparent 55%),
+    linear-gradient(195deg,var(--ink) 0%,var(--ink2) 30%,var(--fire2) 55%,var(--gold) 80%,var(--ink) 100%);
+}
+.pcard-img--placeholder.pcard-img--seq-3{
+  background-image:
+    radial-gradient(85% 60% at 18% 72%,rgba(122,41,66,0.38) 0%,transparent 52%),
+    linear-gradient(135deg,var(--ink) 0%,var(--ink2) 32%,var(--fire2) 58%,var(--gold) 100%);
+}
 .pcard-img--axones{background-image:url('axones/assets/axones-preview.png');background-position:center top;}
 .pcard-img--lf{background-image:url('assets/la-francia/la-francia-card-preview.jpg');background-position:center 22%;}
 
@@ -2143,7 +2173,7 @@ window.addEventListener('scroll',()=>{
     <h1 class="ph-title">This is our<br><span>Portfolio.</span></h1>
   </div>
   <div class="ph-right" style="position:relative;z-index:1;">
-    <p class="ph-desc"></p>
+    <p class="ph-desc">A curated sequence of brand, content and digital work — from real estate film to jewelry identity.</p>
     <div class="ph-count"><span>05</span> Featured Projects &nbsp;·&nbsp; 2021 — 2026</div>
   </div>
   <!-- Burgundy decorative circle -->
@@ -2185,11 +2215,17 @@ window.addEventListener('scroll',()=>{
 <!-- PROJECT GRID -->
 <div class="grid-wrap">
 
+  <header class="portfolio-index rv">
+    <div class="portfolio-index-label">Project Index</div>
+    <h2 class="portfolio-index-title">All Clients · 01 — 05</h2>
+    <p class="portfolio-index-desc">Each project opens with the same case-study layout. Select a card to view the full gallery and story.</p>
+  </header>
+
   <div class="proj-grid">
 
     <!-- CARD 1: Tropical Luxe -->
     <div class="pcard rv d1" data-cat="branding">
-      <div class="pcard-img pcard-img--tl"></div>
+      <div class="pcard-img pcard-img--placeholder"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">01</div>
@@ -2208,7 +2244,7 @@ window.addEventListener('scroll',()=>{
 
     <!-- CARD 2: World Coaching Corp -->
     <div class="pcard rv d2" data-cat="branding" data-project="wcc">
-      <div class="pcard-img pcard-img--wcc"></div>
+      <div class="pcard-img pcard-img--placeholder pcard-img--seq-2"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">02</div>
@@ -2226,7 +2262,7 @@ window.addEventListener('scroll',()=>{
 
     <!-- CARD 3: Be U Academy -->
     <div class="pcard rv d3" data-cat="branding" data-project="beu">
-      <div class="pcard-img pcard-img--beu"></div>
+      <div class="pcard-img pcard-img--placeholder pcard-img--seq-3"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">03</div>
