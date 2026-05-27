@@ -29,7 +29,9 @@ Diseño*
 dynasty-logo-clean.svg
 dynasty-logo.svg
 DYNASTY.png
-/assets/
+/assets/*
+!/assets/la-francia/
+!/assets/la-francia/**
 
 # Capturas y archivos de trabajo
 Captura*
