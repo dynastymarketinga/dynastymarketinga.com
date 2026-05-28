@@ -11,6 +11,8 @@ desktop.ini
 squarespace-snippets/
 squarespace-snippets-v2/
 dynasty-v2-separated/
+BE ACADEMY/
+TROPICAL/
 
 # Páginas sueltas antiguas (el portfolio vive dentro de index.html)
 project-*.html
@@ -32,6 +34,10 @@ DYNASTY.png
 /assets/*
 !/assets/la-francia/
 !/assets/la-francia/**
+!/assets/tropical/
+!/assets/tropical/**
+!/assets/be-academy/
+!/assets/be-academy/**
 
 # Capturas y archivos de trabajo
 Captura*

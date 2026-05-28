@@ -63,6 +63,18 @@ body{
   cursor:none;
 }
 
+/* Avoid accidental blue selection while dragging on portfolio */
+body,.page,nav,a,button,img,video,.pcard,.portfolio-cover,.filter-row,.ftab{
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+input,textarea,[contenteditable="true"]{
+  -webkit-user-select:text;
+  user-select:text;
+}
+::selection{background:rgba(122,41,66,0.35);color:#fff;}
+
 /* GRAIN OVERLAY */
 body::before{
   content:'';
@@ -76,9 +88,15 @@ body::before{
 /* CURSOR */
 .cur{width:12px;height:12px;background:var(--fire);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),background .3s;}
 .cur-ring{width:40px;height:40px;border:1.5px solid var(--ink);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .5s var(--ease),width .4s var(--ease),height .4s var(--ease),opacity .3s,border-color .3s;}
-body.cur-hover .cur{width:60px;height:60px;background:var(--fire);mix-blend-mode:multiply;}
-body.cur-hover .cur-ring{opacity:0;}
-body.cur-text .cur{width:80px;height:80px;background:var(--ink);mix-blend-mode:difference;}
+body.cur-hover .cur{
+  width:60px;height:60px;background:var(--fire);mix-blend-mode:normal;
+  box-shadow:0 0 0 2px rgba(248,241,244,0.28),0 8px 24px rgba(0,0,0,0.2);
+}
+body.cur-hover .cur-ring{opacity:0.3;}
+body.cur-text .cur{
+  width:80px;height:80px;background:rgba(74,3,21,0.88);mix-blend-mode:normal;
+  box-shadow:0 0 0 2px rgba(248,241,244,0.24),0 8px 24px rgba(0,0,0,0.2);
+}
 
 /* NAV */
 nav{
@@ -1056,8 +1074,11 @@ body{background:var(--off);color:var(--ink);font-family:var(--sans);cursor:none;
 /* CURSOR */
 .cur{width:10px;height:10px;background:var(--fire);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;}
 .cur-ring{width:34px;height:34px;border:1.5px solid rgba(35,36,34,0.2);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .4s var(--ease),opacity .3s;}
-body.hov .cur{width:48px;height:48px;background:var(--gold);}
-body.hov .cur-ring{opacity:0;}
+body.hov .cur{
+  width:48px;height:48px;background:var(--gold);
+  box-shadow:0 0 0 2px rgba(248,241,244,0.26),0 8px 24px rgba(0,0,0,0.18);
+}
+body.hov .cur-ring{opacity:0.35;border-color:rgba(215,182,136,0.68);}
 
 /* NAV */
 nav{
@@ -1203,6 +1224,14 @@ nav.stuck{
   background-image:
     radial-gradient(85% 60% at 18% 72%,rgba(122,41,66,0.38) 0%,transparent 52%),
     linear-gradient(135deg,var(--ink) 0%,var(--ink2) 32%,var(--fire2) 58%,var(--gold) 100%);
+}
+.pcard-img--tl{
+  background-image:url('assets/tropical/1.webp');
+  background-position:center;
+}
+.pcard-img--beu{
+  background-image:url('assets/be-academy/Screen+Shot+2021-12-28+at+14.57.41.webp');
+  background-position:center;
 }
 .pcard-img--axones{background-image:url('axones/assets/axones-preview.png');background-position:center top;}
 .pcard-img--lf{background-image:url('assets/la-francia/la-francia-card-preview.jpg');background-position:center 22%;}
@@ -1504,8 +1533,11 @@ body{background:var(--off);color:var(--ink);font-family:var(--sans);cursor:none;
 
 .cur{width:10px;height:10px;background:var(--fire);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;}
 .cur-ring{width:34px;height:34px;border:1.5px solid rgba(35,36,34,0.2);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .4s var(--ease),opacity .3s;}
-body.hov .cur{width:48px;height:48px;background:var(--gold);}
-body.hov .cur-ring{opacity:0;}
+body.hov .cur{
+  width:48px;height:48px;background:var(--gold);
+  box-shadow:0 0 0 2px rgba(248,241,244,0.26),0 8px 24px rgba(0,0,0,0.18);
+}
+body.hov .cur-ring{opacity:0.35;border-color:rgba(215,182,136,0.68);}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 64px;display:flex;align-items:center;justify-content:space-between;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;transition:padding .5s var(--ease),background .5s,border-color .5s,backdrop-filter .5s;}
@@ -2224,8 +2256,8 @@ window.addEventListener('scroll',()=>{
   <div class="proj-grid">
 
     <!-- CARD 1: Tropical Luxe -->
-    <div class="pcard rv d1" data-cat="branding">
-      <div class="pcard-img pcard-img--placeholder"></div>
+    <div class="pcard rv d1" data-cat="branding" data-project="tl">
+      <div class="pcard-img pcard-img--tl"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">01</div>
@@ -2262,7 +2294,7 @@ window.addEventListener('scroll',()=>{
 
     <!-- CARD 3: Be U Academy -->
     <div class="pcard rv d3" data-cat="branding" data-project="beu">
-      <div class="pcard-img pcard-img--placeholder pcard-img--seq-3"></div>
+      <div class="pcard-img pcard-img--beu"></div>
       <div class="pcard-overlay"></div>
       <div class="pcard-line"></div>
       <div class="pcard-num">03</div>
@@ -2387,6 +2419,39 @@ window.addEventListener('scroll',()=>{
   </div>
 </div>
 
+<!-- DETAIL: Tropical Luxe -->
+<div class="detail-overlay" id="det-tl">
+  <button class="detail-close" id="close-tl">&#10005;</button>
+  <div class="detail-nav">
+    <button class="detail-nav-back" onclick="closeDetail('tl')">All Projects</button>
+    <a href="#home" onclick="showPage('home');return false;" class="detail-nav-logo"><img src="dynasty-logo.png" alt="Dynasty"></a>
+  </div>
+  <div class="detail-hero">
+    <div>
+      <div class="dh-num" style="position:relative;z-index:1;">01 of 05</div>
+      <h2 class="dh-title" style="position:relative;z-index:1;">Tropical Luxe</h2>
+      <div class="dh-tags" style="position:relative;z-index:1;">
+        <span class="dh-tag">Logo Design</span><span class="dh-tag">Visual Identity</span>
+        <span class="dh-tag">Print</span><span class="dh-tag">Stationery</span>
+      </div>
+    </div>
+    <p class="dh-desc" style="position:relative;z-index:1;">Tropical Luxe showcases a warm, premium identity system designed to elevate the brand experience across touchpoints and printed assets.</p>
+  </div>
+  <div class="detail-gallery">
+    <div class="dg-beu">
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/tropical/1.webp" alt="Tropical Luxe identity preview 1"><div class="dgi-cap">Logo Design</div></div>
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/tropical/3.webp" alt="Tropical Luxe identity preview 2"><div class="dgi-cap">Visual Identity</div></div>
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/tropical/4.webp" alt="Tropical Luxe identity preview 3"><div class="dgi-cap">Print</div></div>
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/tropical/5.webp" alt="Tropical Luxe identity preview 4"><div class="dgi-cap">Stationery</div></div>
+    </div>
+  </div>
+  <div class="detail-cta">
+    <h3>Like what you see? <em>Let's talk.</em></h3>
+    <p>We can build something like this for your brand.</p>
+    <a href="#contact" onclick="showPage('contact');return false;" class="d-btn">Start Your Project</a>
+  </div>
+</div>
+
 <!-- DETAIL: Be U Academy -->
 <div class="detail-overlay" id="det-beu">
   <button class="detail-close" id="close-beu">&#10005;</button>
@@ -2407,9 +2472,9 @@ window.addEventListener('scroll',()=>{
   </div>
   <div class="detail-gallery">
     <div class="dg-beu">
-      <div class="dgi" style="aspect-ratio:3/4;"><div class="dgi-visual" style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#2d5a3d,#f2ead8);"></div><div class="dgi-cap">Branded Pens</div></div>
-      <div class="dgi" style="aspect-ratio:3/4;"><div class="dgi-visual" style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#4a8f5c,#f2ead8);"></div><div class="dgi-cap">Brand System</div></div>
-      <div class="dgi" style="aspect-ratio:3/4;"><div class="dgi-visual" style="width:100%;height:100%;min-height:200px;background:linear-gradient(135deg,#2d5a3d,#4a8f5c);"></div><div class="dgi-cap">Print Materials</div></div>
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/be-academy/Screen+Shot+2021-12-28+at+14.57.17.webp" alt="Be U Academy branded pens"><div class="dgi-cap">Branded Pens</div></div>
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/be-academy/Screen+Shot+2021-12-28+at+14.57.29.webp" alt="Be U Academy brand system"><div class="dgi-cap">Brand System</div></div>
+      <div class="dgi" style="aspect-ratio:3/4;"><img src="assets/be-academy/Screen+Shot+2021-12-28+at+14.57.41.webp" alt="Be U Academy print materials"><div class="dgi-cap">Print Materials</div></div>
     </div>
   </div>
   <div class="detail-cta">
