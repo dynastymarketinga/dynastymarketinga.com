@@ -5,5 +5,14 @@
   "category": "branding",
   "categoryLabel": "Brand Identity",
   "tags": ["Logo Design", "Brand Identity", "Merchandise"],
-  "cardImage": "/assets/be-academy/Screen+Shot+2021-12-28+at+14.57.41.webp"
+  "cardImage": "/assets/be-academy/beu-feature-print.webp",
+  "gallery": [
+    "/assets/be-academy/beu-logo.webp",
+    "/assets/be-academy/beu-banner.webp",
+    "/assets/be-academy/beu-logo-texture.webp",
+    "/assets/be-academy/beu-notebooks.webp",
+    "/assets/be-academy/beu-stationery.webp",
+    "/assets/be-academy/beu-pens.webp",
+    "/assets/be-academy/beu-bag.webp"
+  ]
 }
