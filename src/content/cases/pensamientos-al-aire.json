@@ -1,0 +1,16 @@
+{
+  "slug": "pensamientos-al-aire",
+  "order": 18,
+  "title": "Pensamientos al Aire",
+  "category": "content",
+  "categoryLabel": "Content & Branding",
+  "tags": ["Social Media Content", "Branding", "Podcast"],
+  "cardImage": "/assets/pensamientos-al-aire/paa-cover.webp",
+  "gallery": [
+    "/assets/pensamientos-al-aire/paa-phones.webp",
+    "/assets/pensamientos-al-aire/paa-brand-logo.webp",
+    "/assets/pensamientos-al-aire/paa-brand-cloud.webp",
+    "/assets/pensamientos-al-aire/paa-countdown.webp",
+    "/assets/pensamientos-al-aire/paa-categories.webp"
+  ]
+}

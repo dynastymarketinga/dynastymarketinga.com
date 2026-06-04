@@ -1,0 +1,15 @@
+{
+  "slug": "dkr-marine",
+  "order": 16,
+  "title": "DKR Marine",
+  "category": "branding",
+  "categoryLabel": "Corporate Branding",
+  "tags": ["Professional Business Cards", "Yachting", "Marina"],
+  "cardImage": "/assets/dkr-marine/dkr-cover.webp",
+  "gallery": [
+    "/assets/dkr-marine/dkr-hero.webp",
+    "/assets/dkr-marine/dkr-desk.webp",
+    "/assets/dkr-marine/dkr-grid.webp",
+    "/assets/dkr-marine/dkr-stacks.jpg"
+  ]
+}

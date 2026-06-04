@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import contactHtml from '../partials/contact.html?raw';
+
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim() ?? '';
+---
+
+<BaseLayout
+  title="Contact · Dynasty Marketing Agency"
+  description="Start your project with Dynasty — Miami and Venezuela. Tell us about your brand and we will respond within 24 hours."
+  page="contact"
+  scripts={['/scripts/contact.js']}
+>
+  <div
+    class="page active"
+    id="page-contact"
+    data-formspree-endpoint={formspreeEndpoint}
+    set:html={contactHtml}
+  />
+</BaseLayout>

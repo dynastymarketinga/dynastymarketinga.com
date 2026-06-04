@@ -1,0 +1,16 @@
+{
+  "slug": "laf-wine-opener",
+  "order": 13,
+  "title": "LAF - Wine Opener",
+  "category": "branding",
+  "categoryLabel": "Product",
+  "tags": ["Photographic Assembly", "Video Product Promotion", "Amazon Listing"],
+  "cardImage": "/assets/laf-wine-opener/laf-cover.webp",
+  "videos": [
+    { "id": "l4UBp4ENa9M", "title": "LAF Wine Opener — promotional video" }
+  ],
+  "gallery": [
+    "/assets/laf-wine-opener/laf-photo-main.png",
+    "/assets/laf-wine-opener/laf-photo-detail.png"
+  ]
+}

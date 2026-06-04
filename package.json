@@ -1,0 +1,22 @@
+{
+  "name": "dynasty-marketing",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "copy:public": "node scripts/copy-public.mjs",
+    "prune:public": "node scripts/prune-public.mjs",
+    "predev": "npm run copy:public && npm run prune:public",
+    "dev": "astro dev",
+    "prebuild": "npm run copy:public && npm run prune:public",
+    "build": "astro build",
+    "preview": "astro preview",
+    "extract": "node scripts/extract-legacy.mjs",
+    "audit:root": "node scripts/audit-root.mjs",
+    "archive:root": "node scripts/archive-root.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^5.7.0"
+  }
+}

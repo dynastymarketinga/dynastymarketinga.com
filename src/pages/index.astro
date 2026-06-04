@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import homeHtml from '../partials/home.html?raw';
+
+const tickerMarker = '<!-- TICKER -->';
+const tickerIndex = homeHtml.indexOf(tickerMarker);
+const beforeTicker = tickerIndex >= 0 ? homeHtml.slice(0, tickerIndex) : homeHtml;
+const fromTicker = tickerIndex >= 0 ? homeHtml.slice(tickerIndex) : '';
+---
+
+<BaseLayout
+  title="Dynasty Marketing Agency · Miami"
+  description="Full-service creative and AI agency in Miami and Venezuela. Branding, content, performance marketing and intelligent systems for growing brands."
+  page="home"
+  scripts={['/scripts/home.js']}
+>
+  <div class="page active" id="page-home">
+    <Fragment set:html={beforeTicker} />
+    <Hero />
+    {fromTicker && <Fragment set:html={fromTicker} />}
+  </div>
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import portfolioHtml from '../partials/portfolio.html?raw';
+---
+
+<BaseLayout
+  title="Portfolio · Dynasty Marketing Agency"
+  description="Brand, content and digital work for Miami and Latin America — real estate film, brand identity, jewelry and software."
+  page="portfolio"
+  scripts={['/scripts/portfolio.js']}
+>
+  <div class="page active" id="page-portfolio" set:html={portfolioHtml} />
+</BaseLayout>

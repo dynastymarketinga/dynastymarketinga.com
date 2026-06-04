@@ -1,0 +1,14 @@
+{
+  "slug": "jennyfer-portillo",
+  "order": 8,
+  "title": "Jennyfer Portillo",
+  "category": "branding",
+  "categoryLabel": "Brand Identity",
+  "tags": ["Branding", "Logo Design", "Life Coach", "Stationery"],
+  "cardImage": "/assets/jennyfer-portillo/jp-cover.webp",
+  "gallery": [
+    "/assets/jennyfer-portillo/jp-brand.webp",
+    "/assets/jennyfer-portillo/jp-pens.webp",
+    "/assets/jennyfer-portillo/jp-motion.gif"
+  ]
+}

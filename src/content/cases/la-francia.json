@@ -1,0 +1,22 @@
+{
+  "slug": "lf",
+  "order": 5,
+  "title": "Joyería La Francia",
+  "category": "branding content",
+  "categoryLabel": "Brand Identity",
+  "tags": ["Social Media", "Photography", "Campaign Management", "Jewelry"],
+  "cardImage": "/assets/la-francia/lf-portada.webp",
+  "gallery": [
+    "/assets/la-francia/lf-anillo.webp",
+    "/assets/la-francia/lf-oro.webp",
+    "/assets/la-francia/lf-cadena-os.webp",
+    "/assets/la-francia/lf-computadora.webp",
+    "/assets/la-francia/lf-telefono.webp",
+    "/assets/la-francia/lf-corazon.webp",
+    "/assets/la-francia/lf-mujer-famosa.webp",
+    "/assets/la-francia/lf-galeria.webp",
+    "/assets/la-francia/lf-italiano.webp",
+    "/assets/la-francia/lf-italiano-rojo.webp",
+    "/assets/la-francia/lf-book.webp"
+  ]
+}

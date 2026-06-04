@@ -1,0 +1,14 @@
+{
+  "slug": "decode-club",
+  "order": 15,
+  "title": "Decode Club",
+  "category": "software",
+  "categoryLabel": "Digital Product",
+  "tags": ["Professional Video Editing", "Decode Club", "Chiquinquirá Delgado"],
+  "cardImage": "/assets/decode-club/dc-cover.webp",
+  "videos": [
+    { "id": "zUO4ldiCugY", "title": "EMPOWERING #1" },
+    { "id": "miJ5gFPNYAI", "title": "EMPOWERING #2" },
+    { "id": "LKgq2dUdWHA", "title": "EMPOWERING #3" }
+  ]
+}

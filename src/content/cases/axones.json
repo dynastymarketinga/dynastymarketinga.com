@@ -1,0 +1,14 @@
+{
+  "slug": "axones",
+  "order": 17,
+  "title": "Axones",
+  "category": "software",
+  "categoryLabel": "Social Media · Plant Systems",
+  "tags": ["Social Media Management", "Plásticos La Dinastía", "Plant Systems"],
+  "cardImage": "/axones/assets/axones-preview.png",
+  "externalUrl": "/axones/index.html",
+  "gallery": [
+    "/assets/axones-branding/ax-cover.webp",
+    "/assets/axones-branding/ax-logos.webp"
+  ]
+}

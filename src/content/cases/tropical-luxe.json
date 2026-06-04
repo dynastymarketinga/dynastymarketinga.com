@@ -1,0 +1,18 @@
+{
+  "slug": "tl",
+  "order": 19,
+  "title": "Tropical Luxe",
+  "category": "branding",
+  "categoryLabel": "Brand Identity",
+  "tags": ["Logo Design", "Visual Identity", "Print", "Stationery"],
+  "cardImage": "/assets/tropical/tropical-carta-2.webp",
+  "gallery": [
+    "/assets/tropical/tropical-cartas.webp",
+    "/assets/tropical/tropical-taza.webp",
+    "/assets/tropical/tropical-almohoda.webp",
+    "/assets/tropical/tropical-carta.webp",
+    "/assets/tropical/tropical-chica-almohoda.webp",
+    "/assets/tropical/tropical-carta-2.webp",
+    "/assets/tropical/tropical-almohoda-2.webp"
+  ]
+}

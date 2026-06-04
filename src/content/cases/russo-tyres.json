@@ -1,0 +1,23 @@
+{
+  "slug": "russo",
+  "order": 3,
+  "title": "Russo Tyres",
+  "category": "social",
+  "categoryLabel": "Social Media",
+  "tags": ["Social Media", "Content", "Branding"],
+  "cardImage": "/assets/russo/russo-carta-portada.webp",
+  "gallery": [
+    "/assets/russo/russo-hero.webp",
+    "/assets/russo/russo-stories.gif",
+    "/assets/russo/russo-llantas.gif",
+    "/assets/russo/russo-shop.webp",
+    "/assets/russo/russo-van.webp",
+    "/assets/russo/russo-logo-reveal.gif",
+    "/assets/russo/russo-mockup-stories.webp",
+    "/assets/russo/russo-ig-perfil.webp",
+    "/assets/russo/russo-logotypes.gif",
+    "/assets/russo/russo-post-1.webp",
+    "/assets/russo/russo-post-2.webp",
+    "/assets/russo/russo-post-3.webp"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "wcc",
+  "order": 4,
+  "title": "World Coaching Corporation",
+  "category": "branding",
+  "categoryLabel": "Corporate Branding",
+  "tags": ["Logo Design", "Stationery", "Brand Manual", "Stage Design"],
+  "cardImage": "/assets/wcc/wcc-portada.webp",
+  "gallery": [
+    "/assets/wcc/wcc-album.webp",
+    "/assets/wcc/wcc-utileria.webp",
+    "/assets/wcc/wcc-cartas.webp",
+    "/assets/wcc/wcc-portada.webp",
+    "/assets/wcc/wcc-cuadernos.webp",
+    "/assets/wcc/wcc-studio.webp"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "taco-x-libra",
+  "order": 14,
+  "title": "Taco x Libra",
+  "category": "branding",
+  "categoryLabel": "Brand Identity",
+  "tags": ["Menu Design", "Business Cards", "Print Collateral"],
+  "cardImage": "/assets/taco-x-libra/txl-cover.webp",
+  "gallery": [
+    "/assets/taco-x-libra/txl-hero.webp",
+    "/assets/taco-x-libra/txl-cards-grid.webp",
+    "/assets/taco-x-libra/txl-cards-stack.webp",
+    "/assets/taco-x-libra/txl-menu-spread.webp",
+    "/assets/taco-x-libra/txl-menu-trifold.webp"
+  ]
+}

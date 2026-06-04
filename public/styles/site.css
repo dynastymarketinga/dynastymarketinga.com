@@ -1,0 +1,10 @@
+/* Multi-page: single active page per route (no SPA hide) */
+body.dynasty-site {
+  overflow-y: auto;
+  cursor: auto;
+}
+body.dynasty-site .page {
+  display: block;
+  overflow: visible;
+  height: auto;
+}

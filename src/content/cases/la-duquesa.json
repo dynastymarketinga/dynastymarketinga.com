@@ -1,0 +1,16 @@
+{
+  "slug": "la-duquesa",
+  "order": 7,
+  "title": "La Duquesa",
+  "category": "branding",
+  "categoryLabel": "Brand Identity",
+  "tags": ["Corporate Identity", "Logo Design", "Instagram Feed", "Social Media Management"],
+  "cardImage": "/assets/la-duquesa/ld-cover.webp",
+  "gallery": [
+    "/assets/la-duquesa/ld-banner.webp",
+    "/assets/la-duquesa/ld-feed.webp",
+    "/assets/la-duquesa/ld-sugar.webp",
+    "/assets/la-duquesa/ld-harina.webp",
+    "/assets/la-duquesa/ld-corn.webp"
+  ]
+}

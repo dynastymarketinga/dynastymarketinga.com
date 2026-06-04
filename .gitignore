@@ -1,3 +1,7 @@
+node_modules/
+dist/
+.astro/
+
 # Editor / sistema
 .cursor/
 .DS_Store
@@ -6,6 +10,7 @@ desktop.ini
 *.log
 .env
 .env.*
+!.env.example
 
 # Versiones alternativas (no usa el sitio en producción)
 squarespace-snippets/
@@ -42,6 +47,34 @@ DYNASTY.png
 # Capturas y archivos de trabajo
 Captura*
 ChatGPT*
+
+# Limpieza local (scripts/archive-root.mjs)
+_archive/
+
+# Videos fuente no usados en el sitio (~350 MB; backup en _archive/public-assets-raw)
+public/assets/raw/
+
+# Carpetas de diseño en la raíz (el sitio sirve copias en public/assets/)
+/Axones/
+/BE ACADEMY/
+/Decode/
+/DKR Marine/
+/Duquesa/
+/Dynasty/
+/Dysnasty Marketing/
+/Jenniffer Portillo/
+/Kary Cubana/
+/La Francia Joyería/
+/La Mubi/
+/LAF WINE OPENER/
+/Marielena/
+/Maystar/
+/Pensamientos/
+/Russo Tires/
+/Taco Libra/
+/TROPICAL/
+/Tropical Luxe/
+/World Coaching Corporation/
 
 # Axones: solo lo que usa el sitio
 axones/README.md
