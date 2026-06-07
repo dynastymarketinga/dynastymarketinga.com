@@ -88,11 +88,17 @@ document.querySelectorAll('[data-close-detail]').forEach(btn => {
     const id = btn.dataset.closeDetail;
     const scrollTo = btn.dataset.scrollTo;
     closeDetail(id);
-    if (scrollTo) {
-      requestAnimationFrame(() => {
-        const target = document.getElementById(scrollTo);
-        target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-    }
+    if (!scrollTo) return;
+    requestAnimationFrame(() => {
+      const target = document.getElementById(scrollTo);
+      if (target?.classList.contains('pcard') && target.dataset.project) {
+        const nextId = target.dataset.project;
+        if (detailIds.includes(nextId)) {
+          openDetail(nextId);
+          return;
+        }
+      }
+      target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
   });
 });
