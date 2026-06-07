@@ -393,7 +393,6 @@ html.detail-open body{
 .detail-overlay--duquesa,
 .detail-overlay--jennyfer,
 .detail-overlay--maystar,
-.detail-overlay--kuba,
 .detail-overlay--dynasty,
 .detail-overlay--mubi,
 .detail-overlay--laf,
@@ -409,7 +408,6 @@ html.detail-open body{
 .detail-overlay--duquesa .detail-nav,
 .detail-overlay--jennyfer .detail-nav,
 .detail-overlay--maystar .detail-nav,
-.detail-overlay--kuba .detail-nav,
 .detail-overlay--dynasty .detail-nav,
 .detail-overlay--mubi .detail-nav,
 .detail-overlay--laf .detail-nav,
@@ -684,43 +682,6 @@ html.detail-open body{
 .mubi-videos-stack{display:grid;gap:clamp(32px,4.5vw,52px);width:100%;}
 .mubi-videos-stack .tl-media{width:100%;margin:0;}
 .detail-overlay--mubi .case-split .tl-media img{width:100%;height:auto;display:block;}
-.pcard-img--kuba{
-  background-color:var(--ink);
-  background-image:
-    radial-gradient(90% 65% at 50% 100%,rgba(106,23,48,0.45) 0%,transparent 55%),
-    linear-gradient(195deg,var(--ink) 0%,var(--ink2) 30%,var(--fire2) 55%,var(--gold) 80%,var(--ink) 100%);
-}
-.tl-intro-mark--kuba{max-width:min(220px,30vw);}
-.detail-overlay--kuba .tl-intro-mark.tl-intro-mark--kuba{
-  width:min(100%,220px);
-  max-width:min(220px,30vw);
-  aspect-ratio:1;
-  height:auto;
-  border-radius:0;
-  overflow:hidden;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0;
-  padding:clamp(16px,2.5vw,24px);
-  flex-shrink:0;
-}
-.detail-overlay--kuba .tl-intro-mark.tl-intro-mark--kuba img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center center;
-}
-.kuba-gallery{
-  display:grid;
-  grid-template-columns:7fr 5fr;
-  gap:clamp(16px,2.5vw,24px);
-  max-width:1180px;margin:0 auto;align-items:start;
-}
-.kuba-gallery__trifolds{display:grid;gap:clamp(16px,2.5vw,24px);}
-.kuba-gallery__motion{padding:0;background:transparent;align-self:center;}
-.kuba-gallery__motion img{width:100%;height:auto;display:block;}
 .pcard-img--maystar{
   background-image:url('/assets/maystar/ms-cover.webp');
   background-size:cover;
@@ -1547,8 +1508,6 @@ a.fcontact-line:hover{color:var(--gold);}
     grid-column:1;grid-row:auto;
   }
   .tl-media--phone{max-width:min(100%,280px);}
-  .kuba-gallery{grid-template-columns:1fr;}
-  .kuba-gallery__motion{max-width:min(100%,320px);margin:0 auto;}
   .mubi-grid{grid-template-columns:1fr;gap:20px;max-width:min(100%,480px);}
   .mubi-stage{grid-template-columns:1fr;gap:28px;}
   .mubi-stage__col--right{padding-top:0;}
