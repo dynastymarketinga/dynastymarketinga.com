@@ -27,6 +27,7 @@ img,video{max-width:100%;height:auto;}
   #hero{min-height:auto!important;}
   .hero-h1{font-size:clamp(36px,14vw,62px)!important;line-height:1.02!important;}
   .hero-desc{font-size:14px!important;line-height:1.65!important;}
+  .hero-desc-spacer{min-height:calc(7 * 1.65 * 14px)!important;}
   .hero-bg-logo{padding:0 24px 80px!important;}
   .hero-bg-logo img{width:min(60vw,280px)!important;max-height:100px!important;}
   #about,#services,#work,#testimonials,#cta,#results,#clients{padding-left:20px!important;padding-right:20px!important;}
@@ -86,7 +87,6 @@ img,video{max-width:100%;height:auto;}
   .tcard{padding:24px 16px!important;}
   .tcard-q{font-size:44px!important;margin-bottom:14px!important;}
   .tcard-role{font-size:10px!important;}
-  .test-visual{min-height:360px!important;}
   .d-btn,.page-btn,.submit-btn{padding-left:18px!important;padding-right:18px!important;}
   .btn-cta-main,.btn-cta-out{padding:16px 14px!important;font-size:10px!important;letter-spacing:0.12em!important;}
   .cta-c{padding:0 6px!important;}
