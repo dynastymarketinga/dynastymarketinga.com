@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "carolina",
+    "order": 0,
+    "title": "Carolina Real Estate",
+    "cardImage": null,
+    "video": "/videos/carolina-realtors.mp4",
+    "published": false
+  },
+  {
+    "slug": "beu",
+    "order": 1,
+    "title": "Be-U Academy",
+    "cardImage": "/assets/be-academy/beu-feature-print.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "vic",
+    "order": 1,
+    "title": "VICTOR",
+    "cardImage": "/assets/portfolio/la-panadería.jpeg",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "russo",
+    "order": 2,
+    "title": "Russo Tyres",
+    "cardImage": "/assets/russo/russo-carta-portada.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "wcc",
+    "order": 3,
+    "title": "World Coaching Corporation",
+    "cardImage": "/assets/wcc/wcc-portada.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "lf",
+    "order": 4,
+    "title": "La Francia Joyería",
+    "cardImage": "/assets/la-francia/lf-portada.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "la-duquesa",
+    "order": 5,
+    "title": "La Duquesa",
+    "cardImage": "/assets/la-duquesa/ld-cover.png",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "jennyfer-portillo",
+    "order": 6,
+    "title": "Jennyfer Portillo",
+    "cardImage": "/assets/jennyfer-portillo/jp-cover.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "dynasty-marketing",
+    "order": 8,
+    "title": "Dynasty Marketing Agency",
+    "cardImage": "/assets/dynasty-marketing/dm-cover.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "la-mubi-miami",
+    "order": 9,
+    "title": "LA MUBI",
+    "cardImage": "/assets/la-mubi-miami/lm-cover.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "laf-wine-opener",
+    "order": 10,
+    "title": "LAF - Wine Opener",
+    "cardImage": "/assets/laf-wine-opener/laf-cover.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "taco-x-libra",
+    "order": 11,
+    "title": "Taco x Libra",
+    "cardImage": "/assets/taco-x-libra/txl-cover.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "axones",
+    "order": 12,
+    "title": "Axones",
+    "cardImage": "/axones/assets/axones-preview.png",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "pensamientos-al-aire",
+    "order": 13,
+    "title": "Pensamientos al Aire",
+    "cardImage": "/assets/pensamientos-al-aire/paa-cover.webp",
+    "video": null,
+    "published": true
+  },
+  {
+    "slug": "tl",
+    "order": 14,
+    "title": "Tropical Luxe",
+    "cardImage": "/assets/tropical/tropical-carta-2.webp",
+    "video": null,
+    "published": true
+  }
+]

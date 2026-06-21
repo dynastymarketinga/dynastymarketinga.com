@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  cases: CollectionEntry<'cases'>[];
+}
+
+const { cases } = Astro.props;
+const sorted = [...cases]
+  .filter((c) => c.data.published !== false)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const total = sorted.length;
+const pad = (n: number) => String(n).padStart(2, '0');
+const delayClasses = ['d1', 'd2', 'd3', 'd4', 'd5', 'd6'];
+---
+
+<div class="proj-grid" id="portfolio-grid">
+  {
+    sorted.map((entry, index) => {
+      const d = entry.data;
+      const num = pad(index + 1);
+      const delay = delayClasses[index % delayClasses.length];
+      const cardStyle = d.cardImage ? `background-image:url('${d.cardImage}')` : undefined;
+
+      return (
+        <div
+          class={`pcard rv ${delay}`}
+          id={`project-${d.slug}`}
+          data-cat={d.category}
+          data-project={d.slug}
+        >
+          <div class="pcard-img" style={cardStyle} />
+          <div class="pcard-overlay" />
+          <div class="pcard-line" />
+          <div class="pcard-num">{num}</div>
+          <div class="pcard-body">
+            <div class="pcard-cat">{d.categoryLabel}</div>
+            <div class="pcard-name">{d.title}</div>
+            {d.demoUrl ? (
+              <div class="pcard-actions">
+                <span class="pcard-btn">Ver proyecto</span>
+                <a href={d.demoUrl} class="pcard-btn pcard-btn--demo">
+                  Ver demo
+                </a>
+              </div>
+            ) : (
+              <div class="pcard-btn">View Project</div>
+            )}
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

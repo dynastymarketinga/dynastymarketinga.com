@@ -1,14 +1,44 @@
 {
   "slug": "dynasty-marketing",
-  "order": 11,
+  "order": 8,
   "title": "Dynasty Marketing Agency",
   "category": "branding",
   "categoryLabel": "Brand Identity",
-  "tags": ["Brandbook", "Corporate Identity", "Rebranding"],
+  "tags": [
+    "Brandbook",
+    "Corporate Identity",
+    "Rebranding"
+  ],
   "cardImage": "/assets/dynasty-marketing/dm-cover.webp",
-  "gallery": [
-    "/assets/dynasty-marketing/dm-brandbook.webp",
-    "/assets/dynasty-marketing/dm-who.webp",
-    "/assets/dynasty-marketing/dm-social.webp"
+  "themeClass": "dynasty",
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/dynasty-marketing/dm-brandbook.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/dynasty-marketing/dm-who.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/dynasty-marketing/dm-social.webp",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

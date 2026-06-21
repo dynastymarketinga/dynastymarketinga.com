@@ -1,16 +1,65 @@
 {
   "slug": "la-duquesa",
-  "order": 7,
+  "order": 5,
+  "published": true,
   "title": "La Duquesa",
   "category": "branding",
   "categoryLabel": "Brand Identity",
-  "tags": ["Corporate Identity", "Logo Design", "Instagram Feed", "Social Media Management"],
   "cardImage": "/assets/la-duquesa/ld-cover.png",
-  "gallery": [
-    "/assets/la-duquesa/ld-banner.webp",
-    "/assets/la-duquesa/ld-feed.webp",
-    "/assets/la-duquesa/ld-sugar.webp",
-    "/assets/la-duquesa/ld-harina.webp",
-    "/assets/la-duquesa/ld-corn.webp"
+  "themeClass": "duquesa",
+  "tags": [
+    "Corporate Identity",
+    "Logo Design",
+    "Instagram Feed",
+    "Social Media Management"
+  ],
+  "intro": {
+    "logo": "/assets/la-duquesa/ld-logo.webp",
+    "label": "Corporate Identity Design / Logo Design / Instagram Feed Design / Social Media Management",
+    "description": "La Duquesa is a complete Venezuelan food brand that sells premium products such as sugar, cornflour, and beans located in all Venezuelan states, La Duquesa provides Venezuelans the opportunity to experience quality food for the best prices while creating memories of great breakfast, lunches or dinners.",
+    "descriptionExtra": "Our agency created a full campaign for La Duquesa including content creation for Instagram stories, feed and flyers."
+  },
+  "sections": [
+    {
+      "type": "wide",
+      "images": [
+        {
+          "src": "/assets/la-duquesa/ld-banner.webp",
+          "alt": "La Duquesa — product campaign banner"
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-duquesa/ld-feed.webp",
+          "alt": "La Duquesa — Instagram feed grid"
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-duquesa/ld-sugar.webp",
+          "alt": "La Duquesa — refined sugar campaign"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "splitRatio": "7-5",
+      "images": [
+        {
+          "src": "/assets/la-duquesa/ld-harina.webp",
+          "alt": "La Duquesa — white corn flour product"
+        },
+        {
+          "src": "/assets/la-duquesa/ld-corn.webp",
+          "alt": "La Duquesa — corn origin campaign"
+        }
+      ]
+    }
   ]
 }

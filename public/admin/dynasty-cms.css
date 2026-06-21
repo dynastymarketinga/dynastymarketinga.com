@@ -1,0 +1,1268 @@
+/* Dynasty CMS — Decap admin theme (scoped, high-contrast) */
+
+:root {
+  --ink: #4a0315;
+  --ink2: #5a1325;
+  --off: #f8f1f4;
+  --warm: #f3e8ed;
+  --mid: #8f6370;
+  --faint: rgba(74, 3, 21, 0.10);
+  --faint2: rgba(74, 3, 21, 0.22);
+  --fire2: #6a1730;
+  --gold: #7a2942;
+  --serif: 'Cinzel', Georgia, serif;
+  --sans: 'Montserrat', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--off) !important;
+  color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  cursor: auto !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(122, 41, 66, 0.35);
+  color: #fff;
+}
+
+/* ══════════════════════════════════════════
+   AppHeader — nav, quick-add, site link, avatar
+   ══════════════════════════════════════════ */
+#nc-root [class*='AppHeader'] {
+  display: flex !important;
+  align-items: stretch !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  padding: 0 !important;
+  background: var(--ink) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+}
+
+#nc-root [class*='AppHeaderContent'] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 20px !important;
+  gap: 24px !important;
+}
+
+#nc-root [class*='AppHeaderNavList'] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  height: 100% !important;
+}
+
+#nc-root [class*='AppHeaderNavList'] li {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+/* Contenido / Medios — same style for link + button */
+#nc-root [class*='AppHeaderNavLink'],
+#nc-root [class*='AppHeaderButton'] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 100% !important;
+  min-height: unset !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: rgba(248, 241, 244, 0.72) !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease) !important;
+}
+
+#nc-root [class*='AppHeaderNavLink']:hover,
+#nc-root [class*='AppHeaderButton']:hover {
+  color: #fff !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+#nc-root [class*='AppHeaderNavLink'][class*='Active'],
+#nc-root [class*='AppHeaderNavLink'][aria-current='page'],
+#nc-root [class*='header-link-active'],
+#nc-root [class*='AppHeaderButton'][class*='Active'] {
+  color: #fff !important;
+  border-bottom-color: var(--gold) !important;
+  background: transparent !important;
+}
+
+/* Icons in nav */
+#nc-root [class*='AppHeaderNavLink'] [class*='IconWrapper'],
+#nc-root [class*='AppHeaderButton'] [class*='IconWrapper'] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+#nc-root [class*='AppHeaderNavLink'] svg,
+#nc-root [class*='AppHeaderButton'] svg {
+  width: 18px !important;
+  height: 18px !important;
+  fill: currentColor !important;
+}
+
+#nc-root [class*='AppHeaderNavLink'] svg path,
+#nc-root [class*='AppHeaderButton'] svg path {
+  fill: currentColor !important;
+}
+
+/* Right actions group */
+#nc-root [class*='AppHeaderActions'] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Añadir rápido */
+#nc-root [class*='AppHeaderQuickNewButton'],
+#nc-root [class*='AppHeaderActions'] [class*='StyledDropdownButton'],
+#nc-root [class*='AppHeaderActions'] [class*='DropdownButton'] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--off) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  font-family: var(--sans) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+#nc-root [class*='AppHeaderQuickNewButton']:hover,
+#nc-root [class*='AppHeaderActions'] [class*='StyledDropdownButton']:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Flecha abajo — reemplaza caret Decap mal posicionado */
+#nc-root [class*='AppHeaderQuickNewButton']::before,
+#nc-root [class*='AppHeaderActions'] [class*='StyledDropdownButton'][class*='caretDown']::before {
+  display: none !important;
+  content: none !important;
+}
+
+#nc-root [class*='AppHeaderQuickNewButton']::after,
+#nc-root [class*='AppHeaderActions'] [class*='StyledDropdownButton'][class*='caretDown']::after {
+  content: '' !important;
+  display: inline-block !important;
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin: 0 0 0 7px !important;
+  padding: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid !important;
+  border-width: 5px 4px 0 4px !important;
+  border-color: currentColor transparent transparent transparent !important;
+  background: none !important;
+  background-image: none !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  opacity: 0.9 !important;
+}
+
+/* Site link */
+#nc-root [class*='AppHeaderSiteLink'] {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 34px !important;
+  padding: 0 4px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  color: rgba(248, 241, 244, 0.75) !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+#nc-root [class*='AppHeaderSiteLink']:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+  opacity: 1 !important;
+}
+
+/* Avatar */
+#nc-root [class*='AvatarDropdownButton'] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+
+#nc-root [class*='AvatarDropdownButton']:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+#nc-root [class*='AvatarPlaceholderIcon'],
+#nc-root [class*='AvatarDropdownButton'] [class*='IconWrapper'] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#nc-root [class*='AvatarPlaceholderIcon'] svg,
+#nc-root [class*='AvatarDropdownButton'] svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+#nc-root [class*='AvatarPlaceholderIcon'] svg path,
+#nc-root [class*='AvatarDropdownButton'] svg path {
+  fill: var(--off) !important;
+}
+
+#nc-root [class*='AppHeaderActions'] [class*='StyledWrapper'] {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+[class*='ToolbarContainer'] {
+  background: var(--ink) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ── Sidebar (light panel, dark text) ── */
+[class*='SidebarContainer'],
+[class*='Sidebar'] {
+  background: #fff !important;
+  border-right: 1px solid var(--faint) !important;
+}
+
+[class*='SidebarHeading'] {
+  background: var(--ink) !important;
+  color: var(--off) !important;
+  font-family: var(--serif) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
+/* Search — InputContainer + IconWrapper (Decap structure) */
+#nc-root [class*='InputContainer'] {
+  position: relative !important;
+  margin: 12px 12px 8px !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+#nc-root [class*='InputContainer'] [class*='IconWrapper'] {
+  position: absolute !important;
+  left: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 18px !important;
+  height: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#nc-root [class*='InputContainer'] [class*='IconWrapper'] svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+}
+
+#nc-root [class*='InputContainer'] [class*='IconWrapper'] svg path {
+  fill: var(--mid) !important;
+}
+
+#nc-root input[class*='SearchInput'],
+#nc-root [class*='InputContainer'] input {
+  background: var(--off) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--faint2) !important;
+  border-radius: 8px !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  padding: 10px 12px 10px 40px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 40px !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 1 !important;
+  box-sizing: border-box !important;
+}
+
+#nc-root input[class*='SearchInput']::placeholder,
+#nc-root [class*='InputContainer'] input::placeholder {
+  color: var(--mid) !important;
+  opacity: 1 !important;
+}
+
+#nc-root input[class*='SearchInput']:focus,
+#nc-root [class*='InputContainer'] input:focus {
+  outline: none !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(122, 41, 66, 0.12) !important;
+}
+
+/* Collection links in sidebar */
+[class*='SidebarNavLink'] {
+  color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  border-left: 3px solid transparent !important;
+  margin: 4px 10px !important;
+  padding: 0 14px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  line-height: 1.3 !important;
+  background: transparent !important;
+}
+
+[class*='SidebarNavLink']:hover {
+  background: var(--warm) !important;
+  color: var(--ink) !important;
+}
+
+[class*='SidebarNavLink'][class*='Active'],
+[class*='SidebarNavLink--active'],
+[class*='SidebarNavLink'][aria-current='page'] {
+  background: var(--gold) !important;
+  color: #fff !important;
+  border-left-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[class*='SidebarNavLink'][class*='Active'] *,
+[class*='SidebarNavLink--active'] * {
+  color: #fff !important;
+}
+
+/* ── Collection list page ── */
+[class*='CollectionPage'],
+[class*='CollectionMain'] {
+  background: var(--off) !important;
+}
+
+[class*='CollectionTop'] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding: 20px 24px 12px !important;
+}
+
+[class*='CollectionTop'],
+[class*='CollectionTop'] > div {
+  background: transparent !important;
+}
+
+[class*='CollectionTop'] h1,
+[class*='TopBar'] h1,
+[class*='CollectionPage'] h1 {
+  color: var(--ink) !important;
+  font-family: var(--serif) !important;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.15 !important;
+  flex: 1 1 auto !important;
+}
+
+/* Nuevo Proyecto button */
+#nc-root [class*='CollectionTop'] button,
+#nc-root [class*='CollectionTop'] a[class*='Button'],
+#nc-root [class*='CreateButton'],
+#nc-root button[class*='Create'] {
+  background: var(--gold) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 0 22px !important;
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  box-shadow: 0 4px 14px rgba(74, 3, 21, 0.18) !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+[class*='CollectionTop'] button:hover,
+[class*='CreateButton']:hover {
+  background: var(--fire2) !important;
+}
+
+/* Sort / view controls */
+[class*='CollectionControls'] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 0 24px 16px !important;
+  width: 100% !important;
+}
+
+[class*='CollectionControls'] button,
+[class*='CollectionControls'] select {
+  color: var(--ink) !important;
+  background: #fff !important;
+  border: 1px solid var(--faint2) !important;
+  border-radius: 8px !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  min-height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+  line-height: 1 !important;
+}
+
+/* Entry cards (list + grid) */
+#nc-root [class*='ListCard'],
+#nc-root [class*='CollectionCard'],
+#nc-root [class*='CollectionPage'] a[class*='Card'],
+#nc-root [class*='CollectionPage'] a {
+  background: #fff !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--faint) !important;
+  border-radius: 10px !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  padding: 0 !important;
+  min-height: 52px !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease) !important;
+}
+
+#nc-root [class*='ListCard'] h2,
+#nc-root [class*='CollectionCard'] h2,
+#nc-root [class*='CollectionPage'] a h2 {
+  color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 14px 18px !important;
+  line-height: 1.35 !important;
+  width: 100% !important;
+}
+
+#nc-root [class*='CollectionPage'] a span {
+  color: var(--ink) !important;
+  padding: 14px 18px !important;
+  line-height: 1.35 !important;
+}
+
+[class*='ListCard']:hover,
+[class*='CollectionCard']:hover,
+[class*='CollectionPage'] a:hover {
+  border-color: var(--gold) !important;
+  box-shadow: 0 6px 20px rgba(74, 3, 21, 0.08) !important;
+}
+
+[class*='GridCard'] {
+  background: #fff !important;
+  border: 1px solid var(--faint) !important;
+  border-radius: 10px !important;
+  min-height: 80px !important;
+}
+
+[class*='GridCard'] h2 {
+  color: var(--ink) !important;
+  background: var(--warm) !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+}
+
+/* Portfolio list/grid — cardImage thumbnails */
+#nc-root a.dynasty-entry-card {
+  gap: 0 !important;
+  overflow: hidden !important;
+  min-height: 72px !important;
+}
+
+#nc-root a.dynasty-entry-card--grid {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-height: 160px !important;
+}
+
+.dynasty-entry-thumb {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  background: var(--warm);
+  border-right: 1px solid var(--faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dynasty-entry-thumb--grid {
+  width: 100%;
+  height: 120px;
+  border-right: none;
+  border-bottom: 1px solid var(--faint);
+}
+
+.dynasty-entry-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dynasty-entry-thumb--placeholder {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+.dynasty-entry-thumb--video {
+  font-size: 22px;
+  color: var(--gold);
+  background: linear-gradient(145deg, var(--warm) 0%, #e8d4dc 100%);
+}
+
+#nc-root a.dynasty-entry-card h2 {
+  flex: 1 !important;
+  width: auto !important;
+  padding: 12px 16px !important;
+}
+
+#nc-root a.dynasty-entry-card--grid h2 {
+  width: 100% !important;
+  border-radius: 0 !important;
+  margin-top: auto !important;
+}
+
+/* ── Editor view ── */
+[class*='EditorContainer'],
+[class*='EditorMain'],
+[class*='Pane'] {
+  background: var(--off) !important;
+}
+
+/* ══════════════════════════════════════════
+   Editor toolbar — ToolbarContainer
+   ══════════════════════════════════════════ */
+[class*='ToolbarContainer'] {
+  background: var(--ink) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  min-height: 64px !important;
+  padding: 10px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+[class*='ToolbarSection'],
+[class*='ToolbarSectionMain'],
+[class*='ToolbarSectionMeta'] {
+  display: flex !important;
+  align-items: center !important;
+  align-self: stretch !important;
+}
+
+/* Back: ← Portafolio · Guardado */
+[class*='ToolbarSectionBackLink'] {
+  color: var(--off) !important;
+  text-decoration: none !important;
+  gap: 12px !important;
+  padding: 4px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 44px !important;
+  max-width: 100% !important;
+}
+
+[class*='ToolbarSectionBackLink'] > div:last-child {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: nowrap !important;
+  min-width: 0 !important;
+}
+
+[class*='BackArrow'] {
+  flex-shrink: 0 !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(145deg, var(--gold) 0%, var(--fire2) 100%) !important;
+  color: #fff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28) !important;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease) !important;
+}
+
+[class*='BackCollection'] {
+  color: #fff !important;
+  font-family: var(--serif) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Cambios guardados badge */
+[class*='BackStatus'],
+[class*='textBadgeSuccess'],
+[class*='textBadge'] {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #c8e6d0 !important;
+  font-family: var(--sans) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  border-radius: 999px !important;
+  padding: 3px 10px !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  width: fit-content !important;
+}
+
+/* Publicar / Publicado — kill Decap teal (high specificity) */
+#nc-root [class*='ToolbarContainer'] [class*='PublishButton'],
+#nc-root [class*='ToolbarContainer'] [class*='PublishedButton'],
+#nc-root [class*='ToolbarContainer'] [class*='StyledDropdownButton'],
+#nc-root [class*='ToolbarContainer'] [class*='DropdownButton'],
+#nc-root [class*='ToolbarSectionMain'] [class*='PublishButton'],
+#nc-root [class*='ToolbarSectionMain'] [role='button'][class*='Button'],
+#nc-root [class*='PublishButton'],
+#nc-root [class*='PublishedButton'] {
+  background: var(--gold) !important;
+  background-color: var(--gold) !important;
+  color: #fff !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 999px !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 0 18px !important;
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
+}
+
+#nc-root [class*='ToolbarContainer'] [class*='PublishButton']:hover,
+#nc-root [class*='ToolbarContainer'] [class*='StyledDropdownButton']:hover,
+#nc-root [class*='PublishButton']:hover {
+  background: var(--fire2) !important;
+  background-color: var(--fire2) !important;
+  border-color: var(--fire2) !important;
+}
+
+/* Delete entry */
+[class*='ToolbarContainer'] [class*='DeleteButton'],
+[class*='ToolbarSectionMain'] [class*='DeleteButton'] {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: rgba(255, 220, 220, 0.95) !important;
+  border: 1px solid rgba(255, 180, 180, 0.45) !important;
+  border-radius: 999px !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 0 16px !important;
+  min-height: 40px !important;
+  margin-left: 8px !important;
+  white-space: nowrap !important;
+}
+
+[class*='ToolbarContainer'] [class*='DeleteButton']:hover {
+  background: rgba(180, 40, 40, 0.35) !important;
+  border-color: rgba(255, 200, 200, 0.75) !important;
+  color: #fff !important;
+}
+
+/* Ver publicación link */
+[class*='ToolbarContainer'] a[class*='PreviewLink'],
+[class*='ToolbarContainer'] a[href*='dynastymarketinga'],
+[class*='ToolbarSectionMain'] a {
+  color: rgba(248, 241, 244, 0.88) !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+
+[class*='ToolbarContainer'] a:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+/* Right meta: site link + avatar */
+[class*='ToolbarSectionMeta'] {
+  gap: 16px !important;
+  align-items: center !important;
+}
+
+[class*='AppHeaderSiteLink'],
+[class*='ToolbarSectionMeta'] a {
+  color: rgba(248, 241, 244, 0.85) !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+
+[class*='AppHeaderSiteLink']:hover {
+  color: #fff !important;
+}
+
+[class*='AvatarDropdownButton'],
+[class*='AvatarPlaceholderIcon'] {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+[class*='AvatarPlaceholderIcon'] svg path {
+  fill: var(--off) !important;
+}
+
+[class*='EditorToolbar'],
+[class*='ToolbarSection'] {
+  background: var(--ink) !important;
+}
+
+label,
+legend,
+[class*='ControlLabel'],
+[class*='FieldLabel'],
+[class*='WidgetLabel'] {
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--mid) !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 0 8px 0 !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+[class*='ControlContainer'],
+[class*='FieldWrapper'] {
+  background: transparent !important;
+  margin-bottom: 20px !important;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+textarea,
+select,
+[class*='ControlInput'] {
+  font-family: var(--sans) !important;
+  background: #fff !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--faint2) !important;
+  border-radius: 8px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(122, 41, 66, 0.12) !important;
+}
+
+[class*='ToggleBackground'],
+[class*='Toggle'] {
+  background: var(--faint2) !important;
+}
+
+[class*='ToggleActive'],
+[class*='Toggle'][class*='Active'],
+input:checked + [class*='Toggle'] {
+  background: var(--gold) !important;
+  background-color: var(--gold) !important;
+}
+
+[class*='ToggleHandle'] {
+  background: #fff !important;
+}
+
+[class*='DropdownList'],
+[class*='DropdownOption'] {
+  color: var(--ink) !important;
+  background: #fff !important;
+}
+
+/* Dropdown menus — ancho suficiente para labels largos */
+#nc-root ul[class*='DropdownList'],
+#nc-root [class*='StyledDropdownList'],
+#nc-root [class*='DropdownList'] {
+  width: auto !important;
+  min-width: 240px !important;
+  max-width: min(320px, 90vw) !important;
+  padding: 6px !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+#nc-root [class*='StyledMenuItem'],
+#nc-root [role='menuitem'][class*='dropdownItem'],
+#nc-root [role='menuitem'][class*='MenuItem'] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 36px !important;
+  padding: 8px 12px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow: hidden !important;
+  color: var(--ink) !important;
+  background: transparent !important;
+}
+
+#nc-root [class*='StyledMenuItem']:focus,
+#nc-root [role='menuitem']:focus,
+#nc-root [class*='StyledMenuItem'][class*='Active'],
+#nc-root [role='menuitem'][aria-selected='true'] {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: var(--warm) !important;
+  color: var(--ink) !important;
+}
+
+#nc-root [class*='StyledMenuItem'] > span:first-of-type,
+#nc-root [role='menuitem'] > span:first-of-type {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  color: inherit !important;
+}
+
+/* Icono de selección — check Dynasty solo en ítem activo */
+#nc-root [class*='MenuItemIconContainer']:not(:has(svg)) {
+  display: none !important;
+}
+
+#nc-root [class*='MenuItemIconContainer'] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+#nc-root [class*='MenuItemIconContainer'] svg,
+#nc-root [class*='MenuItemIconContainer'] [class*='IconWrapper'] {
+  display: none !important;
+}
+
+#nc-root [class*='MenuItemIconContainer']:has(svg)::after {
+  content: '' !important;
+  display: block !important;
+  width: 5px !important;
+  height: 9px !important;
+  border-right: 2px solid var(--gold) !important;
+  border-bottom: 2px solid var(--gold) !important;
+  transform: rotate(45deg) translate(-1px, -1px) !important;
+  opacity: 0.95 !important;
+}
+
+#nc-root [class*='StyledMenuItem']:hover,
+#nc-root [role='menuitem']:hover {
+  background: var(--warm) !important;
+  color: var(--ink) !important;
+}
+
+/* Trigger "Ordenar por" — flecha más limpia */
+#nc-root [class*='CollectionControls'] [class*='StyledDropdownButton']::before,
+#nc-root [class*='CollectionControls'] [class*='DropdownButton']::before {
+  display: none !important;
+  content: none !important;
+}
+
+#nc-root [class*='CollectionControls'] [class*='StyledDropdownButton']::after,
+#nc-root [class*='CollectionControls'] [class*='DropdownButton'][class*='caretDown']::after {
+  content: '' !important;
+  display: inline-block !important;
+  position: static !important;
+  margin-left: 6px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid !important;
+  border-width: 4px 3.5px 0 3.5px !important;
+  border-color: var(--mid) transparent transparent transparent !important;
+  background: none !important;
+  transform: none !important;
+  vertical-align: middle !important;
+}
+
+[class*='EditorContainer'] button[class*='Primary'],
+[class*='EditorContainer'] [class*='Button'][class*='Primary'] {
+  background: var(--gold) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+}
+
+[class*='EditorContainer'] h1,
+[class*='EditorContainer'] h2 {
+  font-family: var(--serif) !important;
+  color: var(--ink) !important;
+}
+
+[class*='PreviewPane'],
+[class*='PreviewPaneContainer'] {
+  background: var(--warm) !important;
+  border-left: 1px solid var(--faint) !important;
+}
+
+[class*='PreviewPane'] iframe {
+  background: var(--off) !important;
+}
+
+.dynasty-cms-preview {
+  background: var(--off);
+  min-height: 100vh;
+  pointer-events: auto;
+}
+
+.dynasty-cms-preview .tl-intro-title {
+  font-family: var(--serif);
+  color: var(--ink);
+}
+
+/* Preview clicable — todas las zonas enlazan al formulario izquierdo */
+.dynasty-preview-hint-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  background: rgba(74, 3, 21, 0.92);
+  color: var(--off);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.dynasty-editable {
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: outline-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.dynasty-editable::after {
+  content: attr(data-cms-hint);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+  padding: 4px 8px;
+  background: var(--ink);
+  color: var(--off);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease);
+}
+
+.dynasty-editable:hover::after,
+.dynasty-editable--active::after {
+  opacity: 1;
+}
+
+.dynasty-editable:hover,
+.dynasty-editable--active {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(122, 41, 66, 0.12);
+}
+
+.dynasty-editable--photo {
+  position: relative;
+}
+
+.dynasty-editable--photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.beu-lifestyle .dynasty-editable--photo,
+.case-split .dynasty-editable--photo {
+  min-height: 0;
+}
+
+.dynasty-editable--block {
+  display: block;
+  width: 100%;
+}
+
+.dynasty-editable--text {
+  display: block;
+  padding: 4px;
+  margin: -4px;
+}
+
+.dynasty-editable--logo img {
+  display: block;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+/* Highlight en formulario izquierdo al hacer clic en preview */
+.dynasty-field-highlight {
+  outline: 2px solid var(--gold) !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 6px rgba(122, 41, 66, 0.14) !important;
+  border-radius: 8px !important;
+  animation: dynasty-field-pulse 1.2s ease;
+}
+
+@keyframes dynasty-field-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(122, 41, 66, 0.35); }
+  70% { box-shadow: 0 0 0 10px rgba(122, 41, 66, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(122, 41, 66, 0); }
+}
+
+[class*='FieldHint'],
+p[class*='Hint'] {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  color: var(--mid) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+[class*='LoginPage'] {
+  background: var(--off) !important;
+}
+
+[class*='LoginPage'] h1 {
+  font-family: var(--serif) !important;
+  color: var(--ink) !important;
+}
+
+[class*='DropdownMenu'],
+[class*='Popover'] {
+  background: #fff !important;
+  border: 1px solid var(--faint2) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 32px rgba(74, 3, 21, 0.12) !important;
+  overflow: visible !important;
+  min-width: 240px !important;
+}
+
+[class*='DropdownMenu'] a,
+[class*='DropdownMenu'] button,
+[class*='Popover'] a,
+[class*='Popover'] button {
+  color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+}
+
+[class*='DropdownMenu'] a:hover,
+[class*='DropdownMenu'] button:hover {
+  background: var(--warm) !important;
+  color: var(--ink) !important;
+}
+
+/* ── List spacing ── */
+#nc-root [class*='CollectionPage'] > div > div {
+  gap: 8px !important;
+}
+
+#nc-root [class*='EntriesCollection'] {
+  padding: 0 24px 24px !important;
+}
+
+[class*='ToolbarSectionBackLink']:hover {
+  opacity: 1 !important;
+}
+
+[class*='ToolbarSectionBackLink']:hover [class*='BackArrow'] {
+  transform: translateX(-2px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+}

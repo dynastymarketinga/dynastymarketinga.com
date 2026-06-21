@@ -6,6 +6,11 @@
   "category": "content",
   "categoryLabel": "Content Creation",
   "description": "Brand video production for a Miami real estate team — cinematic storytelling that puts their agents and listings front and center.",
-  "tags": ["Video Production", "Real Estate", "Social Content"],
-  "video": "/videos/carolina-realtors.mp4"
+  "tags": [
+    "Video Production",
+    "Real Estate",
+    "Social Content"
+  ],
+  "video": "/videos/carolina-realtors.mp4",
+  "published": false
 }

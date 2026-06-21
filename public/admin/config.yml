@@ -1,0 +1,187 @@
+# Dynasty Portfolio CMS (Decap)
+# Panel: https://dynastymarketinga.com/admin/
+# Guía: docs/DECAP-SETUP.md
+# Desarrollo local: añade temporalmente `local_backend: true` y corre `npm run cms`
+
+logo_url: /dynasty-logo.png
+site_url: https://dynastymarketinga.com
+
+backend:
+  name: github
+  repo: dynastymarketinga/dynastymarketinga.com
+  branch: main
+  base_url: https://dynastymarketinga.com
+  auth_endpoint: https://api.netlify.com/auth
+
+media_folder: public/assets/portfolio
+public_folder: /assets/portfolio
+
+publish_mode: simple
+
+locale: es
+
+collections:
+  - name: portfolio
+    label: Portafolio
+    label_singular: Proyecto
+    folder: src/content/cases
+    extension: json
+    format: json
+    create: true
+    slug: '{{fields.slug}}'
+    identifier_field: slug
+    summary: '{{order}} · {{title}}'
+    sortable_fields: [order, title, categoryLabel]
+    fields:
+      # —— Carta en la lista ——
+      - label: Código interno
+        name: slug
+        widget: string
+        hint: 'No cambiar si el proyecto ya existe. Ej: beu, la-duquesa'
+        pattern: ['^[a-z0-9-]+$', 'Usa solo minúsculas, números y guiones']
+
+      - label: Posición en la lista
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+        hint: '1 = aparece primero'
+
+      - label: Mostrar en el sitio
+        name: published
+        widget: boolean
+        default: true
+
+      - label: Título
+        name: title
+        widget: string
+
+      - label: Tipo de trabajo
+        name: category
+        widget: select
+        options:
+          - { label: Branding, value: branding }
+          - { label: Redes sociales, value: social }
+          - { label: Contenido, value: content }
+          - { label: Software, value: software }
+          - { label: Branding + contenido, value: 'branding content' }
+          - { label: Contenido + branding, value: 'content branding' }
+          - { label: Software + contenido, value: 'software content' }
+
+      - label: Texto pequeño en la carta
+        name: categoryLabel
+        widget: string
+        hint: 'Ej: Brand Identity, Social Media'
+
+      - label: Foto de la carta
+        name: cardImage
+        widget: image
+        allow_multiple: false
+
+      - label: Enlace "Ver demo"
+        name: demoUrl
+        widget: string
+        required: false
+        hint: 'Solo para proyectos con demo en vivo (ej. Axones)'
+
+      - label: Clase de tema (solo desarrollo)
+        name: themeClass
+        widget: hidden
+
+      - label: Etiquetas internas (solo desarrollo)
+        name: tags
+        widget: hidden
+
+      # —— Presentación del proyecto ——
+      - label: Presentación del proyecto
+        name: intro
+        widget: object
+        required: false
+        fields:
+          - { label: Logo, name: logo, widget: image, required: false }
+          - { label: Subtítulo, name: label, widget: string, required: false, hint: 'Ej: Video Post-Production' }
+          - { label: Descripción, name: description, widget: text, required: false }
+          - { label: Segundo párrafo, name: descriptionExtra, widget: text, required: false }
+          - { label: Diseñador, name: credit, widget: string, required: false }
+
+      # —— Fotos del proyecto ——
+      - label: Fotos del proyecto
+        name: sections
+        widget: list
+        required: false
+        types:
+          - label: Una foto grande
+            name: full
+            widget: object
+            fields:
+              - { label: Variante (solo desarrollo), name: variant, widget: hidden, default: default }
+              - label: Imagen
+                name: images
+                widget: list
+                max: 1
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }
+
+          - label: Foto a ancho completo
+            name: wide
+            widget: object
+            fields:
+              - label: Imagen
+                name: images
+                widget: list
+                max: 1
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }
+
+          - label: Foto destacada
+            name: media
+            widget: object
+            fields:
+              - label: Imagen
+                name: images
+                widget: list
+                max: 1
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }
+
+          - label: Dos fotos juntas
+            name: split
+            widget: object
+            fields:
+              - { label: Proporción (solo desarrollo), name: splitRatio, widget: hidden, default: '7-5' }
+              - { label: Variante (solo desarrollo), name: variant, widget: hidden, default: default }
+              - label: Imágenes
+                name: images
+                widget: list
+                max: 2
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }
+
+          - label: Tres fotos estilo galería
+            name: trio
+            widget: object
+            fields:
+              - { label: Variante (solo desarrollo), name: variant, widget: hidden, default: beu-lifestyle }
+              - label: Imágenes
+                name: images
+                widget: list
+                max: 3
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }
+
+          - label: Tres fotos en fila
+            name: gallery-three
+            widget: object
+            fields:
+              - label: Imágenes
+                name: images
+                widget: list
+                max: 3
+                fields:
+                  - { label: Foto, name: src, widget: image }
+                  - { label: Descripción de la foto, name: alt, widget: string, required: false }

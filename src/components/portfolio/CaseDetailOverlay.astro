@@ -1,0 +1,93 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import CaseSections from './CaseSections.astro';
+
+interface Props {
+  entry: CollectionEntry<'cases'>;
+  nextSlug?: string;
+  nextTitle?: string;
+}
+
+const { entry, nextSlug, nextTitle } = Astro.props;
+const d = entry.data;
+const theme = d.themeClass ?? d.slug;
+const intro = d.intro;
+const markClass = `tl-intro-mark tl-intro-mark--${theme}`;
+---
+
+<div class={`detail-overlay detail-overlay--tl detail-overlay--${theme}`} id={`det-${d.slug}`}>
+  <button class="detail-close" id={`close-${d.slug}`}>&#10005;</button>
+  <div class="detail-nav">
+    <button class="detail-nav-back" data-close-detail={d.slug}>All Projects</button>
+    <a href="/" class="detail-nav-logo">
+      <img src="/dynasty-logo.png" alt="Dynasty Marketing Agency" />
+    </a>
+  </div>
+
+  <div class="tl-page">
+    {
+      intro && (
+        <section class="tl-section tl-section--intro">
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            <div class="tl-intro-grid tl-intro-grid--logo">
+              {
+                intro.logo && (
+                  <div class={markClass}>
+                    <img src={intro.logo} alt={`${d.title} logo`} />
+                  </div>
+                )
+              }
+              <div class="tl-intro-copy">
+                {intro.label && <p class="tl-intro-label">{intro.label}</p>}
+                <h2 class="tl-intro-title">{d.title}</h2>
+                {intro.description && <p class="tl-intro-desc">{intro.description}</p>}
+                {intro.descriptionExtra && <p class="tl-intro-desc">{intro.descriptionExtra}</p>}
+                {
+                  intro.credit && (
+                    <p class="tl-intro-credit">
+                      Designed by <strong>{intro.credit}</strong>
+                    </p>
+                  )
+                }
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    {d.sections && <CaseSections sections={d.sections} />}
+  </div>
+
+  {
+    nextSlug && nextTitle && (
+      <div class="detail-next-wrap">
+        <button
+          type="button"
+          class="detail-next"
+          data-close-detail={d.slug}
+          data-scroll-to={`project-${nextSlug}`}
+        >
+          {nextTitle} &gt;&gt;
+        </button>
+      </div>
+    )
+  }
+
+  <footer class="detail-case-footer">
+    <a href="/" class="fl"><img src="/dynasty-logo.png" alt="Dynasty Marketing Agency" /></a>
+    <div class="fcontact">
+      <span class="fcontact-line">United states and venezuela</span>
+      <a href="tel:+13053393754" class="fcontact-line">+1 (305) 339-3754</a>
+      <a href="mailto:dynastymarketingagency@gmail.com" class="fcontact-line">
+        dynastymarketingagency@gmail.com
+      </a>
+    </div>
+    <div class="flinks">
+      <a href="https://instagram.com/dynastymarketing_" target="_blank" rel="noopener" aria-label="Instagram">
+        Instagram
+      </a>
+    </div>
+  </footer>
+</div>

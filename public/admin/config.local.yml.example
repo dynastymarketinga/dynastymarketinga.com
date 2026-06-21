@@ -1,0 +1,11 @@
+# Copia a config.local.yml (gitignored) para desarrollo sin OAuth.
+# Decap no carga esto automáticamente — en su lugar añade al inicio de config.yml:
+#
+#   local_backend: true
+#
+# Luego: npm run cms  (terminal 2) + npm run dev  (terminal 1)
+
+local_backend: true
+
+backend:
+  branch: feature/portfolio-cms

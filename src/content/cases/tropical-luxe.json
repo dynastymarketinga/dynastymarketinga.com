@@ -1,18 +1,81 @@
 {
   "slug": "tl",
-  "order": 19,
+  "order": 14,
   "title": "Tropical Luxe",
   "category": "branding",
   "categoryLabel": "Brand Identity",
-  "tags": ["Logo Design", "Visual Identity", "Print", "Stationery"],
+  "tags": [
+    "Logo Design",
+    "Visual Identity",
+    "Print",
+    "Stationery"
+  ],
   "cardImage": "/assets/tropical/tropical-carta-2.webp",
-  "gallery": [
-    "/assets/tropical/tropical-cartas.webp",
-    "/assets/tropical/tropical-taza.webp",
-    "/assets/tropical/tropical-almohoda.webp",
-    "/assets/tropical/tropical-carta.webp",
-    "/assets/tropical/tropical-chica-almohoda.webp",
-    "/assets/tropical/tropical-carta-2.webp",
-    "/assets/tropical/tropical-almohoda-2.webp"
+  "themeClass": "tl",
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-cartas.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-taza.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-almohoda.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-carta.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-chica-almohoda.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-carta-2.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/tropical/tropical-almohoda-2.webp",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

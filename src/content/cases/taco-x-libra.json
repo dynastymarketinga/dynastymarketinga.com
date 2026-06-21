@@ -1,16 +1,62 @@
 {
   "slug": "taco-x-libra",
-  "order": 14,
+  "order": 11,
   "title": "Taco x Libra",
   "category": "branding",
   "categoryLabel": "Brand Identity",
-  "tags": ["Menu Design", "Business Cards", "Print Collateral"],
+  "tags": [
+    "Menu Design",
+    "Business Cards",
+    "Print Collateral"
+  ],
   "cardImage": "/assets/taco-x-libra/txl-cover.webp",
-  "gallery": [
-    "/assets/taco-x-libra/txl-hero.webp",
-    "/assets/taco-x-libra/txl-cards-grid.webp",
-    "/assets/taco-x-libra/txl-cards-stack.webp",
-    "/assets/taco-x-libra/txl-menu-spread.webp",
-    "/assets/taco-x-libra/txl-menu-trifold.webp"
+  "themeClass": "txl",
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/taco-x-libra/txl-hero.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/taco-x-libra/txl-cards-grid.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/taco-x-libra/txl-cards-stack.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/taco-x-libra/txl-menu-spread.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/taco-x-libra/txl-menu-trifold.webp",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

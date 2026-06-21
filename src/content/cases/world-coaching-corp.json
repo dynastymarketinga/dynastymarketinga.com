@@ -1,17 +1,72 @@
 {
   "slug": "wcc",
-  "order": 4,
+  "order": 3,
   "title": "World Coaching Corporation",
   "category": "branding",
   "categoryLabel": "Corporate Branding",
-  "tags": ["Logo Design", "Stationery", "Brand Manual", "Stage Design"],
+  "tags": [
+    "Logo Design",
+    "Stationery",
+    "Brand Manual",
+    "Stage Design"
+  ],
   "cardImage": "/assets/wcc/wcc-portada.webp",
-  "gallery": [
-    "/assets/wcc/wcc-album.webp",
-    "/assets/wcc/wcc-utileria.webp",
-    "/assets/wcc/wcc-cartas.webp",
-    "/assets/wcc/wcc-portada.webp",
-    "/assets/wcc/wcc-cuadernos.webp",
-    "/assets/wcc/wcc-studio.webp"
+  "themeClass": "wcc",
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/wcc/wcc-album.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/wcc/wcc-utileria.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/wcc/wcc-cartas.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/wcc/wcc-portada.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/wcc/wcc-cuadernos.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/wcc/wcc-studio.webp",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

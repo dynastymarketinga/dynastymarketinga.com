@@ -1,0 +1,135 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  sections: NonNullable<CollectionEntry<'cases'>['data']['sections']>;
+}
+
+const { sections } = Astro.props;
+---
+
+{
+  sections.map((section) => {
+    if (section.type === 'wide') {
+      const img = section.images[0];
+      return (
+        <section class="tl-section tl-section--media tl-section--wide">
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            <figure class="tl-media tl-media--full">
+              <img src={img.src} alt={img.alt ?? ''} />
+            </figure>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.type === 'media') {
+      const img = section.images[0];
+      return (
+        <section class="tl-section tl-section--media">
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            <figure class="tl-media tl-media--lg">
+              <img src={img.src} alt={img.alt ?? ''} />
+            </figure>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.type === 'full') {
+      const img = section.images[0];
+      if (section.variant === 'beu-split-print') {
+        return (
+          <section class="tl-section tl-section--split beu-split__section--print">
+            <div class="section-border" aria-hidden="true" />
+            <div class="section-background">
+              <figure class="tl-media beu-split__desk">
+                <img src={img.src} alt={img.alt ?? ''} />
+              </figure>
+            </div>
+          </section>
+        );
+      }
+      return (
+        <section class="tl-section tl-section--media tl-section--wide">
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            <figure class="tl-media tl-media--full">
+              <img src={img.src} alt={img.alt ?? ''} />
+            </figure>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.type === 'trio' && section.variant === 'beu-lifestyle') {
+      const [shirt, pens, bag] = section.images;
+      return (
+        <section class="tl-section tl-section--trio">
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            <div class="beu-lifestyle">
+              {shirt && (
+                <figure class="beu-lifestyle__shirt">
+                  <img src={shirt.src} alt={shirt.alt ?? ''} />
+                </figure>
+              )}
+              {pens && (
+                <figure class="beu-lifestyle__pens">
+                  <img src={pens.src} alt={pens.alt ?? ''} />
+                </figure>
+              )}
+              {bag && (
+                <figure class="beu-lifestyle__bag">
+                  <img src={bag.src} alt={bag.alt ?? ''} />
+                </figure>
+              )}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.type === 'split' && section.variant === 'beu-split-notebooks') {
+      return (
+        <section class="tl-section tl-section--split beu-split__section--notebooks">
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            {section.images.map((img) => (
+              <figure class="tl-media beu-split__notebooks">
+                <img src={img.src} alt={img.alt ?? ''} />
+              </figure>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    if (section.type === 'split' || section.type === 'trio' || section.type === 'gallery-three') {
+      const ratio = section.splitRatio ?? (section.images.length === 3 ? '3' : '7-5');
+      const splitClass =
+        ratio === '8-4' ? 'case-split--8-4' : ratio === '3' ? 'case-split--3' : 'case-split--7-5';
+      const sectionClass =
+        section.type === 'gallery-three' ? 'tl-section tl-section--posts' : 'tl-section tl-section--split';
+
+      return (
+        <section class={sectionClass}>
+          <div class="section-border" aria-hidden="true" />
+          <div class="section-background">
+            <div class={`case-split ${splitClass}`}>
+              {section.images.map((img) => (
+                <figure class="tl-media tl-media--full">
+                  <img src={img.src} alt={img.alt ?? ''} />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    return null;
+  })
+}

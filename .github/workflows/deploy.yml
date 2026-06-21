@@ -1,9 +1,11 @@
-# Build Astro → deploy only dist/ to GitHub Pages (custom domain in public/CNAME).
-name: Deploy to GitHub Pages
+# Deploy desactivado — producción en Vercel (dynastymarketinga-com.vercel.app).
+# El dominio www.dynastymarketinga.com apunta a Vercel, no a GitHub Pages.
+#
+# Para reactivar GitHub Pages, descomenta el bloque `on:` inferior.
+
+name: Deploy to GitHub Pages (disabled)
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,32 +19,12 @@ concurrency:
 
 jobs:
   build:
+    if: false
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - run: echo "Use Vercel for production deploys"
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - run: npm ci
-
-      - name: Build static site
-        run: npm run build
-        env:
-          PUBLIC_FORMSPREE_ENDPOINT: ${{ secrets.PUBLIC_FORMSPREE_ENDPOINT }}
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:

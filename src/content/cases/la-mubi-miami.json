@@ -1,23 +1,89 @@
 {
   "slug": "la-mubi-miami",
-  "order": 12,
+  "order": 9,
   "title": "LA MUBI",
   "category": "social",
   "categoryLabel": "Social Media",
-  "tags": ["Media Campaigns", "Social Media Management", "Nightlife"],
-  "cardImage": "/assets/la-mubi-miami/lm-cover.webp",
-  "videos": [
-    { "id": "BMD-49cYu2Q", "title": "STORY PROMO FOR CANDELA" },
-    { "id": "Uff3rzPyYCw", "title": "PARTY REEL — LA MUBI #1" },
-    { "id": "8Mf_C5oA-pk", "title": "LA MUBI — event promo" },
-    { "id": "AE58GUWIwMQ", "title": "LA MUBI — nightlife reel" }
+  "tags": [
+    "Media Campaigns",
+    "Social Media Management",
+    "Nightlife"
   ],
-  "gallery": [
-    "/assets/la-mubi-miami/lm-grid-01.webp",
-    "/assets/la-mubi-miami/lm-grid-02.webp",
-    "/assets/la-mubi-miami/lm-grid-03.webp",
-    "/assets/la-mubi-miami/lm-grid-04.webp",
-    "/assets/la-mubi-miami/lm-grid-d.webp",
-    "/assets/la-mubi-miami/lm-grid-b.webp"
+  "cardImage": "/assets/la-mubi-miami/lm-cover.webp",
+  "themeClass": "mubi",
+  "videos": [
+    {
+      "id": "BMD-49cYu2Q",
+      "title": "STORY PROMO FOR CANDELA"
+    },
+    {
+      "id": "Uff3rzPyYCw",
+      "title": "PARTY REEL — LA MUBI #1"
+    },
+    {
+      "id": "8Mf_C5oA-pk",
+      "title": "LA MUBI — event promo"
+    },
+    {
+      "id": "AE58GUWIwMQ",
+      "title": "LA MUBI — nightlife reel"
+    }
+  ],
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-mubi-miami/lm-grid-01.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-mubi-miami/lm-grid-02.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-mubi-miami/lm-grid-03.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-mubi-miami/lm-grid-04.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-mubi-miami/lm-grid-d.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-mubi-miami/lm-grid-b.webp",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

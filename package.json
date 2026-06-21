@@ -6,9 +6,11 @@
   "scripts": {
     "copy:public": "node scripts/copy-public.mjs",
     "prune:public": "node scripts/prune-public.mjs",
-    "predev": "npm run copy:public && npm run prune:public",
+    "portfolio:index": "node scripts/build-portfolio-index.mjs",
+    "predev": "npm run copy:public && npm run prune:public && npm run portfolio:index",
     "dev": "astro dev",
-    "prebuild": "npm run copy:public && npm run prune:public",
+    "cms": "npx decap-server",
+    "prebuild": "npm run copy:public && npm run prune:public && npm run portfolio:index",
     "build": "astro build",
     "preview": "astro preview",
     "extract": "node scripts/extract-legacy.mjs",

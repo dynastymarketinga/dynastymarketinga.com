@@ -1,17 +1,65 @@
 {
   "slug": "beu",
-  "order": 3,
-  "title": "Be U Academy",
+  "order": 1,
+  "published": true,
+  "title": "Be-U Academy",
   "category": "branding",
   "categoryLabel": "Brand Identity",
-  "tags": ["Logo Design", "Brand Identity", "Merchandise"],
   "cardImage": "/assets/be-academy/beu-feature-print.webp",
-  "gallery": [
-    "/assets/be-academy/beu-logo.png",
-    "/assets/be-academy/beu-feature-merch.webp",
-    "/assets/be-academy/beu-pens.webp",
-    "/assets/be-academy/beu-bag.webp",
-    "/assets/be-academy/beu-notebooks.webp",
-    "/assets/be-academy/beu-feature-print.webp"
+  "themeClass": "beu",
+  "tags": [
+    "Logo Design",
+    "Brand Identity",
+    "Merchandise"
+  ],
+  "intro": {
+    "logo": "/assets/be-academy/beu-logo.png",
+    "label": "Video Post-Production",
+    "description": "Be U Academy is an organization that focuses on accompanying people in their process of self-realization and becoming the best version of themselves.",
+    "credit": "Designer Daniela Sanchez"
+  },
+  "sections": [
+    {
+      "type": "full",
+      "variant": "beu-split-print",
+      "images": [
+        {
+          "src": "/assets/be-academy/beu-feature-print.webp",
+          "alt": "Be U Academy — print collateral"
+        }
+      ]
+    },
+    {
+      "type": "trio",
+      "variant": "beu-lifestyle",
+      "images": [
+        {
+          "src": "/assets/be-academy/beu-feature-merch.webp",
+          "alt": "Be U Academy — branded apparel"
+        },
+        {
+          "src": "/assets/be-academy/beu-pens.webp",
+          "alt": "Be U Academy — branded pens"
+        },
+        {
+          "src": "/assets/be-academy/beu-bag.webp",
+          "alt": "Be U Academy — retail bag"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "variant": "beu-split-notebooks",
+      "images": [
+        {
+          "src": "/assets/be-academy/beu-notebooks.webp",
+          "alt": "Be U Academy — notebook system"
+        },
+        {
+          "src": "/assets/be-academy/beu-notebooks-cuadernos.webp",
+          "alt": "Be U Academy — cuadernos stationery"
+        }
+      ]
+    }
   ]
 }

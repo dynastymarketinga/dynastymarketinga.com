@@ -99,10 +99,11 @@ Eso mueve todo a `_archive/` (gitignored). Borra `_archive/` cuando ya no necesi
 npm run extract
 ```
 
-## Fase 2 (pendiente)
+## Fase 2 (en progreso)
 
 - Rutas `/work/[slug]` desde `src/content/cases/*.json`
 - Más componentes Astro (Nav, Services, ProjectCard…)
+- **Portfolio CMS** — panel `/admin` (Decap) para editar casos. Ver [docs/DECAP-SETUP.md](docs/DECAP-SETUP.md)
 - Blog / CMS
 
 ## Notas

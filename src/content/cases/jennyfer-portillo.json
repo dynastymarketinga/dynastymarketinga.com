@@ -1,14 +1,45 @@
 {
   "slug": "jennyfer-portillo",
-  "order": 8,
+  "order": 6,
   "title": "Jennyfer Portillo",
   "category": "branding",
   "categoryLabel": "Brand Identity",
-  "tags": ["Branding", "Logo Design", "Life Coach", "Stationery"],
+  "tags": [
+    "Branding",
+    "Logo Design",
+    "Life Coach",
+    "Stationery"
+  ],
   "cardImage": "/assets/jennyfer-portillo/jp-cover.webp",
-  "gallery": [
-    "/assets/jennyfer-portillo/jp-brand.webp",
-    "/assets/jennyfer-portillo/jp-pens.webp",
-    "/assets/jennyfer-portillo/jp-motion.gif"
+  "themeClass": "jennyfer",
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/jennyfer-portillo/jp-brand.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/jennyfer-portillo/jp-pens.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/jennyfer-portillo/jp-motion.gif",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

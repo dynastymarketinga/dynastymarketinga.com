@@ -1,22 +1,117 @@
 {
   "slug": "lf",
-  "order": 5,
+  "order": 4,
   "title": "La Francia Joyería",
   "category": "branding content",
   "categoryLabel": "Brand Identity",
-  "tags": ["Social Media", "Photography", "Campaign Management", "Jewelry"],
+  "tags": [
+    "Social Media",
+    "Photography",
+    "Campaign Management",
+    "Jewelry"
+  ],
   "cardImage": "/assets/la-francia/lf-portada.webp",
-  "gallery": [
-    "/assets/la-francia/lf-anillo.webp",
-    "/assets/la-francia/lf-oro.webp",
-    "/assets/la-francia/lf-cadena-os.webp",
-    "/assets/la-francia/lf-computadora.webp",
-    "/assets/la-francia/lf-telefono.webp",
-    "/assets/la-francia/lf-corazon.webp",
-    "/assets/la-francia/lf-mujer-famosa.webp",
-    "/assets/la-francia/lf-galeria.webp",
-    "/assets/la-francia/lf-italiano.webp",
-    "/assets/la-francia/lf-italiano-rojo.webp",
-    "/assets/la-francia/lf-book.webp"
+  "themeClass": "lf",
+  "published": true,
+  "sections": [
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-anillo.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-oro.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-cadena-os.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-computadora.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-telefono.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-corazon.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-mujer-famosa.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-galeria.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-italiano.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-italiano-rojo.webp",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/la-francia/lf-book.webp",
+          "alt": ""
+        }
+      ]
+    }
   ]
 }

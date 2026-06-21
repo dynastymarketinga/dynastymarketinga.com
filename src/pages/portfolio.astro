@@ -1,6 +1,26 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import portfolioHtml from '../partials/portfolio.html?raw';
+import PortfolioGrid from '../components/portfolio/PortfolioGrid.astro';
+import CaseDetailOverlay from '../components/portfolio/CaseDetailOverlay.astro';
+import shellTop from '../partials/portfolio-shell-top.html?raw';
+import shellBottom from '../partials/portfolio-shell-bottom.html?raw';
+import legacyDetails from '../partials/portfolio-legacy-details.html?raw';
+
+const cases = await getCollection('cases');
+const published = cases
+  .filter((c) => c.data.published !== false)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const cmsCases = published.filter(
+  (c) => c.data.sections && c.data.sections.length > 0
+);
+
+const total = published.length;
+const totalPadded = String(total).padStart(2, '0');
+const shellTopHtml = shellTop
+  .replace('>14<', `>${total}<`)
+  .replace('01 — 14', `01 — ${totalPadded}`);
 ---
 
 <BaseLayout
@@ -9,5 +29,23 @@ import portfolioHtml from '../partials/portfolio.html?raw';
   page="portfolio"
   scripts={['/scripts/portfolio.js']}
 >
-  <div class="page active" id="page-portfolio" set:html={portfolioHtml} />
+  <div class="page active" id="page-portfolio">
+    <Fragment set:html={shellTopHtml} />
+    <PortfolioGrid cases={published} />
+    <Fragment set:html={shellBottom} />
+    {
+      cmsCases.map((entry) => {
+        const idx = published.findIndex((c) => c.id === entry.id);
+        const next = published[idx + 1];
+        return (
+          <CaseDetailOverlay
+            entry={entry}
+            nextSlug={next?.data.slug}
+            nextTitle={next?.data.title}
+          />
+        );
+      })
+    }
+    <Fragment set:html={legacyDetails} />
+  </div>
 </BaseLayout>

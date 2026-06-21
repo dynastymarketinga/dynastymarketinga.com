@@ -1,23 +1,109 @@
 {
   "slug": "russo",
-  "order": 3,
+  "order": 2,
+  "published": true,
   "title": "Russo Tyres",
   "category": "social",
   "categoryLabel": "Social Media",
-  "tags": ["Social Media", "Content", "Branding"],
   "cardImage": "/assets/russo/russo-carta-portada.webp",
-  "gallery": [
-    "/assets/russo/russo-hero.webp",
-    "/assets/russo/russo-stories.gif",
-    "/assets/russo/russo-llantas.gif",
-    "/assets/russo/russo-shop.webp",
-    "/assets/russo/russo-van.webp",
-    "/assets/russo/russo-logo-reveal.gif",
-    "/assets/russo/russo-mockup-stories.webp",
-    "/assets/russo/russo-ig-perfil.webp",
-    "/assets/russo/russo-logotypes.gif",
-    "/assets/russo/russo-post-1.webp",
-    "/assets/russo/russo-post-2.webp",
-    "/assets/russo/russo-post-3.webp"
+  "themeClass": "russo",
+  "tags": [
+    "Social Media",
+    "Content",
+    "Branding"
+  ],
+  "intro": {
+    "logo": "/assets/russo/russo-logotipo.webp",
+    "label": "Social Media Content",
+    "description": "Russo Tires offers maintenance and repair services for your vehicle, as well as tires from a wide variety of brands to help customers have a safe drive. Their services are fast, affordable and convenient."
+  },
+  "sections": [
+    {
+      "type": "wide",
+      "images": [
+        {
+          "src": "/assets/russo/russo-hero.webp",
+          "alt": "Russo Tyres — automotive service"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "splitRatio": "8-4",
+      "images": [
+        {
+          "src": "/assets/russo/russo-stories.gif",
+          "alt": "Russo Tyres social media stories"
+        },
+        {
+          "src": "/assets/russo/russo-llantas.gif",
+          "alt": "Russo Tyres tire detail"
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/russo/russo-shop.webp",
+          "alt": "Russo Tyres shop interior"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "splitRatio": "7-5",
+      "images": [
+        {
+          "src": "/assets/russo/russo-van.webp",
+          "alt": "Russo Tyres branded service van"
+        },
+        {
+          "src": "/assets/russo/russo-logo-reveal.gif",
+          "alt": "Russo Tyres logo animation"
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "images": [
+        {
+          "src": "/assets/russo/russo-mockup-stories.webp",
+          "alt": "Russo Tyres Instagram stories mockup"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "splitRatio": "7-5",
+      "images": [
+        {
+          "src": "/assets/russo/russo-ig-perfil.webp",
+          "alt": "Russo Tyres Instagram profile mockup"
+        },
+        {
+          "src": "/assets/russo/russo-logotypes.gif",
+          "alt": "Russo Tyres logotype variations"
+        }
+      ]
+    },
+    {
+      "type": "gallery-three",
+      "splitRatio": "3",
+      "images": [
+        {
+          "src": "/assets/russo/russo-post-1.webp",
+          "alt": "Russo Tyres social post — tire specs"
+        },
+        {
+          "src": "/assets/russo/russo-post-2.webp",
+          "alt": "Russo Tyres social post — brakes"
+        },
+        {
+          "src": "/assets/russo/russo-post-3.webp",
+          "alt": "Russo Tyres social post — tire diagram"
+        }
+      ]
+    }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "published": true,
+  "slug": "vic",
+  "order": 1,
+  "title": "VICTOR",
+  "category": "branding",
+  "categoryLabel": "CAR",
+  "cardImage": "/assets/portfolio/la-panadería.jpeg",
+  "sections": [
+    {
+      "type": "full",
+      "variant": "beu-split-print",
+      "images": [
+        {
+          "src": "/assets/portfolio/la-panadería.jpeg"
+        }
+      ]
+    }
+  ]
+}
