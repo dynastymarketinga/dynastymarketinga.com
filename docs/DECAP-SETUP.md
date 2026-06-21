@@ -69,34 +69,61 @@ Ver también `public/admin/config.local.yml.example`.
 
 ---
 
-## Producción: login con GitHub
+## Producción: login con GitHub (todo en Vercel)
 
-Decap guarda cambios directamente en el repo GitHub (`branch: main`). Para login en producción necesitas **OAuth**.
+El sitio vive en **Vercel**, no en Netlify. Decap CMS (antes “Netlify CMS”) solo comparte el nombre — el login corre en **funciones serverless de Vercel** (`/api/auth` y `/api/callback`).
 
-### Netlify Identity (recomendada, gratis)
+### ¿Por qué no le paso mi usuario y contraseña de GitHub?
 
-1. Crea un sitio en [Netlify](https://netlify.com) (puede estar vacío, solo para auth).
-2. Settings → Identity → Enable Identity.
-3. Settings → Identity → Services → Enable Git Gateway **o** OAuth externo.
-4. `public/admin/config.yml` ya incluye:
+**No lo hagas.** El panel es una página web: cualquier contraseña o token escrito en el código o en el navegador lo podría ver cualquiera. Además, si ella usa **su propia cuenta GitHub** (invitada al repo), tú no compartes acceso personal y puedes quitarla cuando quieras.
+
+Lo correcto: **una vez** pulsa “Iniciar sesión con GitHub” con la cuenta de ella. GitHub pide permiso al repo y listo — como “Continuar con Google”.
+
+### Paso 1 — Invitar a tu hermana al repo
+
+1. GitHub → `dynastymarketinga/dynastymarketinga.com` → **Settings → Collaborators**
+2. Invítala con rol **Write** (puede editar contenido, no borrar el repo entero)
+
+### Paso 2 — Crear GitHub OAuth App (solo tú, una vez)
+
+1. [GitHub → Developer settings → OAuth Apps → New](https://github.com/settings/developers)
+2. **Application name:** Dynasty CMS
+3. **Homepage URL:** `https://www.dynastymarketinga.com`
+4. **Authorization callback URL:** `https://www.dynastymarketinga.com/api/callback`
+5. Guarda **Client ID** y genera **Client Secret**
+
+### Paso 3 — Variables en Vercel
+
+Vercel → proyecto `dynastymarketinga-com` → **Settings → Environment Variables** (Production):
+
+| Variable | Valor |
+|----------|--------|
+| `ORIGIN` | `www.dynastymarketinga.com,dynastymarketinga.com` |
+| `COMPLETE_URL` | `https://www.dynastymarketinga.com/api/callback` |
+| `ADMIN_PANEL_URL` | `https://www.dynastymarketinga.com/admin/` |
+| `OAUTH_CLIENT_ID` | *(Client ID del paso 2)* |
+| `OAUTH_CLIENT_SECRET` | *(Client Secret del paso 2)* |
+
+Redeploy después de guardar las variables.
+
+Plantilla: [`.env.example`](../.env.example) en la raíz del repo.
+
+### Paso 4 — Probar
+
+1. Abre https://www.dynastymarketinga.com/admin/
+2. **Iniciar sesión con GitHub** (cuenta de tu hermana)
+3. Edita un proyecto de prueba → **Publicar**
+
+`config.yml` apunta al OAuth de Vercel:
 
 ```yaml
 backend:
   name: github
   repo: dynastymarketinga/dynastymarketinga.com
   branch: main
-  base_url: https://dynastymarketinga.com
-  auth_endpoint: https://api.netlify.com/auth
+  base_url: https://www.dynastymarketinga.com
+  auth_endpoint: api/auth
 ```
-
-5. Invita a la hermana: Netlify Identity → Invite users (email).
-
-### Acceso al repo
-
-La cuenta que edita debe ser **colaboradora** del repo:
-
-1. Repo `dynastymarketinga/dynastymarketinga.com` → Settings → Collaborators.
-2. Invita la cuenta GitHub de la hermana con rol **Write**.
 
 ---
 

@@ -4,14 +4,14 @@
 # Desarrollo local: añade temporalmente `local_backend: true` y corre `npm run cms`
 
 logo_url: /dynasty-logo.png
-site_url: https://dynastymarketinga.com
+site_url: https://www.dynastymarketinga.com
 
 backend:
   name: github
   repo: dynastymarketinga/dynastymarketinga.com
   branch: main
-  base_url: https://dynastymarketinga.com
-  auth_endpoint: https://api.netlify.com/auth
+  base_url: https://www.dynastymarketinga.com
+  auth_endpoint: api/auth
 
 media_folder: public/assets/portfolio
 public_folder: /assets/portfolio

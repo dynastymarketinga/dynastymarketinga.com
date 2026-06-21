@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^5.7.0"
+    "astro": "^5.7.0",
+    "netlify-cms-oauth-provider-node": "^2.0.0"
   }
 }
